@@ -1,0 +1,128 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Projeto Final Disciplina\stageWB\simulation\modelsim
+Emux21mips
+Z1 w1435867537
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dE:\Projeto Final Disciplina\stageWB\simulation\modelsim
+Z8 8E:/Projeto Final Disciplina/mux21MIPS.vhd
+Z9 FE:/Projeto Final Disciplina/mux21MIPS.vhd
+l0
+L6
+VhoFzj>ndB]WSaV0>ozbAE0
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1436070010.304000
+Z12 !s90 -reportprogress|300|-93|-work|work|E:/Projeto Final Disciplina/mux21MIPS.vhd|
+Z13 !s107 E:/Projeto Final Disciplina/mux21MIPS.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 YzaZF;AX0DPA_e=10CzcK3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 mux21mips 0 22 hoFzj>ndB]WSaV0>ozbAE0
+l15
+L13
+VPK9V2i1R88o`6OKALCWe00
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 mReWRHJQFj33m[=_BD?=Q2
+!i10b 1
+Estagewb
+Z16 w1436069370
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8E:/Projeto Final Disciplina/stageWB/stageWB.vhd
+Z18 FE:/Projeto Final Disciplina/stageWB/stageWB.vhd
+l0
+L6
+VMen=F:kK1HAjI`LLiQB3i1
+R10
+31
+Z19 !s108 1436070010.926000
+Z20 !s90 -reportprogress|300|-93|-work|work|E:/Projeto Final Disciplina/stageWB/stageWB.vhd|
+Z21 !s107 E:/Projeto Final Disciplina/stageWB/stageWB.vhd|
+R14
+R15
+!s100 6>?zCZObUTN;IH69ak?dM0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 stagewb 0 22 Men=F:kK1HAjI`LLiQB3i1
+l27
+L17
+V3f=P9CQaCLiXTUJ??UaHk2
+R10
+31
+R19
+R20
+R21
+R14
+R15
+!s100 QeID_aHN<Zm=Cl8D=U0991
+!i10b 1
+Etb_stagewb
+Z22 w1436069898
+R2
+R3
+R4
+R5
+R6
+R7
+Z23 8E:/Projeto Final Disciplina/stageWB/tb_stageWB.vhd
+Z24 FE:/Projeto Final Disciplina/stageWB/tb_stageWB.vhd
+l0
+L6
+VbAc6BzMFM;aT@4FRCM^0<0
+!s100 <fkZC@SX1T5Zi;4RoYCSj1
+R10
+31
+!i10b 1
+Z25 !s108 1436070011.431000
+Z26 !s90 -reportprogress|300|-93|-work|work|E:/Projeto Final Disciplina/stageWB/tb_stageWB.vhd|
+Z27 !s107 E:/Projeto Final Disciplina/stageWB/tb_stageWB.vhd|
+R14
+R15
+Atb
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 tb_stagewb 0 22 bAc6BzMFM;aT@4FRCM^0<0
+l28
+L10
+V822djZTgg2DH5j;IHbFd>1
+!s100 3Kf]7aBz83X;9SRKQN4cK1
+R10
+31
+!i10b 1
+R25
+R26
+R27
+R14
+R15

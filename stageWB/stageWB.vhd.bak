@@ -1,0 +1,42 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity stageWB is
+	port (
+
+		memtoregW	: in std_logic;
+		ALUoutW		: in std_logic_vector(31 downto 0);
+		ReadDataW	: in std_logic_vector(31 downto 0);
+		
+		ResultW 		: out std_logic_vector(31 downto 0);
+		
+end regEXMEM;
+
+architecture behavioral of regEXMEM is
+
+begin
+
+
+	proc_EXMEM_read: process(clk)
+	begin
+
+		regWriteM	<= regWrite;
+		memtoregM	<= memtoreg;
+		memWriteM 	<= memWrite;
+		ALUoutM		<= ALUout;
+		WriteDataM	<= WriteData;
+		WriteRegM	<= writeReg;
+		
+	end process proc_EXMEM_read;
+	
+	
+end architecture behavioral;
+
+
+
+
+
+
+

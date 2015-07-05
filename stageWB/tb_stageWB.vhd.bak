@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity tb_stageWB is
+end tb_stageWB;
+
+
+architecture TB of tb_stageWB is
+		
+	signal tb_memtoregW	: std_logic;
+	signal ALUoutW			: std_logic_vector(31 downto 0);
+	signal ReadDataW		: std_logic_vector(31 downto 0);
+		
+	signal ResultW 		: std_logic_vector(31 downto 0));
+			
+	
+	component stageWB
+	port (
+		
+	end component;
+	
+begin
+
+		process
+	begin
+		
+	
+	end process;
+
+
+end TB;
+

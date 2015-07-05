@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Jul 05 00:14:20 2015
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : regMEMWB
+Top-level Entity Name : regMEMWB
+Family : Cyclone II
+Total logic elements : 71
+    Total combinational functions : 0
+    Dedicated logic registers : 71
+Total registers : 71
+Total pins : 144
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
