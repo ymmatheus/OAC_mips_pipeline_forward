@@ -1,0 +1,29 @@
+O que temos que implementar?
+
+- BREG                  X
+- ULA                   X
+- SOMADOR
+- MULTIPLEXADORES       X
+- Memoria Dados
+- Memoria Intrucoes
+
+- Unidade Controle      
+    - Instrucoes: BEQ, BNE,...
+- Detector de Hazard 
+    - com Forwarding 
+
+- Registrador IF/ID
+- Registrador ID/EX
+- Registrador EX/MEM    X
+- Registrador MEM/WB    X 
+
+- Estagio IF
+- Estagio ID
+- Estagio EX
+- Estagio MEM
+- Estagio WB            X
+
+- MIPS Final
+    - Juntar todos os estagios e registadores
+
+legenda: com X apos o nome quer dizer que ja foi implementador
