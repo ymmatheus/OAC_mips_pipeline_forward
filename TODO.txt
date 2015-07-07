@@ -2,18 +2,20 @@ O que temos que implementar?
 
 - BREG                  X
 - ULA                   X
-- SOMADOR
+- SOMADOR               Marcelo
 - MULTIPLEXADORES       X
-- Memoria Dados
+- Memoria Dados         
 - Memoria Intrucoes
+- PC                    Marcelo
 
-- Unidade Controle      
+- Unidade Controle      Matheus 
     - Instrucoes: BEQ, BNE,...
+
 - Detector de Hazard 
     - com Forwarding 
 
-- Registrador IF/ID
-- Registrador ID/EX
+- Registrador IF/ID     Marcelo
+- Registrador ID/EX     Marcelo
 - Registrador EX/MEM    X
 - Registrador MEM/WB    X 
 
@@ -27,3 +29,5 @@ O que temos que implementar?
     - Juntar todos os estagios e registadores
 
 legenda: com X apos o nome quer dizer que ja foi implementador
+         nome significa q a pessoa esta responsavel por esse modulo
+            quando a pessoa terminar por favor colocar um x, ou deixar em branco se nao conseguiu
