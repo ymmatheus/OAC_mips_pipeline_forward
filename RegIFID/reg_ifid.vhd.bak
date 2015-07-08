@@ -1,0 +1,27 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+
+entity reg_ifid is
+	port(	InstrF					:in	std_logic_vector(31 downto 0);
+			PCplus4F					:in	std_logic_vector(31 downto 0);	
+			EN							:in	std_logic;
+			CLR						:in	std_logic;
+			clk						:in	std_logic;
+			InstrD					:out	std_logic_vector(31 downto 0);
+			PCplus4D					:out	std_logic_vector(31 downto 0);
+end reg_ifid;
+
+architecture REGIFID of reg_ifid is
+signal instr_interno: std_logic_vector(31 downto 0):
+
+begin
+
+	proc_escrita: process(EN,CLR,Instr,PCplus4, clk)
+	begin
+		if (rising_edge(clk) and EN = '0') then
+			instr_interno <= InstrF;
+	end process;
+end REGIFID;
+			
