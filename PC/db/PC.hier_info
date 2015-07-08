@@ -1,0 +1,35 @@
+|PC
+ent1[0] => reg_interno[0].DATAIN
+ent1[1] => reg_interno[1].DATAIN
+ent1[2] => reg_interno[2].DATAIN
+ent1[3] => reg_interno[3].DATAIN
+ent1[4] => reg_interno[4].DATAIN
+ent1[5] => reg_interno[5].DATAIN
+ent1[6] => reg_interno[6].DATAIN
+ent1[7] => reg_interno[7].DATAIN
+clk => reg_interno[0].CLK
+clk => reg_interno[1].CLK
+clk => reg_interno[2].CLK
+clk => reg_interno[3].CLK
+clk => reg_interno[4].CLK
+clk => reg_interno[5].CLK
+clk => reg_interno[6].CLK
+clk => reg_interno[7].CLK
+wren => reg_interno[0].ENA
+wren => reg_interno[1].ENA
+wren => reg_interno[2].ENA
+wren => reg_interno[3].ENA
+wren => reg_interno[4].ENA
+wren => reg_interno[5].ENA
+wren => reg_interno[6].ENA
+wren => reg_interno[7].ENA
+saida[0] <= reg_interno[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= reg_interno[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= reg_interno[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= reg_interno[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= reg_interno[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= reg_interno[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= reg_interno[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= reg_interno[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,87 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Mars\Documents\OAC\PC\simulation\modelsim
+Epc
+Z1 w1435872641
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\Mars\Documents\OAC\PC\simulation\modelsim
+Z8 8C:/Users/Mars/Documents/OAC/PC/pc.vhd
+Z9 FC:/Users/Mars/Documents/OAC/PC/pc.vhd
+l0
+L6
+V4GZ4>GCkX1KW<mNWmZ=MA1
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1435872656.534000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/PC/pc.vhd|
+Z13 !s107 C:/Users/Mars/Documents/OAC/PC/pc.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 ggj8TdDfPnzi?g<76Uk4W3
+!i10b 1
+Apc
+R2
+R3
+R4
+R5
+R6
+DEx4 work 2 pc 0 22 4GZ4>GCkX1KW<mNWmZ=MA1
+l16
+L13
+V6?nc`^aUnI22?W2:_OaEO1
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 S2^JO>h91XEOO=X`XhDaa1
+!i10b 1
+Epc_testbench
+Z16 w1435872367
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8C:/Users/Mars/Documents/OAC/PC/pc_testbench.vhd
+Z18 FC:/Users/Mars/Documents/OAC/PC/pc_testbench.vhd
+l0
+L6
+V222_@CS2]HRKaJ=FV^m^c3
+!s100 GmQZ]?ZW^0F@H<2?j;H2G2
+R10
+31
+!i10b 1
+Z19 !s108 1435872656.627000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/PC/pc_testbench.vhd|
+Z21 !s107 C:/Users/Mars/Documents/OAC/PC/pc_testbench.vhd|
+R14
+R15
+Aestrutural
+R2
+R3
+R4
+R5
+R6
+DEx4 work 12 pc_testbench 0 22 222_@CS2]HRKaJ=FV^m^c3
+l24
+L10
+Vfz1ih_hg2iUc1jVJfh@_`2
+!s100 W7K1NJgD]K5D6[iDHiH9M2
+R10
+31
+!i10b 1
+R19
+R20
+R21
+R14
+R15
