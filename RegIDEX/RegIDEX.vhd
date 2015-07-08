@@ -27,14 +27,16 @@ entity RegIDEX is
 			RsE						:out	std_logic_vector(4 downto 0);
 			RtE						:out	std_logic_vector(4 downto 0);
 			RdE						:out	std_logic_vector(4 downto 0);
-			SignImmE					:out	std_logic_vector(31 downto 0));
+			SignImmE					:out	std_logic_vector(31 downto 0);
+			RD1_E						:out 	std_logic_vector(31 downto 0);
+			RD2_E						:out	std_logic_vector(31 downto 0));
 end RegIDEX;
 
-architecture reg_idex of RegIFID is
+architecture reg_idex of RegIDEX is
 	signal RegW				: std_logic;
 	signal MemReg			: std_logic;
 	signal MemW				: std_logic;
-	signal ALUControl		: std_logic_vector:= "000";
+	signal ALUControl		: std_logic_vector(2 downto 0):= "000";
 	signal ALUSrc			: std_logic;
 	signal RegDst			: std_logic;
 	signal RD_1				: std_logic_vector(31 downto 0):= X"00000000";
@@ -75,18 +77,25 @@ begin
 			Rs				<= "00000";
 			Rt				<= "00000";
 			Rd				<= "00000";
-			SignImm		<= "00000";
+			SignImm		<= X"00000000";
 			
 		end if;
 	end process;
 	
-	proc_leitura: process(RegWriteE,MemtoRegE,MemWriteE,ALUControlE,ALUSrcE,RegDstE,RsE,RtE,RdE,
-			SignImmE					:out	std_logic_vector(31 downto 0)); clk)
+	proc_leitura: process(clk)
 	begin
-		if (rising_edge(clk) and EN = '1') then
-			InstrD <= instr_interno;
-			PCplus4D <= progcounter;
-		end if;
+		RegWriteE 	<= RegW;
+		MemtoRegE 	<= MemReg;
+		MemWriteE 	<= MemW;
+		ALUControlE <= ALUControl;
+		ALUSrcE 		<= ALUSrc;
+		RegDstE 		<= RegDst;
+		RsE 			<= Rs;
+		RtE 			<= Rt;
+		RdE 			<= Rd;
+		SignImmE 	<= SignImm;
+		RD1_E			<= RD_1;
+		RD2_E			<= RD_2;
 	end process;
-end reg_ifid;
+end reg_idex;
 			
