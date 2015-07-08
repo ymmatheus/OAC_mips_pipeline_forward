@@ -1,0 +1,87 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Projeto Final Disciplina\regEXMEM\simulation\modelsim
+Eregexmem
+Z1 w1436061946
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dE:\Projeto Final Disciplina\regEXMEM\simulation\modelsim
+Z8 8E:/Projeto Final Disciplina/regEXMEM/regEXMEM.vhd
+Z9 FE:/Projeto Final Disciplina/regEXMEM/regEXMEM.vhd
+l0
+L6
+VmM8ao_FG;22oNcd5kQaS11
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1436062117.748000
+Z12 !s90 -reportprogress|300|-93|-work|work|E:/Projeto Final Disciplina/regEXMEM/regEXMEM.vhd|
+Z13 !s107 E:/Projeto Final Disciplina/regEXMEM/regEXMEM.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 j4^389[6>DNP;35WlScI:0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 regexmem 0 22 mM8ao_FG;22oNcd5kQaS11
+l37
+L28
+V`K=S^GeYb:B6P[a:M]InV0
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 gUHh1ozf;3hoC=SO1]LBh1
+!i10b 1
+Etb_regexmem
+Z16 w1436061972
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8E:/Projeto Final Disciplina/regEXMEM/tb_regEXMEM.vhd
+Z18 FE:/Projeto Final Disciplina/regEXMEM/tb_regEXMEM.vhd
+l0
+L6
+Vi0o8gh:hgkJ^RzlVIa3>m2
+!s100 c??M]GCPCM7C;@<MIXn5o1
+R10
+31
+!i10b 1
+Z19 !s108 1436062118.085000
+Z20 !s90 -reportprogress|300|-93|-work|work|E:/Projeto Final Disciplina/regEXMEM/tb_regEXMEM.vhd|
+Z21 !s107 E:/Projeto Final Disciplina/regEXMEM/tb_regEXMEM.vhd|
+R14
+R15
+Atb
+R2
+R3
+R4
+R5
+R6
+DEx4 work 11 tb_regexmem 0 22 i0o8gh:hgkJ^RzlVIa3>m2
+l47
+L11
+VgZA=063RbBJ397oAH?m=z0
+!s100 3AX6^`je0dY2<Y<R<_V6a0
+R10
+31
+!i10b 1
+R19
+R20
+R21
+R14
+R15

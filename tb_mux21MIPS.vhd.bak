@@ -1,0 +1,71 @@
+-- OAC Turma C - Trabalho V
+-- Matheus Y. Matsumoto
+-- 10/0017967
+--
+-- tb_bregMIPS
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity tb_mux21MIPS is
+end tb_mux21MIPS;
+
+architecture TB of tb_mux21MIPS is
+
+	
+	signal	T_sel				: std_logic;
+	signal	T_A,T_B			: std_logic_vector(31 downto 0);
+	signal	T_S				: std_logic_vector(31 downto 0);
+	
+	component bregMIPS
+	port(		
+		clk		: in std_logic;
+		wreg		: in std_logic;
+		add1		: in std_logic_vector(4 downto 0);
+		add2		: in std_logic_vector(4 downto 0);
+		wadd		: in std_logic_vector(4 downto 0);
+		wdata		: in std_logic_vector(31 downto 0);
+		r1			: out std_logic_vector(31 downto 0);
+		r2			: out std_logic_vector(31 downto 0)
+	);
+	end component;
+begin
+
+	map_bregMIPS: bregMIPS port map(T_clk, T_wreg, T_add1, T_add2, T_wadd, T_wdata, T_r1, T_r2);
+	process
+	begin
+	
+		--primeiro ciclo escreve no registrador 1
+		-- e le o registrador 1 e 0
+		T_clk <= '1';
+		T_wreg <= '1';
+		
+		T_add1 <= "00000";
+		T_add2 <= "00001";
+		T_wadd <= "00001";
+		
+		T_wdata <= X"01020304";
+		
+		wait for 10 ns;
+	
+		-- 
+		T_clk <= '0';
+		T_wreg <= '1';
+		T_add1 <= "00001";
+		T_add2 <= "00000";
+		wait for 10 ns;
+	
+		T_clk <= '1';
+		T_wreg <= '1';
+		
+		T_add1 <= "00000";
+		T_add2 <= "00001";
+		T_wadd <= "00000";
+		
+		T_wdata <= X"01020304";
+		
+		wait for 10 ns;
+	
+	end process;
+end TB;
