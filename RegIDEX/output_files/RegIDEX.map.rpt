@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RegIDEX
-Wed Jul 08 15:18:46 2015
+Wed Jul 08 20:51:23 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 08 15:18:46 2015           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 08 20:51:23 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; RegIDEX                                         ;
 ; Top-level Entity Name              ; RegIDEX                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 119                                             ;
+; Total logic elements               ; 120                                             ;
 ;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 119                                             ;
-; Total registers                    ; 119                                             ;
-; Total pins                         ; 240                                             ;
+;     Dedicated logic registers      ; 120                                             ;
+; Total registers                    ; 120                                             ;
+; Total pins                         ; 242                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -168,7 +168,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 119   ;
+; Estimated Total logic elements              ; 120   ;
 ;                                             ;       ;
 ; Total combinational functions               ; 0     ;
 ; Logic element usage by number of LUT inputs ;       ;
@@ -180,15 +180,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 0     ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 119   ;
-;     -- Dedicated logic registers            ; 119   ;
+; Total registers                             ; 120   ;
+;     -- Dedicated logic registers            ; 120   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 240   ;
+; I/O pins                                    ; 242   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 119   ;
-; Total fan-out                               ; 476   ;
+; Maximum fan-out                             ; 120   ;
+; Total fan-out                               ; 480   ;
 ; Average fan-out                             ; 1.33  ;
 +---------------------------------------------+-------+
 
@@ -198,7 +198,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |RegIDEX                   ; 0 (0)             ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 240  ; 0            ; |RegIDEX            ; work         ;
+; |RegIDEX                   ; 0 (0)             ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 242  ; 0            ; |RegIDEX            ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -208,10 +208,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 119   ;
+; Total registers                              ; 120   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 119   ;
+; Number of registers using Asynchronous Clear ; 120   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -233,7 +233,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jul 08 15:18:44 2015
+    Info: Processing started: Wed Jul 08 20:51:21 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RegIDEX -c RegIDEX
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file regidex.vhd
@@ -243,27 +243,15 @@ Info (12021): Found 2 design units, including 1 entities, in source file regidex
     Info (12022): Found design unit 1: RegIDEX_testbench-estrutural
     Info (12023): Found entity 1: RegIDEX_testbench
 Info (12127): Elaborating entity "RegIDEX" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(87): signal "RegW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(88): signal "MemReg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(89): signal "MemW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(90): signal "ALUControl" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(91): signal "ALUSrc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(92): signal "RegDst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(93): signal "Rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(94): signal "Rt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(95): signal "Rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(96): signal "SignImm" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(97): signal "RD_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at RegIDEX.vhd(98): signal "RD_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 359 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 121 input pins
-    Info (21059): Implemented 119 output pins
-    Info (21061): Implemented 119 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 511 megabytes
-    Info: Processing ended: Wed Jul 08 15:18:46 2015
+Info (21057): Implemented 362 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 122 input pins
+    Info (21059): Implemented 120 output pins
+    Info (21061): Implemented 120 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 491 megabytes
+    Info: Processing ended: Wed Jul 08 20:51:23 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

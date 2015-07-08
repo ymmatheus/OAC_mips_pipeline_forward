@@ -9,7 +9,7 @@ entity RegIDEX is
 			RegWriteD				:in	std_logic;
 			MemtoRegD				:in 	std_logic;
 			MemWriteD				:in	std_logic;
-			ALUControlD				:in	std_logic_vector(2 downto 0);
+			ALUControlD				:in	std_logic_vector(3 downto 0);
 			ALUSrcD					:in	std_logic;
 			RegDstD					:in	std_logic;
 			RsD						:in 	std_logic_vector(4 downto 0);
@@ -21,7 +21,7 @@ entity RegIDEX is
 			RegWriteE				:out	std_logic;
 			MemtoRegE				:out 	std_logic;
 			MemWriteE				:out	std_logic;
-			ALUControlE				:out	std_logic_vector(2 downto 0);
+			ALUControlE				:out	std_logic_vector(3 downto 0);
 			ALUSrcE					:out	std_logic;
 			RegDstE					:out	std_logic;
 			RsE						:out	std_logic_vector(4 downto 0);
@@ -36,7 +36,7 @@ architecture reg_idex of RegIDEX is
 	signal RegW				: std_logic;
 	signal MemReg			: std_logic;
 	signal MemW				: std_logic;
-	signal ALUControl		: std_logic_vector(2 downto 0):= "000";
+	signal ALUControl		: std_logic_vector(3 downto 0):= "0000";
 	signal ALUSrc			: std_logic;
 	signal RegDst			: std_logic;
 	signal RD_1				: std_logic_vector(31 downto 0):= X"00000000";
@@ -69,7 +69,7 @@ begin
 			RegW 			<= '0';
 			MemReg	 	<= '0';
 			MemW 			<= '0';
-			ALUControl 	<= "000";
+			ALUControl 	<= "0000";
 			ALUSrc 		<= '0';
 			RegDst 		<= '0';
 			RD_1 			<= X"00000000";
@@ -82,7 +82,7 @@ begin
 		end if;
 	end process;
 	
-	proc_leitura: process(clk)
+	proc_leitura: process(clk,RegW,MemReg,MemW,ALUControl,ALUSrc,RegDst,Rs,Rt,Rd,SignImm,RD_1,RD_2)
 	begin
 		RegWriteE 	<= RegW;
 		MemtoRegE 	<= MemReg;

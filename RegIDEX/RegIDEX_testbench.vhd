@@ -15,7 +15,7 @@ component RegIDEX is
 			RegWriteD				:in	std_logic;
 			MemtoRegD				:in 	std_logic;
 			MemWriteD				:in	std_logic;
-			ALUControlD				:in	std_logic_vector(2 downto 0);
+			ALUControlD				:in	std_logic_vector(3 downto 0);
 			ALUSrcD					:in	std_logic;
 			RegDstD					:in	std_logic;
 			RsD						:in 	std_logic_vector(4 downto 0);
@@ -27,7 +27,7 @@ component RegIDEX is
 			RegWriteE				:out	std_logic;
 			MemtoRegE				:out 	std_logic;
 			MemWriteE				:out	std_logic;
-			ALUControlE				:out	std_logic_vector(2 downto 0);
+			ALUControlE				:out	std_logic_vector(3 downto 0);
 			ALUSrcE					:out	std_logic;
 			RegDstE					:out	std_logic;
 			RsE						:out	std_logic_vector(4 downto 0);
@@ -43,7 +43,7 @@ end component;
 	signal RegWriteD				:	std_logic;
 	signal MemtoRegD				: 	std_logic;
 	signal MemWriteD				:	std_logic;
-	signal ALUControlD			:	std_logic_vector(2 downto 0);
+	signal ALUControlD			:	std_logic_vector(3 downto 0);
 	signal ALUSrcD					:	std_logic;
 	signal RegDstD					:	std_logic;
 	signal RsD						: 	std_logic_vector(4 downto 0);
@@ -55,7 +55,7 @@ end component;
 	signal RegWriteE				:	std_logic;
 	signal MemtoRegE				: 	std_logic;
 	signal MemWriteE				:	std_logic;
-	signal ALUControlE			:	std_logic_vector(2 downto 0);
+	signal ALUControlE			:	std_logic_vector(3 downto 0);
 	signal ALUSrcE					:	std_logic;
 	signal RegDstE					:	std_logic;
 	signal RsE						:	std_logic_vector(4 downto 0);
@@ -67,11 +67,12 @@ end component;
 	
 begin
 
-	RgIDEX:RegIDEX port map (RD1=> RD1, RD2 => RD2, RegWriteD => RegWriteD, MemtoRegD => MemtoRegD, 
+	RgIDEX:RegIDEX port map (RD1 => RD1, RD2 => RD2, RegWriteD => RegWriteD, MemtoRegD => MemtoRegD, 
 	MemWriteD => MemWriteD, ALUControlD => ALUControlD, ALUSrcD => ALUSrcD, RegDstD => RegDstD, RsD => RsD, RtD => RtD,
 	RdD => RdD, SignImmD => SignImmD, CLR => CLR, clk => clk, RegWriteE => RegWriteE, MemtoRegE => MemtoRegE,
-	ALUControlE => ALUControlE, ALUSrcE => ALUSrcE, RegDstE => RegDstE, RsE => RsE, RtE => RtE, RdE => RdE,
-	SignImmE => SignImmE, RD1_E => RD1_E, RD2_E => RD2_E);
+	MemWriteE => MemWriteE, ALUControlE => ALUControlE, ALUSrcE => ALUSrcE, RegDstE => RegDstE, RsE => RsE, RtE => RtE,
+	RdE => RdE, SignImmE => SignImmE, RD1_E => RD1_E, RD2_E => RD2_E);
+	
 	clock: process begin
 		
 		clk <= '0';  wait for 5ns;	
@@ -81,6 +82,60 @@ begin
 	
 	drive: process begin
 		
+		CLR <= '0';
+		
+		RegWriteD 	<= '0';
+		MemtoRegD 	<= '0';
+		MemWriteD 	<= '0';
+		ALUControlD <= "0000";
+		ALUSrcD 		<= '0';
+		RegDstD		<= '0';
+		RsD			<= "00001";
+		RtD			<= "00010";
+		RdD			<= "00011";
+		SignImmD		<= X"00000005";
+		RD1			<= X"00000004";
+		RD2			<= X"00000003";
+		wait for 10ns;
+		
+		RegWriteD 	<= '1';
+		wait for 10ns;
+		
+		MemtoRegD 	<= '1';
+		wait for 10ns;
+		
+		MemWriteD 	<= '1';
+		wait for 10ns;
+		
+		ALUControlD <= "0001";
+		wait for 10ns;
+		
+		ALUSrcD 		<= '1';
+		wait for 10ns;
+		
+		RegDstD		<= '1';
+		wait for 10ns;
+		
+		RsD			<= "00100";
+		wait for 10ns;
+		
+		RtD			<= "00100";
+		wait for 10ns;
+		
+		RdD			<= "00100";
+		wait for 10ns;
+		
+		SignImmD		<= X"0000000F";
+		wait for 10ns;
+		
+		RD1			<= X"0000000F";
+		wait for 10ns;
+		
+		RD2			<= X"0000000F";
+		wait for 10ns;
+		
+		CLR <= '1';
+		wait for 10ns;
 		
 	end process;
 end estrutural;
