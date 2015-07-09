@@ -60,7 +60,7 @@ set_global_assignment -name EDA_TEST_BENCH_NAME stageMEM_testbench -section_id e
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id stageMEM_testbench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME stageMEM_testbench -section_id stageMEM_testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE stageMEM_testbench.vhd -section_id stageMEM_testbench
-set_global_assignment -name MIF_FILE ../Memoria/memData.mif.mif
+set_global_assignment -name MIF_FILE ../Memoria/memData.mif
 set_global_assignment -name VHDL_FILE ../dataMIPS.vhd
 set_global_assignment -name QIP_FILE ../dataMIPS.qip
 set_global_assignment -name SOURCE_FILE ../dataMIPS.cmp

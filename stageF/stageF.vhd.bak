@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity stageF is
+	port (
+
+		memtoregW	: in std_logic;
+		ALUoutW		: in std_logic_vector(31 downto 0);
+		ReadDataW	: in std_logic_vector(31 downto 0);
+		
+		ResultW 		: out std_logic_vector(31 downto 0));
+		
+end stageF;
+
+architecture behavioral of stageF is
+
+	component mux21MIPS
+	port(
+		sel			: in  std_logic;
+		A,B			: in  std_logic_vector(31 downto 0);
+		S				: out std_logic_vector(31 downto 0));
+	end component;
+	
+
+begin
+
+	map_mux21MIPS: mux21MIPS port map(memtoregW, ALUoutW, ReadDataW, ResultW);
+	
+end architecture behavioral;

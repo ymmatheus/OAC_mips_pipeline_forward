@@ -1,0 +1,539 @@
+Analysis & Synthesis report for stageD
+Thu Jul 09 14:42:09 2015
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Elapsed Time Per Partition
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 09 14:42:09 2015           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; stageD                                          ;
+; Top-level Entity Name              ; stageD                                          ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 277                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; stageD             ; stageD             ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; stageD.vhd                       ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/stageD/stageD.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 277   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |stageD                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 277  ; 0            ; |stageD             ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jul 09 14:42:06 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stageD -c stageD
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/bregmips.vhdl
+    Info (12022): Found design unit 1: bregMIPS-behavioral
+    Info (12023): Found entity 1: bregMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file staged.vhd
+    Info (12022): Found design unit 1: stageD-behavioral
+    Info (12023): Found entity 1: stageD
+Info (12127): Elaborating entity "stageD" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(16): used implicit default value for signal "RD1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(17): used implicit default value for signal "RD2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(19): used implicit default value for signal "signImmD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(21): used implicit default value for signal "RsD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(22): used implicit default value for signal "RtD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(23): used implicit default value for signal "RdD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(25): used implicit default value for signal "equalD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(28): used implicit default value for signal "PCBranchD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "RD1[0]" is stuck at GND
+    Warning (13410): Pin "RD1[1]" is stuck at GND
+    Warning (13410): Pin "RD1[2]" is stuck at GND
+    Warning (13410): Pin "RD1[3]" is stuck at GND
+    Warning (13410): Pin "RD1[4]" is stuck at GND
+    Warning (13410): Pin "RD1[5]" is stuck at GND
+    Warning (13410): Pin "RD1[6]" is stuck at GND
+    Warning (13410): Pin "RD1[7]" is stuck at GND
+    Warning (13410): Pin "RD1[8]" is stuck at GND
+    Warning (13410): Pin "RD1[9]" is stuck at GND
+    Warning (13410): Pin "RD1[10]" is stuck at GND
+    Warning (13410): Pin "RD1[11]" is stuck at GND
+    Warning (13410): Pin "RD1[12]" is stuck at GND
+    Warning (13410): Pin "RD1[13]" is stuck at GND
+    Warning (13410): Pin "RD1[14]" is stuck at GND
+    Warning (13410): Pin "RD1[15]" is stuck at GND
+    Warning (13410): Pin "RD1[16]" is stuck at GND
+    Warning (13410): Pin "RD1[17]" is stuck at GND
+    Warning (13410): Pin "RD1[18]" is stuck at GND
+    Warning (13410): Pin "RD1[19]" is stuck at GND
+    Warning (13410): Pin "RD1[20]" is stuck at GND
+    Warning (13410): Pin "RD1[21]" is stuck at GND
+    Warning (13410): Pin "RD1[22]" is stuck at GND
+    Warning (13410): Pin "RD1[23]" is stuck at GND
+    Warning (13410): Pin "RD1[24]" is stuck at GND
+    Warning (13410): Pin "RD1[25]" is stuck at GND
+    Warning (13410): Pin "RD1[26]" is stuck at GND
+    Warning (13410): Pin "RD1[27]" is stuck at GND
+    Warning (13410): Pin "RD1[28]" is stuck at GND
+    Warning (13410): Pin "RD1[29]" is stuck at GND
+    Warning (13410): Pin "RD1[30]" is stuck at GND
+    Warning (13410): Pin "RD1[31]" is stuck at GND
+    Warning (13410): Pin "RD2[0]" is stuck at GND
+    Warning (13410): Pin "RD2[1]" is stuck at GND
+    Warning (13410): Pin "RD2[2]" is stuck at GND
+    Warning (13410): Pin "RD2[3]" is stuck at GND
+    Warning (13410): Pin "RD2[4]" is stuck at GND
+    Warning (13410): Pin "RD2[5]" is stuck at GND
+    Warning (13410): Pin "RD2[6]" is stuck at GND
+    Warning (13410): Pin "RD2[7]" is stuck at GND
+    Warning (13410): Pin "RD2[8]" is stuck at GND
+    Warning (13410): Pin "RD2[9]" is stuck at GND
+    Warning (13410): Pin "RD2[10]" is stuck at GND
+    Warning (13410): Pin "RD2[11]" is stuck at GND
+    Warning (13410): Pin "RD2[12]" is stuck at GND
+    Warning (13410): Pin "RD2[13]" is stuck at GND
+    Warning (13410): Pin "RD2[14]" is stuck at GND
+    Warning (13410): Pin "RD2[15]" is stuck at GND
+    Warning (13410): Pin "RD2[16]" is stuck at GND
+    Warning (13410): Pin "RD2[17]" is stuck at GND
+    Warning (13410): Pin "RD2[18]" is stuck at GND
+    Warning (13410): Pin "RD2[19]" is stuck at GND
+    Warning (13410): Pin "RD2[20]" is stuck at GND
+    Warning (13410): Pin "RD2[21]" is stuck at GND
+    Warning (13410): Pin "RD2[22]" is stuck at GND
+    Warning (13410): Pin "RD2[23]" is stuck at GND
+    Warning (13410): Pin "RD2[24]" is stuck at GND
+    Warning (13410): Pin "RD2[25]" is stuck at GND
+    Warning (13410): Pin "RD2[26]" is stuck at GND
+    Warning (13410): Pin "RD2[27]" is stuck at GND
+    Warning (13410): Pin "RD2[28]" is stuck at GND
+    Warning (13410): Pin "RD2[29]" is stuck at GND
+    Warning (13410): Pin "RD2[30]" is stuck at GND
+    Warning (13410): Pin "RD2[31]" is stuck at GND
+    Warning (13410): Pin "signImmD[0]" is stuck at GND
+    Warning (13410): Pin "signImmD[1]" is stuck at GND
+    Warning (13410): Pin "signImmD[2]" is stuck at GND
+    Warning (13410): Pin "signImmD[3]" is stuck at GND
+    Warning (13410): Pin "signImmD[4]" is stuck at GND
+    Warning (13410): Pin "signImmD[5]" is stuck at GND
+    Warning (13410): Pin "signImmD[6]" is stuck at GND
+    Warning (13410): Pin "signImmD[7]" is stuck at GND
+    Warning (13410): Pin "signImmD[8]" is stuck at GND
+    Warning (13410): Pin "signImmD[9]" is stuck at GND
+    Warning (13410): Pin "signImmD[10]" is stuck at GND
+    Warning (13410): Pin "signImmD[11]" is stuck at GND
+    Warning (13410): Pin "signImmD[12]" is stuck at GND
+    Warning (13410): Pin "signImmD[13]" is stuck at GND
+    Warning (13410): Pin "signImmD[14]" is stuck at GND
+    Warning (13410): Pin "signImmD[15]" is stuck at GND
+    Warning (13410): Pin "signImmD[16]" is stuck at GND
+    Warning (13410): Pin "signImmD[17]" is stuck at GND
+    Warning (13410): Pin "signImmD[18]" is stuck at GND
+    Warning (13410): Pin "signImmD[19]" is stuck at GND
+    Warning (13410): Pin "signImmD[20]" is stuck at GND
+    Warning (13410): Pin "signImmD[21]" is stuck at GND
+    Warning (13410): Pin "signImmD[22]" is stuck at GND
+    Warning (13410): Pin "signImmD[23]" is stuck at GND
+    Warning (13410): Pin "signImmD[24]" is stuck at GND
+    Warning (13410): Pin "signImmD[25]" is stuck at GND
+    Warning (13410): Pin "signImmD[26]" is stuck at GND
+    Warning (13410): Pin "signImmD[27]" is stuck at GND
+    Warning (13410): Pin "signImmD[28]" is stuck at GND
+    Warning (13410): Pin "signImmD[29]" is stuck at GND
+    Warning (13410): Pin "signImmD[30]" is stuck at GND
+    Warning (13410): Pin "signImmD[31]" is stuck at GND
+    Warning (13410): Pin "RsD[0]" is stuck at GND
+    Warning (13410): Pin "RsD[1]" is stuck at GND
+    Warning (13410): Pin "RsD[2]" is stuck at GND
+    Warning (13410): Pin "RsD[3]" is stuck at GND
+    Warning (13410): Pin "RsD[4]" is stuck at GND
+    Warning (13410): Pin "RtD[0]" is stuck at GND
+    Warning (13410): Pin "RtD[1]" is stuck at GND
+    Warning (13410): Pin "RtD[2]" is stuck at GND
+    Warning (13410): Pin "RtD[3]" is stuck at GND
+    Warning (13410): Pin "RtD[4]" is stuck at GND
+    Warning (13410): Pin "RdD[0]" is stuck at GND
+    Warning (13410): Pin "RdD[1]" is stuck at GND
+    Warning (13410): Pin "RdD[2]" is stuck at GND
+    Warning (13410): Pin "RdD[3]" is stuck at GND
+    Warning (13410): Pin "RdD[4]" is stuck at GND
+    Warning (13410): Pin "equalD" is stuck at GND
+    Warning (13410): Pin "PCBranchD[0]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[1]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[2]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[3]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[4]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[5]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[6]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[7]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[8]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[9]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[10]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[11]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[12]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[13]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[14]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[15]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[16]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[17]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[18]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[19]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[20]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[21]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[22]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[23]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[24]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[25]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[26]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[27]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[28]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[29]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[30]" is stuck at GND
+    Warning (13410): Pin "PCBranchD[31]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 133 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "InstD[0]"
+    Warning (15610): No output dependent on input pin "InstD[1]"
+    Warning (15610): No output dependent on input pin "InstD[2]"
+    Warning (15610): No output dependent on input pin "InstD[3]"
+    Warning (15610): No output dependent on input pin "InstD[4]"
+    Warning (15610): No output dependent on input pin "InstD[5]"
+    Warning (15610): No output dependent on input pin "InstD[6]"
+    Warning (15610): No output dependent on input pin "InstD[7]"
+    Warning (15610): No output dependent on input pin "InstD[8]"
+    Warning (15610): No output dependent on input pin "InstD[9]"
+    Warning (15610): No output dependent on input pin "InstD[10]"
+    Warning (15610): No output dependent on input pin "InstD[11]"
+    Warning (15610): No output dependent on input pin "InstD[12]"
+    Warning (15610): No output dependent on input pin "InstD[13]"
+    Warning (15610): No output dependent on input pin "InstD[14]"
+    Warning (15610): No output dependent on input pin "InstD[15]"
+    Warning (15610): No output dependent on input pin "InstD[16]"
+    Warning (15610): No output dependent on input pin "InstD[17]"
+    Warning (15610): No output dependent on input pin "InstD[18]"
+    Warning (15610): No output dependent on input pin "InstD[19]"
+    Warning (15610): No output dependent on input pin "InstD[20]"
+    Warning (15610): No output dependent on input pin "InstD[21]"
+    Warning (15610): No output dependent on input pin "InstD[22]"
+    Warning (15610): No output dependent on input pin "InstD[23]"
+    Warning (15610): No output dependent on input pin "InstD[24]"
+    Warning (15610): No output dependent on input pin "InstD[25]"
+    Warning (15610): No output dependent on input pin "InstD[26]"
+    Warning (15610): No output dependent on input pin "InstD[27]"
+    Warning (15610): No output dependent on input pin "InstD[28]"
+    Warning (15610): No output dependent on input pin "InstD[29]"
+    Warning (15610): No output dependent on input pin "InstD[30]"
+    Warning (15610): No output dependent on input pin "InstD[31]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[0]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[1]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[2]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[3]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[4]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[5]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[6]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[7]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[8]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[9]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[10]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[11]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[12]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[13]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[14]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[15]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[16]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[17]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[18]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[19]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[20]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[21]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[22]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[23]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[24]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[25]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[26]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[27]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[28]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[29]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[30]"
+    Warning (15610): No output dependent on input pin "PCPlus4D[31]"
+    Warning (15610): No output dependent on input pin "ResultW[0]"
+    Warning (15610): No output dependent on input pin "ResultW[1]"
+    Warning (15610): No output dependent on input pin "ResultW[2]"
+    Warning (15610): No output dependent on input pin "ResultW[3]"
+    Warning (15610): No output dependent on input pin "ResultW[4]"
+    Warning (15610): No output dependent on input pin "ResultW[5]"
+    Warning (15610): No output dependent on input pin "ResultW[6]"
+    Warning (15610): No output dependent on input pin "ResultW[7]"
+    Warning (15610): No output dependent on input pin "ResultW[8]"
+    Warning (15610): No output dependent on input pin "ResultW[9]"
+    Warning (15610): No output dependent on input pin "ResultW[10]"
+    Warning (15610): No output dependent on input pin "ResultW[11]"
+    Warning (15610): No output dependent on input pin "ResultW[12]"
+    Warning (15610): No output dependent on input pin "ResultW[13]"
+    Warning (15610): No output dependent on input pin "ResultW[14]"
+    Warning (15610): No output dependent on input pin "ResultW[15]"
+    Warning (15610): No output dependent on input pin "ResultW[16]"
+    Warning (15610): No output dependent on input pin "ResultW[17]"
+    Warning (15610): No output dependent on input pin "ResultW[18]"
+    Warning (15610): No output dependent on input pin "ResultW[19]"
+    Warning (15610): No output dependent on input pin "ResultW[20]"
+    Warning (15610): No output dependent on input pin "ResultW[21]"
+    Warning (15610): No output dependent on input pin "ResultW[22]"
+    Warning (15610): No output dependent on input pin "ResultW[23]"
+    Warning (15610): No output dependent on input pin "ResultW[24]"
+    Warning (15610): No output dependent on input pin "ResultW[25]"
+    Warning (15610): No output dependent on input pin "ResultW[26]"
+    Warning (15610): No output dependent on input pin "ResultW[27]"
+    Warning (15610): No output dependent on input pin "ResultW[28]"
+    Warning (15610): No output dependent on input pin "ResultW[29]"
+    Warning (15610): No output dependent on input pin "ResultW[30]"
+    Warning (15610): No output dependent on input pin "ResultW[31]"
+    Warning (15610): No output dependent on input pin "WriteRegW[0]"
+    Warning (15610): No output dependent on input pin "WriteRegW[1]"
+    Warning (15610): No output dependent on input pin "WriteRegW[2]"
+    Warning (15610): No output dependent on input pin "WriteRegW[3]"
+    Warning (15610): No output dependent on input pin "WriteRegW[4]"
+    Warning (15610): No output dependent on input pin "AluOutM[0]"
+    Warning (15610): No output dependent on input pin "AluOutM[1]"
+    Warning (15610): No output dependent on input pin "AluOutM[2]"
+    Warning (15610): No output dependent on input pin "AluOutM[3]"
+    Warning (15610): No output dependent on input pin "AluOutM[4]"
+    Warning (15610): No output dependent on input pin "AluOutM[5]"
+    Warning (15610): No output dependent on input pin "AluOutM[6]"
+    Warning (15610): No output dependent on input pin "AluOutM[7]"
+    Warning (15610): No output dependent on input pin "AluOutM[8]"
+    Warning (15610): No output dependent on input pin "AluOutM[9]"
+    Warning (15610): No output dependent on input pin "AluOutM[10]"
+    Warning (15610): No output dependent on input pin "AluOutM[11]"
+    Warning (15610): No output dependent on input pin "AluOutM[12]"
+    Warning (15610): No output dependent on input pin "AluOutM[13]"
+    Warning (15610): No output dependent on input pin "AluOutM[14]"
+    Warning (15610): No output dependent on input pin "AluOutM[15]"
+    Warning (15610): No output dependent on input pin "AluOutM[16]"
+    Warning (15610): No output dependent on input pin "AluOutM[17]"
+    Warning (15610): No output dependent on input pin "AluOutM[18]"
+    Warning (15610): No output dependent on input pin "AluOutM[19]"
+    Warning (15610): No output dependent on input pin "AluOutM[20]"
+    Warning (15610): No output dependent on input pin "AluOutM[21]"
+    Warning (15610): No output dependent on input pin "AluOutM[22]"
+    Warning (15610): No output dependent on input pin "AluOutM[23]"
+    Warning (15610): No output dependent on input pin "AluOutM[24]"
+    Warning (15610): No output dependent on input pin "AluOutM[25]"
+    Warning (15610): No output dependent on input pin "AluOutM[26]"
+    Warning (15610): No output dependent on input pin "AluOutM[27]"
+    Warning (15610): No output dependent on input pin "AluOutM[28]"
+    Warning (15610): No output dependent on input pin "AluOutM[29]"
+    Warning (15610): No output dependent on input pin "AluOutM[30]"
+    Warning (15610): No output dependent on input pin "AluOutM[31]"
+Info (21057): Implemented 277 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 133 input pins
+    Info (21059): Implemented 144 output pins
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 288 warnings
+    Info: Peak virtual memory: 371 megabytes
+    Info: Processing ended: Thu Jul 09 14:42:09 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
