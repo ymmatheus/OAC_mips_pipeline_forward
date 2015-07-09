@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="stageMEM">
-		<CBX_INST_ENTRY INSTANCE_NAME="|stageMEM|MemDataMIPS:map_DataMemory|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_atd1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|stageMEM|dataMIPS:map_DataMemory|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_k1d1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

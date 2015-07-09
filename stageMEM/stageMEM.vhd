@@ -19,7 +19,7 @@ end stageMEM;
 
 architecture behavioral of stageMEM is
 
-	component MemDataMIPS is
+	component dataMIPS is
 	PORT (	address			:IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 				clock				:IN STD_LOGIC  := '1';
 				data				:IN STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -29,7 +29,7 @@ architecture behavioral of stageMEM is
 	
 begin
 
-	map_DataMemory:MemDataMIPS port map (ALUOutM(7 downto 0),clk,WriteDataM,MemWriteM,ReadDataM);
+	map_DataMemory:dataMIPS port map (ALUOutM(7 downto 0),clk,WriteDataM,MemWriteM,ReadDataM);
 	RegWriteM_S	<= RegWriteM;
 	MemtoRegM_S <= MemtoRegM;
 	WriteRegM_S <= WriteRegM;
