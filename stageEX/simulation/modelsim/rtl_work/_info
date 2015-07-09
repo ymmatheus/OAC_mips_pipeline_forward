@@ -1,0 +1,251 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Mars\Documents\OAC\Meu_mips_repositorio\stageEX\simulation\modelsim
+Emux21
+Z1 w1436446416
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\Mars\Documents\OAC\Meu_mips_repositorio\stageEX\simulation\modelsim
+Z8 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/mux21.vhd
+Z9 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/mux21.vhd
+l0
+L6
+VM`U]SEnOioezUjd>N5@iF3
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1436450121.703000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/mux21.vhd|
+Z13 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/mux21.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 iIKJ5<_SDTWVJm1U6dlI=3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 5 mux21 0 22 M`U]SEnOioezUjd>N5@iF3
+l15
+L13
+VDjgd4KLJHOOBSRW4nB8XC0
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 h1XCYFjo<9OiOQ?hk0bOY2
+!i10b 1
+Emux21mips
+Z16 w1436375652
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/mux21MIPS.vhd
+Z18 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/mux21MIPS.vhd
+l0
+L6
+VhoFzj>ndB]WSaV0>ozbAE0
+R10
+31
+Z19 !s108 1436450121.375000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/mux21MIPS.vhd|
+Z21 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/mux21MIPS.vhd|
+R14
+R15
+!s100 YzaZF;AX0DPA_e=10CzcK3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 mux21mips 0 22 hoFzj>ndB]WSaV0>ozbAE0
+l15
+L13
+VPK9V2i1R88o`6OKALCWe00
+R10
+31
+R19
+R20
+R21
+R14
+R15
+!s100 mReWRHJQFj33m[=_BD?=Q2
+!i10b 1
+Emux41
+Z22 w1436363593
+R2
+R3
+R4
+R5
+R6
+R7
+Z23 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/Mux41/mux41.vhd
+Z24 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/Mux41/mux41.vhd
+l0
+L6
+VImR<=I??`SW6ZP_acGh8_1
+R10
+31
+Z25 !s108 1436450121.472000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/Mux41/mux41.vhd|
+Z27 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/Mux41/mux41.vhd|
+R14
+R15
+!s100 zUCmNZj[DWJ;QY=Sz`D<F1
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 5 mux41 0 22 ImR<=I??`SW6ZP_acGh8_1
+l15
+L13
+Vm0E8;Z`0J:ZS_PXQ:I<Yj2
+R10
+31
+R25
+R26
+R27
+R14
+R15
+!s100 5SX[YhBkZ<6W5bKiRFU3H2
+!i10b 1
+Estageex
+Z28 w1436449871
+R2
+R3
+R4
+R5
+R6
+R7
+Z29 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX.vhd
+Z30 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX.vhd
+l0
+L6
+VmCJBd:LjTaz^Z9V8ziK[V1
+R10
+31
+Z31 !s108 1436450121.598000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX.vhd|
+Z33 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX.vhd|
+R14
+R15
+!s100 ?ll<T;45LWlnVfHYWRbT20
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 stageex 0 22 mCJBd:LjTaz^Z9V8ziK[V1
+l65
+L32
+V]UODXGh008?N9ZQWEk@L03
+R10
+31
+R31
+R32
+R33
+R14
+R15
+!s100 [o50OTEb9eTSYPj4bdJRD2
+!i10b 1
+Estageex_testbench
+Z34 w1436450092
+R2
+R3
+R4
+R5
+R6
+R7
+Z35 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX_testbench.vhd
+Z36 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX_testbench.vhd
+l0
+L6
+Vf<PVWjhgn;FaJ>ZzjW00:1
+!s100 kI1RoglC_e9Xmh?Sj?BQc1
+R10
+31
+!i10b 1
+Z37 !s108 1436450122.149000
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX_testbench.vhd|
+Z39 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageEX/stageEX_testbench.vhd|
+R14
+R15
+Aestrutural
+R2
+R3
+R4
+R5
+R6
+DEx4 work 17 stageex_testbench 0 22 f<PVWjhgn;FaJ>ZzjW00:1
+l61
+L10
+VPSj6og3b2;96YSz0z3@6Z0
+!s100 jWXmczl8ocGhnji6V8[ZW3
+R10
+31
+!i10b 1
+R37
+R38
+R39
+R14
+R15
+Eulamips
+Z40 w1436375653
+R2
+R3
+R4
+R5
+R6
+R7
+Z41 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/ulaMIPS.vhdl
+Z42 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/ulaMIPS.vhdl
+l0
+L22
+VZg5Q[m2IE0UaBClP6?@z[2
+R10
+31
+Z43 !s108 1436450121.255000
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/ulaMIPS.vhdl|
+Z45 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/ulaMIPS.vhdl|
+R14
+R15
+!s100 mA_RmlF:z30hVgCL@C3R>0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 ulamips 0 22 Zg5Q[m2IE0UaBClP6?@z[2
+l34
+L30
+Vo4T2`MF^ZzaLA1R;k2;jC1
+R10
+31
+R43
+R44
+R45
+R14
+R15
+!s100 m?K1B2YKO`84T8S[f>1iY3
+!i10b 1
