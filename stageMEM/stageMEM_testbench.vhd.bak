@@ -53,7 +53,7 @@ architecture estrutural of stageMEM_testbench is
 			tb_RegWriteM	<= '0';
 			tb_MemtoRegM	<= '0';
 			tb_MemWriteM	<= '0';
-			tb_ALUOutM		<= X"00000001";
+			tb_ALUOutM		<= X"0000000F";
 			tb_WriteDataM	<= X"00000005";
 			tb_WriteRegM	<=	"00001";
 			wait for 10ns;
@@ -65,15 +65,6 @@ architecture estrutural of stageMEM_testbench is
 			tb_WriteDataM	<= X"00000005";
 			tb_WriteRegM	<=	"00001";
 			wait for 10ns;
-			
-			tb_RegWriteM	<= '0';
-			tb_MemtoRegM	<= '0';
-			tb_MemWriteM	<= '0';
-			tb_ALUOutM		<= X"0000000F";
-			tb_WriteDataM	<= X"00000005";
-			tb_WriteRegM	<=	"00001";
-			wait for 10ns;
-			
 			
 		end process;
 end estrutural;

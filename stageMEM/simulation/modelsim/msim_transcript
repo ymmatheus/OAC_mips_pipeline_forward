@@ -1,5 +1,4 @@
 # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
-# ERROR: No extended dataflow license exists
 # do stageMEM_run_msim_rtl_vhdl.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -11,14 +10,14 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {E:/ProjetoFinalDisciplina/dataMIPS.vhd}
+# vcom -93 -work work {C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/dataMIPS.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity dataMIPS
 # -- Compiling architecture SYN of datamips
-# vcom -93 -work work {E:/ProjetoFinalDisciplina/stageMEM/stageMEM.vhd}
+# vcom -93 -work work {C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -29,7 +28,7 @@
 # -- Compiling entity stageMEM
 # -- Compiling architecture behavioral of stageMEM
 # 
-# vcom -93 -work work {E:/ProjetoFinalDisciplina/stageMEM/stageMEM_testbench.vhd}
+# vcom -93 -work work {C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -39,10 +38,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity stageMEM_testbench
 # -- Compiling architecture estrutural of stageMEM_testbench
-# ** Warning: [4] E:/ProjetoFinalDisciplina/stageMEM/stageMEM_testbench.vhd(45): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] E:/ProjetoFinalDisciplina/stageMEM/stageMEM_testbench.vhd(46): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] E:/ProjetoFinalDisciplina/stageMEM/stageMEM_testbench.vhd(59): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] E:/ProjetoFinalDisciplina/stageMEM/stageMEM_testbench.vhd(67): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd(45): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd(46): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd(59): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd(67): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: [4] C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd(75): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  stageMEM_testbench
 # vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps stageMEM_testbench 
