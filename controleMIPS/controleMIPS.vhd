@@ -13,33 +13,39 @@ entity controleMIPS is
 port (
 		Op					: in STD_LOGIC_VECTOR(5 downto 0);
 		Funct				: in STD_LOGIC_VECTOR(5 downto 0);
+		equalD			: in std_logic;
 		RegWriteD		: out STD_LOGIC;
 		MemtoRegD		: out STD_LOGIC;
 		MemWriteD		: out STD_LOGIC;
 		ALUControlD		: out STD_LOGIC_VECTOR(3 downto 0);
 		ALUsrcD			: out STD_LOGIC;
 		RegDstD			: out STD_LOGIC;
-		BranchEQD 		: out STD_LOGIC;
-		BranchNED 		: out STD_LOGIC;
-		JumpD				: out std_logic);
+		BranchD			: out std_logic;
+		BranchClear		: out std_logic;
+		JumpD 			: out std_logic;
+		PCsrcD			: out std_logic_vector(1 downto 0));
 
 end controleMIPS;
 
 architecture controleMIPS_op of controleMIPS is
+
+	signal JumpDsig		: std_logic;
+	signal BranchEQDsig	: std_logic;
+	signal BranchNEDsig	: std_logic;
 
 begin
 	proc_controle: process(Op, Funct)
 	begin
 		case Op is
 			-- Instruções Tipo R
-			when X"00" => 	RegDstD 		<= '1', 
-								RegWriteD	<= '1',	
-								MemtoReg		<= '0',		
-								MemWriteD	<= '0',		
-								ALUsrcD		<= '0',				
-								BranchEQD	<= '0',
-								BranchNED	<= '0',
-								JumpD 		<= '0';
+			when "000000" => 	RegDstD 		<= '1';
+								RegWriteD	<= '1';	
+								MemtoRegD	<= '0';		
+								MemWriteD	<= '0';		
+								ALUsrcD		<= '0';				
+								BranchEQDsig	<= '0';
+								BranchNEDsig	<= '0';
+								JumpDsig		<= '0';
 								if Funct = X"20" then
 									ALUControlD <= X"2"; -- ADD
 								elsif Funct = X"22" then
@@ -63,71 +69,81 @@ begin
 								end if;
 								
 			-- LW(0x23)()
-			when X"23" => 	RegDstD 			<= '0',
-								RegWriteD		<= '1',	
-								MemtoRegD		<= '1',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '0',
-								BranchNED		<= '0',
-								JumpD 			<= '0';
+			when "100011" => 	RegDstD 			<= '0';
+								RegWriteD		<= '1';
+								MemtoRegD		<= '1';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";	
+								ALUsrcD			<= '1';			
+								BranchEQDsig		<= '0';
+								BranchNEDsig		<= '0';
+								JumpDsig 			<= '0';
 								
 			-- SW(0x2B)()
-			when X"2B" => 	RegDstD 			<= '0',
-								RegWriteD		<= '1',	
-								MemtoRegD		<= '1',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '0',
-								BranchNED		<= '0',
-								JumpD 			<= '0';
+			when "101011" => 	RegDstD 			<= '0';
+								RegWriteD		<= '1';
+								MemtoRegD		<= '1';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";	
+								ALUsrcD			<= '1';			
+								BranchEQDsig		<= '0';
+								BranchNEDsig		<= '0';
+								JumpDsig 			<= '0';
 								
 			-- BEQ(0x04)()
-			when X"04" => RegDstD 			<= '0',
-								RegWriteD		<= '0',	
-								MemtoRegD		<= '0',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '1',
-								BranchNED		<= '0',
-								JumpD 			<= '0';
+			when "000100" => RegDstD 			<= '0';
+								RegWriteD		<= '0';
+								MemtoRegD		<= '0';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";
+								ALUsrcD			<= '1';				
+								BranchEQDsig		<= '1';
+								BranchNEDsig		<= '0';
+								JumpDsig			<= '0';
 									
 			-- ADDI(0x08)()
-			when X"08" => RegDstD 			<= '0',
-								RegWriteD		<= '1',	
-								MemtoRegD		<= '0',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '0',
-								BranchNED		<= '0',				
-								JumpD 			<= '0';
+			when "001000" => RegDstD 			<= '0';
+								RegWriteD		<= '1';	
+								MemtoRegD		<= '0';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";	
+								ALUsrcD			<= '1';				
+								BranchEQDsig		<= '0';
+								BranchNEDsig		<= '0';				
+								JumpDsig			<= '0';
 								
 								
 			-- BNE(0x05)()
-			when X"05" => RegDstD 			<= '0',
-								RegWriteD		<= '0',	
-								MemtoRegD		<= '0',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '0',
-								BranchNED		<= '1',
-								JumpD 			<= '0';
+			when "000101" => RegDstD 			<= '0';
+								RegWriteD		<= '0';
+								MemtoRegD		<= '0';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";	
+								ALUsrcD			<= '1';			
+								BranchEQDsig		<= '0';
+								BranchNEDsig		<= '1';
+								JumpDsig 			<= '0';
 								
 			-- J(0x02)()
-			when X"02" => RegDstD 			<= '0',
-								RegWriteD		<= '0',	
-								MemtoRegD		<= '0',		
-								MemWriteD		<= '0',	
-								ALUControlD 	<= X"2",	
-								ALUsrcD			<= '1',				
-								BranchEQD		<= '0',
-								BranchNED		<= '0',
-								JumpD 			<= '0';
+			when "000010" => RegDstD 			<= '0';
+								RegWriteD		<= '0';
+								MemtoRegD		<= '0';		
+								MemWriteD		<= '0';	
+								ALUControlD 	<= X"2";
+								ALUsrcD			<= '1';				
+								BranchEQDsig		<= '0';
+								BranchNEDsig		<= '0';
+								JumpDsig 			<= '0';
+			when others => null;
 		end case;
+		
+		JumpD				<= JumpDsig;
+		BranchD			<= BranchEQDsig or BranchNEDsig;
+		BranchClear		<= JumpDsig or BranchEQDsig or BranchNEDsig;
+		PCsrcD(0)		<= (equalD and BranchEQDsig) or (not(equalD) and BranchNEDsig);
+		PCsrcD(1)		<= JumpDsig;
+
+		
+		
 	end process;
 end architecture controleMIPS_op;
