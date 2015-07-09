@@ -1,6 +1,6 @@
 Analysis & Synthesis report for mipsPipe_line
-Thu Jul 02 17:00:49 2015
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Thu Jul 09 18:27:59 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -36,8 +36,8 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jul 02 17:00:49 2015               ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Failed - Thu Jul 09 18:27:59 2015               ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; mipsPipe_line                                   ;
 ; Top-level Entity Name              ; mipsPipe_line                                   ;
 ; Family                             ; Cyclone II                                      ;
@@ -144,7 +144,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -153,29 +153,86 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul 02 17:00:46 2015
+    Info: Processing started: Thu Jul 09 18:27:58 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mipsPipe_line -c mipsPipe_line
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file ulamips.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file textmips.vhd
+    Info (12022): Found design unit 1: textmips-SYN
+    Info (12023): Found entity 1: textMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file datamips.vhd
+    Info (12022): Found design unit 1: datamips-SYN
+    Info (12023): Found entity 1: dataMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file ulamips/ulamips.vhdl
     Info (12022): Found design unit 1: ulaMIPS-behavioral
     Info (12023): Found entity 1: ulaMIPS
-Info (12021): Found 2 design units, including 1 entities, in source file bregmips.vhdl
-    Info (12022): Found design unit 1: bregMIPS-behavioral
-    Info (12023): Found entity 1: bregMIPS
-Info (12021): Found 0 design units, including 0 entities, in source file pcmips.vhd
-Info (12021): Found 2 design units, including 1 entities, in source file mux21mips.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file stagewb/stagewb.vhd
+    Info (12022): Found design unit 1: stageWB-behavioral
+    Info (12023): Found entity 1: stageWB
+Info (12021): Found 2 design units, including 1 entities, in source file stagemem/stagemem.vhd
+    Info (12022): Found design unit 1: stageMEM-behavioral
+    Info (12023): Found entity 1: stageMEM
+Info (12021): Found 2 design units, including 1 entities, in source file stagef/stagef.vhd
+    Info (12022): Found design unit 1: stageF-behavioral
+    Info (12023): Found entity 1: stageF
+Info (12021): Found 2 design units, including 1 entities, in source file stageex/stageex.vhd
+    Info (12022): Found design unit 1: stageEX-behavioral
+    Info (12023): Found entity 1: stageEX
+Info (12021): Found 2 design units, including 1 entities, in source file stageex/mux21.vhd
+    Info (12022): Found design unit 1: mux21-behavioral
+    Info (12023): Found entity 1: mux21
+Info (12021): Found 2 design units, including 1 entities, in source file staged/staged.vhd
+    Info (12022): Found design unit 1: stageD-behavioral
+    Info (12023): Found entity 1: stageD
+Info (12021): Found 2 design units, including 1 entities, in source file somador/somador.vhd
+    Info (12022): Found design unit 1: somador-Somador
+    Info (12023): Found entity 1: somador
+Info (12021): Found 2 design units, including 1 entities, in source file regmemwb/regmemwb.vhd
+    Info (12022): Found design unit 1: regMEMWB-behavioral
+    Info (12023): Found entity 1: regMEMWB
+Info (12021): Found 2 design units, including 1 entities, in source file regifid/regifid.vhd
+    Info (12022): Found design unit 1: RegIFID-reg_ifid
+    Info (12023): Found entity 1: RegIFID
+Info (12021): Found 2 design units, including 1 entities, in source file regidex/regidex.vhd
+    Info (12022): Found design unit 1: RegIDEX-reg_idex
+    Info (12023): Found entity 1: RegIDEX
+Info (12021): Found 2 design units, including 1 entities, in source file regexmem/regexmem.vhd
+    Info (12022): Found design unit 1: regEXMEM-behavioral
+    Info (12023): Found entity 1: regEXMEM
+Info (12021): Found 2 design units, including 1 entities, in source file pc/pc.vhd
+    Info (12022): Found design unit 1: pc-PC
+    Info (12023): Found entity 1: pc
+Warning (12090): Entity "mux41" obtained from "Mux41/mux41.vhd" instead of from Quartus II megafunction library
+Info (12021): Found 2 design units, including 1 entities, in source file mux41/mux41.vhd
+    Info (12022): Found design unit 1: mux41-behavioral
+    Info (12023): Found entity 1: mux41
+Info (12021): Found 2 design units, including 1 entities, in source file mux21/mux21mips.vhd
     Info (12022): Found design unit 1: mux21MIPS-behavioral
     Info (12023): Found entity 1: mux21MIPS
-Info (12021): Found 2 design units, including 1 entities, in source file tb_mux21mips.vhd
-    Info (12022): Found design unit 1: tb_mux21MIPS-TB
-    Info (12023): Found entity 1: tb_mux21MIPS
-Error (12007): Top-level design entity "mipsPipe_line" is undefined
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 348 megabytes
-    Error: Processing ended: Thu Jul 02 17:00:49 2015
-    Error: Elapsed time: 00:00:03
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file controlemips/controlemips.vhd
+    Info (12022): Found design unit 1: controleMIPS-controleMIPS_op
+    Info (12023): Found entity 1: controleMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file bregmips/bregmips.vhdl
+    Info (12022): Found design unit 1: bregMIPS-behavioral
+    Info (12023): Found entity 1: bregMIPS
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(36): interface object "RegWriteD" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 36
+Error (10327): VHDL error at controleMIPS.vhd(36): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 36
+Error (10482): VHDL error at controleMIPS.vhd(37): object "MemtoReg" is used but not declared File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 37
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(38): interface object "MemWriteD" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 38
+Error (10327): VHDL error at controleMIPS.vhd(38): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 38
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(39): interface object "ALUsrcD" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 39
+Error (10327): VHDL error at controleMIPS.vhd(39): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 39
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(40): interface object "BranchEQD" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 40
+Error (10327): VHDL error at controleMIPS.vhd(40): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 40
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(41): interface object "BranchNED" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 41
+Error (10327): VHDL error at controleMIPS.vhd(41): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 41
+Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(42): interface object "JumpD" of mode out cannot be read. Change object mode to buffer. File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 42
+Error (10327): VHDL error at controleMIPS.vhd(42): can't determine definition of operator ""<="" -- found 0 possible definitions File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd Line: 42
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 13 errors, 2 warnings
+    Error: Peak virtual memory: 486 megabytes
+    Error: Processing ended: Thu Jul 09 18:27:59 2015
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:02
 
 
