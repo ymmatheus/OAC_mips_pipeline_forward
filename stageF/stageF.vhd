@@ -28,12 +28,6 @@ architecture behavioral of stageF is
 		saida					:out	std_logic_vector(7 downto 0));
 	end component pc;
 	
-	component somador
-	port(	
-		ent1, ent2			:in	std_logic_vector(31 downto 0);
-		saida					:out	std_logic_vector(31 downto 0));
-	end component somador;
-	
 	component textMIPS
 	PORT
 	(
@@ -48,35 +42,34 @@ architecture behavioral of stageF is
 	signal plus4		: std_LOGIC_VECTOR(31 downto 0);
 	signal PCPlus4Sig	: std_logic_vector(31 downto 0);
 	signal PCsig		: std_LOGIC_VECTOR(7 downto 0);
-	signal PCF			: std_LOGIC_VECTOR(7 downto 0);
-	signal mem_clock	: std_logic;
+	signal PCF			: std_logic_vector(7 downto 0);
 	signal mem_data	: std_logic_vector(31 downto 0);
 	signal mem_wren	: std_logic;
-
+	signal notclk		: std_logic;
+	signal notStallF	: std_logic;
 begin
 	
-	PCF 		<= X"00";
-	plus4 	<= X"00000004";
+	plus4 	<= X"00000001";
 	mem_wren <= '0';
-	mem_clock<= '0';
+	notclk   <= not(clk);
+	notStallF<= not(StallF);
 	
-	map_textMIPS: textMIPS 	port map(PCF, mem_clock, mem_data, mem_wren, InstrF);
-	map_somador : somador	port map(PCF,plus4,PCPlus4Sig);
-	map_pc		: pc			port map(PCsig, clk, not(StallF), PCF);
+	map_textMIPS: textMIPS 	port map(PCF, notclk, mem_data, mem_wren, InstrF);
+	map_pc		: pc		   port map(PCsig, notclk, notStallF, PCF);
 	
-	proc_stageF_PSSRC: process( PCSrcF )
+	proc_stageF: process( clk )
 	begin
+	
+		PCPlus4F 	<= X"000000"&PCF + plus4;
+		PCPlus4Sig	<= X"000000"&PCF + plus4;	
+	
 		case PCSrcF is
-				when "00" => PCsig <= PCPlus4Sig(7 downto 0);
-				when "01" => PCsig <= PCBranchF(7 downto 0);
-				when "10" => PCsig <= PCJumpF(7 downto 0);
-				when others => null;
-			end case;
-	end process proc_stageF_PSSRC;
-	
-	proc_stageF: process(clk)
-	begin
-		PCPlus4F <= PCPlus4Sig;
+			when "00" => PCsig <= PCPlus4Sig(7 downto 0);
+			when "01" => PCsig <= PCBranchF(7 downto 0);
+			when "10" => PCsig <= PCJumpF(7 downto 0);
+			when others => null;
+		end case;
+		
 	end process proc_stageF;
 	
 	

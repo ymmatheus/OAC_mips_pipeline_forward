@@ -31,6 +31,7 @@ architecture TB of tb_stageF is
 		
 		PCPlus4F		: out std_logic_vector(31 downto 0);
 		InstrF		: out std_logic_vector(31 downto 0));
+		
 	end component;
 	
 begin
