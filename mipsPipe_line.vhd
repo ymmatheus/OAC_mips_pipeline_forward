@@ -5,10 +5,10 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity MIPS_pipeline is
-end MIPS_pipeline;
+entity mipsPipe_line is
+end mipsPipe_line;
 
-architecture MIPS_pipeline_op of MIPS_pipeline is
+architecture mipsPipe_line_op of mipsPipe_line is
 
 	-- pc
 	component pc is
@@ -283,25 +283,25 @@ architecture MIPS_pipeline_op of MIPS_pipeline is
 	signal PCJumpF, PCBranchF, PCPlus4F, InstrF : STD_LOGIC_VECTOR(31 downto 0);
 			
 	-- signals stage De
-	signal equalD, PCBranchD: STD_LOGIC;
+	signal equalD: STD_LOGIC;
 	signal WriteRegW, RsD, RtD, RdD: STD_LOGIC_VECTOR(4 downto 0);
-	signal InstD, PCPlus4D, ResultW, AluOutM, RD1, RD2, signImmD	: STD_LOGIC_VECTOR(31 downto 0); 
+	signal InstD, PCPlus4D, ResultW, AluOutM, RD1, RD2, signImmD, PCBranchD	: STD_LOGIC_VECTOR(31 downto 0); 
 	
 	-- signals stage EX
 	signal RegWriteE, MemtoRegE, MemWriteE,  ALUSrcE, RegDstE, ALUOutOvfl, ALUOutZero, RegWriteE_S, MemtoRegE_S, MemWriteE_S: STD_LOGIC;
 	signal ForwardAE, ForwardBE : STD_LOGIC_VECTOR(1 downto 0);
 	signal ALUControlE : STD_LOGIC_VECTOR(3 downto 0);
 	signal RtE, RdE, WriteRegE : STD_LOGIC_VECTOR(4 downto 0);
-	signal RD1_E, RD2_E, SignImmE, ResultW, ALUOutM, ALUOutE, WriteDataE : STD_LOGIC_VECTOR(31 downto 0);
+	signal RD1_E, RD2_E, SignImmE, ALUOutE, WriteDataE : STD_LOGIC_VECTOR(31 downto 0);--ResultW, ALUOutM,
 	
 	-- signals stage MEM
-	signal RegWriteM, MemtoRegM, MemWriteM, clk, RegWriteM_S, MemtoRegM_S : STD_LOGIC;
-	signal ALUOutM, WriteDataM, ReadDataM :STD_LOGIC_VECTOR(31 downto 0);
+	signal RegWriteM, MemtoRegM, MemWriteM, RegWriteM_S, MemtoRegM_S : STD_LOGIC;--clk,
+	signal WriteDataM, ReadDataM :STD_LOGIC_VECTOR(31 downto 0); --ALUOutM,
 	signal WriteRegM,	WriteRegM_S : STD_LOGIC_VECTOR(4 downto 0);
 
 	-- signals stage WB
 	signal memtoregW	: STD_LOGIC;
-	signal ALUoutW, ReadDataW, ResultW : STD_LOGIC_VECTOR(31 downto 0);
+	signal ALUoutW, ReadDataW : STD_LOGIC_VECTOR(31 downto 0);--, ResultW
 	
 	begin	
 	
@@ -316,4 +316,4 @@ architecture MIPS_pipeline_op of MIPS_pipeline is
 			WriteBack:stageWB port map (memtoregW, ALUoutW, ReadDataW, ResultW);
 		
 		
-end architecture mipS_pipeline_op;
+end architecture mipsPipe_line_op;
