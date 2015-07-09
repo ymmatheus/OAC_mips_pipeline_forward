@@ -58,6 +58,7 @@ architecture estrutural of stageEX_testbench is
 	signal tb_RegWriteE_S	: std_logic;
 	signal tb_MemtoRegE_S	: std_logic;
 	signal tb_MemWriteE_S	: std_logic;
+	
 	begin
 	
 	map_testStageEX:stageEX port map(tb_RegWriteE,tb_MemtoRegE,tb_MemWriteE,tb_ALUControlE,tb_ALUSrcE,tb_RegDstE,
