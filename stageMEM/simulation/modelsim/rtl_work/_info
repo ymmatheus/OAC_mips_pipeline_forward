@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Mars\Documents\OAC\Meu_mips_repositorio\stageMEM\simulation\modelsim
+Ememdatamips
+Z1 w1436375652
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\Mars\Documents\OAC\Meu_mips_repositorio\stageMEM\simulation\modelsim
+Z5 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/MemDataMIPS.vhd
+Z6 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/MemDataMIPS.vhd
+l0
+L42
+VjkGDA=;h[9oB[BHj@a?Bn1
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1436466516.074000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/MemDataMIPS.vhd|
+Z10 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/MemDataMIPS.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 e@d29K7Ch=1K1_Qfn9k?L1
+!i10b 1
+Asyn
+R2
+R3
+DEx4 work 11 memdatamips 0 22 jkGDA=;h[9oB[BHj@a?Bn1
+l86
+L54
+VBOFeA`@hV922V@]KXKk6i3
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 eemSh:NJ>dL98P0iQ[Mha0
+!i10b 1
+Estagemem
+Z13 w1436455399
+Z14 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R2
+R3
+R4
+Z17 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM.vhd
+Z18 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM.vhd
+l0
+L6
+VEoL`HFVZQ@7;MDSdBe[4U2
+R7
+31
+Z19 !s108 1436466516.166000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM.vhd|
+Z21 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM.vhd|
+R11
+R12
+!s100 z>[X04X[eX_g9=4kV5:k>0
+!i10b 1
+Abehavioral
+R14
+R15
+R16
+R2
+R3
+DEx4 work 8 stagemem 0 22 EoL`HFVZQ@7;MDSdBe[4U2
+l30
+L20
+VbYH_:A45@zPoB;kmMH<mY1
+R7
+31
+R19
+R20
+R21
+R11
+R12
+!s100 S@I;^m]jV:j[18o4N7mC83
+!i10b 1
+Estagemem_testbench
+Z22 w1436465468
+R14
+R15
+R16
+R2
+R3
+R4
+Z23 8C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd
+Z24 FC:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd
+l0
+L6
+VQh:8c60naeLXB91TzE1kJ3
+!s100 Y89Qi@^^B]gK@6hkb9f_o0
+R7
+31
+!i10b 1
+Z25 !s108 1436466516.278000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd|
+Z27 !s107 C:/Users/Mars/Documents/OAC/Meu_mips_repositorio/stageMEM/stageMEM_testbench.vhd|
+R11
+R12
+Aestrutural
+R14
+R15
+R16
+R2
+R3
+DEx4 work 18 stagemem_testbench 0 22 Qh:8c60naeLXB91TzE1kJ3
+l38
+L10
+VJN>C1dlAd_g>nPL4R5iIK1
+!s100 l>AILHgeTAg?DmNG?JSzE2
+R7
+31
+!i10b 1
+R25
+R26
+R27
+R11
+R12
