@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controleMIPS
-Wed Jul 08 22:39:58 2015
+Thu Jul 09 18:26:49 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,13 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +42,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jul 08 22:39:58 2015               ;
+; Analysis & Synthesis Status        ; Successful - Thu Jul 09 18:26:49 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; controleMIPS                                    ;
 ; Top-level Entity Name              ; controleMIPS                                    ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 39                                              ;
+;     Total combinational functions  ; 39                                              ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 27                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,41 +155,177 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; controleMIPS.vhd                 ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 39    ;
+;                                             ;       ;
+; Total combinational functions               ; 39    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 17    ;
+;     -- 3 input functions                    ; 20    ;
+;     -- <=2 input functions                  ; 2     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 39    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 27    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; Op[2] ;
+; Maximum fan-out                             ; 11    ;
+; Total fan-out                               ; 143   ;
+; Average fan-out                             ; 2.17  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |controleMIPS              ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |controleMIPS       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; RegWriteD$latch                                     ; Mux11               ; yes                    ;
+; MemtoRegD$latch                                     ; Mux11               ; yes                    ;
+; ALUControlD[0]$latch                                ; Mux5                ; yes                    ;
+; ALUControlD[1]$latch                                ; Mux5                ; yes                    ;
+; ALUControlD[2]$latch                                ; Mux5                ; yes                    ;
+; ALUControlD[3]$latch                                ; Mux5                ; yes                    ;
+; ALUsrcD$latch                                       ; Mux11               ; yes                    ;
+; RegDstD$latch                                       ; Mux11               ; yes                    ;
+; BranchNEDsig                                        ; Mux11               ; yes                    ;
+; BranchEQDsig                                        ; Mux11               ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jul 08 22:39:56 2015
+    Info: Processing started: Thu Jul 09 18:26:46 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controleMIPS -c controleMIPS
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file controlemips.vhd
     Info (12022): Found design unit 1: controleMIPS-controleMIPS_op
     Info (12023): Found entity 1: controleMIPS
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(36): interface object "RegWriteD" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 36
-Error (10327): VHDL error at controleMIPS.vhd(36): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 36
-Error (10482): VHDL error at controleMIPS.vhd(37): object "MemtoReg" is used but not declared File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 37
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(38): interface object "MemWriteD" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 38
-Error (10327): VHDL error at controleMIPS.vhd(38): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 38
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(39): interface object "ALUsrcD" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 39
-Error (10327): VHDL error at controleMIPS.vhd(39): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 39
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(40): interface object "BranchEQD" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 40
-Error (10327): VHDL error at controleMIPS.vhd(40): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 40
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(41): interface object "BranchNED" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 41
-Error (10327): VHDL error at controleMIPS.vhd(41): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 41
-Error (10309): VHDL Interface Declaration error in controleMIPS.vhd(42): interface object "JumpD" of mode out cannot be read. Change object mode to buffer. File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 42
-Error (10327): VHDL error at controleMIPS.vhd(42): can't determine definition of operator ""<="" -- found 0 possible definitions File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 42
-Error (10315): VHDL syntax error at controleMIPS.vhd(67): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 67
-Error (10315): VHDL syntax error at controleMIPS.vhd(78): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 78
-Error (10315): VHDL syntax error at controleMIPS.vhd(89): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 89
-Error (10315): VHDL syntax error at controleMIPS.vhd(100): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 100
-Error (10315): VHDL syntax error at controleMIPS.vhd(112): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 112
-Error (10315): VHDL syntax error at controleMIPS.vhd(123): object with std_logic type cannot contain character 'x' File: E:/ProjetoFinalDisciplina/controleMIPS/controleMIPS.vhd Line: 123
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 19 errors, 1 warning
-    Error: Peak virtual memory: 348 megabytes
-    Error: Processing ended: Wed Jul 08 22:39:58 2015
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12127): Elaborating entity "controleMIPS" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(140): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(141): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(141): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "equalD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(144): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "RegDstD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "RegWriteD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "MemtoRegD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "MemWriteD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "ALUsrcD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "BranchEQDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "BranchNEDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "JumpDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "ALUControlD", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ALUControlD[0]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[1]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[2]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[3]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "JumpDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "BranchNEDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "BranchEQDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUsrcD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "MemWriteD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "MemtoRegD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "RegWriteD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "RegDstD" at controleMIPS.vhd(37)
+Warning (13012): Latch RegWriteD$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[2]
+Warning (13012): Latch MemtoRegD$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning (13012): Latch ALUControlD[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Funct[4]
+Warning (13012): Latch ALUControlD[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[2]
+Warning (13012): Latch ALUControlD[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[1]
+Warning (13012): Latch ALUControlD[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Funct[4]
+Warning (13012): Latch ALUsrcD$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[2]
+Warning (13012): Latch RegDstD$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[1]
+Warning (13012): Latch BranchNEDsig has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning (13012): Latch BranchEQDsig has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Op[0]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "MemWriteD" is stuck at GND
+    Warning (13410): Pin "JumpD" is stuck at GND
+    Warning (13410): Pin "PCsrcD[1]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 66 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 39 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 370 megabytes
+    Info: Processing ended: Thu Jul 09 18:26:49 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

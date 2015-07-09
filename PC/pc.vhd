@@ -22,7 +22,7 @@ begin
 		end if;
 	end process;
 	
-	proc_leitura: process (reg_interno)
+	proc_leitura: process (clk, reg_interno, ent1)
 	begin
 		saida <= reg_interno;
 	end process;

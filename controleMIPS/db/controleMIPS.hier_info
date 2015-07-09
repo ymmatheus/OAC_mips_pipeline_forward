@@ -137,8 +137,8 @@ Funct[5] => Equal6.IN10
 Funct[5] => Equal7.IN10
 Funct[5] => Equal8.IN10
 Funct[5] => Equal9.IN10
-equalD => BranchSig.IN1
-equalD => BranchSig.IN1
+equalD => PCsrcD.IN1
+equalD => PCsrcD.IN1
 RegWriteD <= RegWriteD$latch.DB_MAX_OUTPUT_PORT_TYPE
 MemtoRegD <= MemtoRegD$latch.DB_MAX_OUTPUT_PORT_TYPE
 MemWriteD <= MemWriteD$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -148,11 +148,10 @@ ALUControlD[2] <= ALUControlD[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUControlD[3] <= ALUControlD[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 ALUsrcD <= ALUsrcD$latch.DB_MAX_OUTPUT_PORT_TYPE
 RegDstD <= RegDstD$latch.DB_MAX_OUTPUT_PORT_TYPE
-BranchEQD <= BranchEQDsig.DB_MAX_OUTPUT_PORT_TYPE
-BranchNED <= BranchNEDsig.DB_MAX_OUTPUT_PORT_TYPE
+BranchD <= BranchD.DB_MAX_OUTPUT_PORT_TYPE
+BranchClear <= BranchClear.DB_MAX_OUTPUT_PORT_TYPE
 JumpD <= JumpDsig.DB_MAX_OUTPUT_PORT_TYPE
-BranchSig <= BranchSig.DB_MAX_OUTPUT_PORT_TYPE
-PCSrcD[0] <= PCSrcD.DB_MAX_OUTPUT_PORT_TYPE
-PCSrcD[1] <= JumpDsig.DB_MAX_OUTPUT_PORT_TYPE
+PCsrcD[0] <= PCsrcD.DB_MAX_OUTPUT_PORT_TYPE
+PCsrcD[1] <= JumpDsig.DB_MAX_OUTPUT_PORT_TYPE
 
 
