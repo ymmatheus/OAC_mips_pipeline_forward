@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mipsPipe_line
-Thu Jul 09 18:48:48 2015
+Fri Jul 10 16:04:04 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,19 +10,28 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Source assignments for stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated
-  7. Source assignments for stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated
-  8. Parameter Settings for User Entity Instance: stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component
-  9. Parameter Settings for User Entity Instance: stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component
- 10. altsyncram Parameter Settings by Entity Instance
- 11. Port Connectivity Checks: "stageMEM:Memory"
- 12. Port Connectivity Checks: "stageEX:Execute"
- 13. Port Connectivity Checks: "stageD:InsDecode"
- 14. Port Connectivity Checks: "stageF:InsFetch|textMIPS:map_textMIPS"
- 15. Port Connectivity Checks: "stageF:InsFetch"
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Source assignments for stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated
+ 13. Source assignments for stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated
+ 14. Parameter Settings for User Entity Instance: stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component
+ 15. Parameter Settings for User Entity Instance: stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "regMEMWB:registrador4"
+ 18. Port Connectivity Checks: "stageMEM:Memory"
+ 19. Port Connectivity Checks: "stageEX:Execute"
+ 20. Port Connectivity Checks: "RegIDEX:registrador2"
+ 21. Port Connectivity Checks: "stageD:InsDecode|bregMIPS:map_breg"
+ 22. Port Connectivity Checks: "stageD:InsDecode"
+ 23. Port Connectivity Checks: "stageF:InsFetch|textMIPS:map_textMIPS"
+ 24. Port Connectivity Checks: "controleMIPS:UnidadeControle"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -48,20 +57,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jul 09 18:48:48 2015               ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 10 16:04:04 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; mipsPipe_line                                   ;
 ; Top-level Entity Name              ; mipsPipe_line                                   ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 1                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -161,6 +170,79 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; Mux41/mux41_MIPS.vhd             ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd          ;         ;
+; textMIPS.vhd                     ; yes             ; User Wizard-Generated File   ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd                  ;         ;
+; dataMIPS.vhd                     ; yes             ; User Wizard-Generated File   ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd                  ;         ;
+; mipsPipe_line.vhd                ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd             ;         ;
+; UlaMIPS/ulaMIPS.vhdl             ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl          ;         ;
+; stageWB/stageWB.vhd              ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd           ;         ;
+; stageMEM/stageMEM.vhd            ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd         ;         ;
+; stageF/stageF.vhd                ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd             ;         ;
+; stageEX/stageEX.vhd              ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd           ;         ;
+; stageEX/mux21.vhd                ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd             ;         ;
+; stageD/stageD.vhd                ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd             ;         ;
+; regMEMWB/regMEMWB.vhd            ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd         ;         ;
+; RegIFID/RegIFID.vhd              ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd           ;         ;
+; RegIDEX/RegIDEX.vhd              ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd           ;         ;
+; regEXMEM/regEXMEM.vhd            ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd         ;         ;
+; PC/pc.vhd                        ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd                     ;         ;
+; Mux21/mux21MIPS.vhd              ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd           ;         ;
+; controleMIPS/controleMIPS.vhd    ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd ;         ;
+; bregMIPS/bregMIPS.vhdl           ; yes             ; User VHDL File               ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                          ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                              ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
+; db/altsyncram_v2d1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/db/altsyncram_v2d1.tdf        ;         ;
+; db/altsyncram_k1d1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/db/altsyncram_k1d1.tdf        ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 1     ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |mipsPipe_line             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 1    ; 0            ; |mipsPipe_line      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                                                                                             ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------+--------------------------------------------------------------------------+
@@ -169,6 +251,107 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Altera ; RAM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |mipsPipe_line|stageF:InsFetch|textMIPS:map_textMIPS   ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd ;
 ; Altera ; RAM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |mipsPipe_line|stageMEM:Memory|dataMIPS:map_DataMemory ; C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd ;
 +--------+--------------+---------+--------------+--------------+--------------------------------------------------------+--------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Registers Removed During Synthesis                               ;
++---------------------------------------------+--------------------+
+; Register name                               ; Reason for Removal ;
++---------------------------------------------+--------------------+
+; regMEMWB:registrador4|WriteReg[0..4]        ; Lost fanout        ;
+; regMEMWB:registrador4|ALUout[0..31]         ; Lost fanout        ;
+; regMEMWB:registrador4|ReadData[0..31]       ; Lost fanout        ;
+; regMEMWB:registrador4|memtoreg              ; Lost fanout        ;
+; regEXMEM:registrador3|WriteReg[0..4]        ; Lost fanout        ;
+; regEXMEM:registrador3|WriteData[0..31]      ; Lost fanout        ;
+; regEXMEM:registrador3|memWrite              ; Lost fanout        ;
+; regEXMEM:registrador3|memtoreg              ; Lost fanout        ;
+; RegIDEX:registrador2|Rd[0..4]               ; Lost fanout        ;
+; RegIDEX:registrador2|Rt[0..4]               ; Lost fanout        ;
+; RegIDEX:registrador2|RD_2[0..31]            ; Lost fanout        ;
+; RegIDEX:registrador2|RegDst                 ; Lost fanout        ;
+; RegIDEX:registrador2|MemW                   ; Lost fanout        ;
+; RegIDEX:registrador2|MemReg                 ; Lost fanout        ;
+; RegIFID:registrador1|instr_interno[11..25]  ; Lost fanout        ;
+; stageF:InsFetch|pc:map_pc|reg_interno[0..7] ; Lost fanout        ;
+; Total Number of Removed Registers = 177     ;                    ;
++---------------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                   ;
++------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal ; Registers Removed due to This Register                                              ;
++------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; regMEMWB:registrador4|WriteReg[0]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteReg[0], RegIDEX:registrador2|Rd[0],                      ;
+;                                    ;                    ; RegIDEX:registrador2|Rt[0], RegIDEX:registrador2|RegDst,                            ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[11], RegIFID:registrador1|instr_interno[16],     ;
+;                                    ;                    ; stageF:InsFetch|pc:map_pc|reg_interno[0], stageF:InsFetch|pc:map_pc|reg_interno[1], ;
+;                                    ;                    ; stageF:InsFetch|pc:map_pc|reg_interno[2], stageF:InsFetch|pc:map_pc|reg_interno[3], ;
+;                                    ;                    ; stageF:InsFetch|pc:map_pc|reg_interno[4], stageF:InsFetch|pc:map_pc|reg_interno[5]  ;
+; regMEMWB:registrador4|WriteReg[1]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteReg[1], RegIDEX:registrador2|Rd[1],                      ;
+;                                    ;                    ; RegIDEX:registrador2|Rt[1], RegIFID:registrador1|instr_interno[12],                 ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[17]                                              ;
+; regMEMWB:registrador4|WriteReg[2]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteReg[2], RegIDEX:registrador2|Rd[2],                      ;
+;                                    ;                    ; RegIDEX:registrador2|Rt[2], RegIFID:registrador1|instr_interno[13],                 ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[18]                                              ;
+; regMEMWB:registrador4|WriteReg[3]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteReg[3], RegIDEX:registrador2|Rd[3],                      ;
+;                                    ;                    ; RegIDEX:registrador2|Rt[3], RegIFID:registrador1|instr_interno[14],                 ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[19]                                              ;
+; regMEMWB:registrador4|WriteReg[4]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteReg[4], RegIDEX:registrador2|Rd[4],                      ;
+;                                    ;                    ; RegIDEX:registrador2|Rt[4], RegIFID:registrador1|instr_interno[15],                 ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[20]                                              ;
+; regMEMWB:registrador4|ReadData[0]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[0], regEXMEM:registrador3|memWrite,                 ;
+;                                    ;                    ; RegIDEX:registrador2|RD_2[0], RegIDEX:registrador2|MemW,                            ;
+;                                    ;                    ; RegIFID:registrador1|instr_interno[25]                                              ;
+; regMEMWB:registrador4|ReadData[1]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[1], RegIDEX:registrador2|RD_2[1]                    ;
+; regMEMWB:registrador4|ReadData[2]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[2], RegIDEX:registrador2|RD_2[2]                    ;
+; regMEMWB:registrador4|ReadData[3]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[3], RegIDEX:registrador2|RD_2[3]                    ;
+; regMEMWB:registrador4|ReadData[4]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[4], RegIDEX:registrador2|RD_2[4]                    ;
+; regMEMWB:registrador4|ReadData[5]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[5], RegIDEX:registrador2|RD_2[5]                    ;
+; regMEMWB:registrador4|ReadData[6]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[6], RegIDEX:registrador2|RD_2[6]                    ;
+; regMEMWB:registrador4|ReadData[7]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[7], RegIDEX:registrador2|RD_2[7]                    ;
+; regMEMWB:registrador4|ReadData[8]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[8], RegIDEX:registrador2|RD_2[8]                    ;
+; regMEMWB:registrador4|ReadData[9]  ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[9], RegIDEX:registrador2|RD_2[9]                    ;
+; regMEMWB:registrador4|ReadData[10] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[10], RegIDEX:registrador2|RD_2[10]                  ;
+; regMEMWB:registrador4|ReadData[11] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[11], RegIDEX:registrador2|RD_2[11]                  ;
+; regMEMWB:registrador4|ReadData[12] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[12], RegIDEX:registrador2|RD_2[12]                  ;
+; regMEMWB:registrador4|ReadData[13] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[13], RegIDEX:registrador2|RD_2[13]                  ;
+; regMEMWB:registrador4|ReadData[14] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[14], RegIDEX:registrador2|RD_2[14]                  ;
+; regMEMWB:registrador4|ReadData[15] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[15], RegIDEX:registrador2|RD_2[15]                  ;
+; regMEMWB:registrador4|ReadData[16] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[16], RegIDEX:registrador2|RD_2[16]                  ;
+; regMEMWB:registrador4|ReadData[17] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[17], RegIDEX:registrador2|RD_2[17]                  ;
+; regMEMWB:registrador4|ReadData[18] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[18], RegIDEX:registrador2|RD_2[18]                  ;
+; regMEMWB:registrador4|ReadData[19] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[19], RegIDEX:registrador2|RD_2[19]                  ;
+; regMEMWB:registrador4|ReadData[20] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[20], RegIDEX:registrador2|RD_2[20]                  ;
+; regMEMWB:registrador4|ReadData[21] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[21], RegIDEX:registrador2|RD_2[21]                  ;
+; regMEMWB:registrador4|ReadData[22] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[22], RegIDEX:registrador2|RD_2[22]                  ;
+; regMEMWB:registrador4|ReadData[23] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[23], RegIDEX:registrador2|RD_2[23]                  ;
+; regMEMWB:registrador4|ReadData[24] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[24], RegIDEX:registrador2|RD_2[24]                  ;
+; regMEMWB:registrador4|ReadData[25] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[25], RegIDEX:registrador2|RD_2[25]                  ;
+; regMEMWB:registrador4|ReadData[26] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[26], RegIDEX:registrador2|RD_2[26]                  ;
+; regMEMWB:registrador4|ReadData[27] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[27], RegIDEX:registrador2|RD_2[27]                  ;
+; regMEMWB:registrador4|ReadData[28] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[28], RegIDEX:registrador2|RD_2[28]                  ;
+; regMEMWB:registrador4|ReadData[29] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[29], RegIDEX:registrador2|RD_2[29]                  ;
+; regMEMWB:registrador4|ReadData[30] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[30], RegIDEX:registrador2|RD_2[30]                  ;
+; regMEMWB:registrador4|ReadData[31] ; Lost Fanouts       ; regEXMEM:registrador3|WriteData[31], RegIDEX:registrador2|RD_2[31]                  ;
+; regMEMWB:registrador4|memtoreg     ; Lost Fanouts       ; regEXMEM:registrador3|memtoreg, RegIDEX:registrador2|MemReg                         ;
++------------------------------------+--------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -342,12 +525,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regMEMWB:registrador4"                                                                   ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; regwritew ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "stageMEM:Memory"                                                                           ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; readdatam   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; writeregm_s ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; regwritem_s ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; memtoregm_s ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
@@ -359,9 +550,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port        ; Type   ; Severity ; Details                                                                             ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
-; aluoute     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; writedatae  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; writerege   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; aluoutovfl  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; aluoutzero  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; regwritee_s ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
@@ -370,20 +558,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "stageD:InsDecode"                                                                        ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; rd1       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rd2       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; signimmd  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rsd       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rtd       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; rdd       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; equald    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pcbranchd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RegIDEX:registrador2"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rse  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stageD:InsDecode|bregMIPS:map_breg"                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; r2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stageD:InsDecode"                                                                                                                                 ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; pcbranchd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clk       ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; regwritew ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; forwardad ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; forwardbd ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; op        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; funct     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; pcjumpd   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------+
@@ -395,14 +601,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+-----------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "stageF:InsFetch"                                                                        ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; pcplus4f ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; instrf   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controleMIPS:UnidadeControle"                                                              ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; branchd     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; branchclear ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; jumpd       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pcsrcd      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -420,18 +628,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul 09 18:48:35 2015
+    Info: Processing started: Fri Jul 10 16:04:01 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mipsPipe_line -c mipsPipe_line
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file mipspipe_line.vhd
-    Info (12022): Found design unit 1: mipsPipe_line-mipsPipe_line_op
-    Info (12023): Found entity 1: mipsPipe_line
+Info (12021): Found 2 design units, including 1 entities, in source file mux41/mux41_mips.vhd
+    Info (12022): Found design unit 1: mux41_MIPS-behavioral
+    Info (12023): Found entity 1: mux41_MIPS
 Info (12021): Found 2 design units, including 1 entities, in source file textmips.vhd
     Info (12022): Found design unit 1: textmips-SYN
     Info (12023): Found entity 1: textMIPS
 Info (12021): Found 2 design units, including 1 entities, in source file datamips.vhd
     Info (12022): Found design unit 1: datamips-SYN
     Info (12023): Found entity 1: dataMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file mipspipe_line.vhd
+    Info (12022): Found design unit 1: mipsPipe_line-mipsPipe_line_op
+    Info (12023): Found entity 1: mipsPipe_line
 Info (12021): Found 2 design units, including 1 entities, in source file ulamips/ulamips.vhdl
     Info (12022): Found design unit 1: ulaMIPS-behavioral
     Info (12023): Found entity 1: ulaMIPS
@@ -471,10 +682,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file regexme
 Info (12021): Found 2 design units, including 1 entities, in source file pc/pc.vhd
     Info (12022): Found design unit 1: pc-PC
     Info (12023): Found entity 1: pc
-Warning (12090): Entity "mux41" obtained from "Mux41/mux41.vhd" instead of from Quartus II megafunction library
-Info (12021): Found 2 design units, including 1 entities, in source file mux41/mux41.vhd
-    Info (12022): Found design unit 1: mux41-behavioral
-    Info (12023): Found entity 1: mux41
 Info (12021): Found 2 design units, including 1 entities, in source file mux21/mux21mips.vhd
     Info (12022): Found design unit 1: mux21MIPS-behavioral
     Info (12023): Found entity 1: mux21MIPS
@@ -485,58 +692,67 @@ Info (12021): Found 2 design units, including 1 entities, in source file bregmip
     Info (12022): Found design unit 1: bregMIPS-behavioral
     Info (12023): Found entity 1: bregMIPS
 Info (12127): Elaborating entity "mipsPipe_line" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(281): used implicit default value for signal "clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(281): used implicit default value for signal "StallF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(282): used implicit default value for signal "PCSrcF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(283): used implicit default value for signal "PCJumpF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(283): used implicit default value for signal "PCBranchF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(283): object "PCPlus4F" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(283): object "InstrF" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(286): object "equalD" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(287): used implicit default value for signal "WriteRegW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(287): object "RsD" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(287): object "RtD" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(287): object "RdD" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(288): used implicit default value for signal "InstD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(288): used implicit default value for signal "PCPlus4D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(288): used implicit default value for signal "AluOutM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(288): object "RD1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(288): object "RD2" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(288): object "signImmD" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(288): object "PCBranchD" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(291): used implicit default value for signal "RegWriteE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(291): used implicit default value for signal "MemtoRegE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(291): used implicit default value for signal "MemWriteE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(291): used implicit default value for signal "ALUSrcE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(291): used implicit default value for signal "RegDstE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(291): object "ALUOutOvfl" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(291): object "ALUOutZero" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(291): object "RegWriteE_S" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(291): object "MemtoRegE_S" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(291): object "MemWriteE_S" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(292): used implicit default value for signal "ForwardAE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(292): used implicit default value for signal "ForwardBE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(293): used implicit default value for signal "ALUControlE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(294): used implicit default value for signal "RtE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(294): used implicit default value for signal "RdE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(294): object "WriteRegE" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(295): used implicit default value for signal "RD1_E" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(295): used implicit default value for signal "RD2_E" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(295): used implicit default value for signal "SignImmE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(295): object "ALUOutE" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(295): object "WriteDataE" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(298): used implicit default value for signal "RegWriteM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(298): used implicit default value for signal "MemtoRegM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(298): used implicit default value for signal "MemWriteM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(298): object "RegWriteM_S" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(298): object "MemtoRegM_S" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(299): used implicit default value for signal "WriteDataM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(299): object "ReadDataM" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(300): used implicit default value for signal "WriteRegM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(300): object "WriteRegM_S" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(303): used implicit default value for signal "memtoregW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(304): used implicit default value for signal "ALUoutW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(304): used implicit default value for signal "ReadDataW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(212): object "BranchD" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(212): object "BranchClear" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(212): object "JumpD" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(213): object "PCsrcD" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(215): used implicit default value for signal "Op" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(215): used implicit default value for signal "Funct" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(218): used implicit default value for signal "StallF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(219): used implicit default value for signal "PCSrcF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(220): used implicit default value for signal "PCJumpF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(220): used implicit default value for signal "PCBranchF" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(223): used implicit default value for signal "EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(223): used implicit default value for signal "CLR_IFID" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(229): used implicit default value for signal "AluOutM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(229): object "PCBranchD" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(232): used implicit default value for signal "CLR_IDEX" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(235): object "RsE" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(239): object "ALUOutOvfl" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(240): object "ALUOutZero" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(240): object "RegWriteE_S" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(240): object "MemtoRegE_S" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(240): object "MemWriteE_S" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(241): used implicit default value for signal "ForwardAE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(241): used implicit default value for signal "ForwardBE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(247): used implicit default value for signal "wren_EXMEM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(252): object "RegWriteM_S" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(252): object "MemtoRegM_S" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(254): object "WriteRegM_S" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at mipsPipe_line.vhd(257): used implicit default value for signal "wren_MEMWB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at mipsPipe_line.vhd(257): object "regWriteW" assigned a value but never read
+Info (12128): Elaborating entity "controleMIPS" for hierarchy "controleMIPS:UnidadeControle"
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(140): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(141): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(141): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(142): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "equalD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "BranchEQDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(143): signal "BranchNEDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at controleMIPS.vhd(144): signal "JumpDsig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "RegDstD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "RegWriteD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "MemtoRegD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "MemWriteD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "ALUsrcD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "BranchEQDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "BranchNEDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "JumpDsig", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at controleMIPS.vhd(37): inferring latch(es) for signal or variable "ALUControlD", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ALUControlD[0]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[1]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[2]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUControlD[3]" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "JumpDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "BranchNEDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "BranchEQDsig" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "ALUsrcD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "MemWriteD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "MemtoRegD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "RegWriteD" at controleMIPS.vhd(37)
+Info (10041): Inferred latch for "RegDstD" at controleMIPS.vhd(37)
 Info (12128): Elaborating entity "stageF" for hierarchy "stageF:InsFetch"
 Warning (10541): VHDL Signal Declaration warning at stageF.vhd(46): used implicit default value for signal "mem_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10492): VHDL Process Statement warning at stageF.vhd(63): signal "PCF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -577,26 +793,54 @@ Info (12133): Instantiated megafunction "stageF:InsFetch|textMIPS:map_textMIPS|a
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v2d1.tdf
     Info (12023): Found entity 1: altsyncram_v2d1
 Info (12128): Elaborating entity "altsyncram_v2d1" for hierarchy "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated"
-Critical Warning (127003): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/memText.mif -- setting all initial values to 0
 Info (12128): Elaborating entity "pc" for hierarchy "stageF:InsFetch|pc:map_pc"
+Info (12128): Elaborating entity "RegIFID" for hierarchy "RegIFID:registrador1"
+Warning (10492): VHDL Process Statement warning at RegIFID.vhd(37): signal "instr_interno" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at RegIFID.vhd(38): signal "progcounter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "stageD" for hierarchy "stageD:InsDecode"
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(16): used implicit default value for signal "RD1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(17): used implicit default value for signal "RD2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(19): used implicit default value for signal "signImmD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(21): used implicit default value for signal "RsD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(22): used implicit default value for signal "RtD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(23): used implicit default value for signal "RdD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(25): used implicit default value for signal "equalD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(28): used implicit default value for signal "PCBranchD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(59): used implicit default value for signal "RD1sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at stageD.vhd(65): object "rd" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "RD1sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "RD2sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(79): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(80): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(81): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(82): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(83): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(84): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(85): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(86): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(87): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(89): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(90): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(92): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(95): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "bregMIPS" for hierarchy "stageD:InsDecode|bregMIPS:map_breg"
+Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(46): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(52): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "mux21MIPS" for hierarchy "stageD:InsDecode|mux21MIPS:map_mux1"
+Info (12128): Elaborating entity "RegIDEX" for hierarchy "RegIDEX:registrador2"
 Info (12128): Elaborating entity "stageEX" for hierarchy "stageEX:Execute"
 Info (12128): Elaborating entity "mux21" for hierarchy "stageEX:Execute|mux21:map_mux21_1"
-Info (12128): Elaborating entity "mux41" for hierarchy "stageEX:Execute|mux41:map_Mux41_1"
-Info (12128): Elaborating entity "mux21MIPS" for hierarchy "stageEX:Execute|mux21MIPS:map_mux21MIPS_2"
+Info (12128): Elaborating entity "mux41_MIPS" for hierarchy "stageEX:Execute|mux41_MIPS:map_Mux41_1"
 Info (12128): Elaborating entity "ulaMIPS" for hierarchy "stageEX:Execute|ulaMIPS:map_ulaMIPS"
 Warning (10492): VHDL Process Statement warning at ulaMIPS.vhdl(63): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ulaMIPS.vhdl(65): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ulaMIPS.vhdl(67): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ulaMIPS.vhdl(80): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "regEXMEM" for hierarchy "regEXMEM:registrador3"
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(43): signal "regWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(44): signal "memtoreg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(45): signal "memWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(46): signal "ALUout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(47): signal "WriteData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regEXMEM.vhd(48): signal "WriteReg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "stageMEM" for hierarchy "stageMEM:Memory"
 Info (12128): Elaborating entity "dataMIPS" for hierarchy "stageMEM:Memory|dataMIPS:map_DataMemory"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component"
@@ -619,7 +863,12 @@ Info (12133): Instantiated megafunction "stageMEM:Memory|dataMIPS:map_DataMemory
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k1d1.tdf
     Info (12023): Found entity 1: altsyncram_k1d1
 Info (12128): Elaborating entity "altsyncram_k1d1" for hierarchy "stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated"
-Critical Warning (127003): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/memData.mif -- setting all initial values to 0
+Info (12128): Elaborating entity "regMEMWB" for hierarchy "regMEMWB:registrador4"
+Warning (10492): VHDL Process Statement warning at regMEMWB.vhd(39): signal "regWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regMEMWB.vhd(40): signal "memtoreg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regMEMWB.vhd(41): signal "ReadData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regMEMWB.vhd(42): signal "ALUout" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at regMEMWB.vhd(43): signal "WriteReg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "stageWB" for hierarchy "stageWB:WriteBack"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
@@ -655,17 +904,6 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated|q_a[29]"
         Warning (14320): Synthesized away node "stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated|q_a[30]"
         Warning (14320): Synthesized away node "stageMEM:Memory|dataMIPS:map_DataMemory|altsyncram:altsyncram_component|altsyncram_k1d1:auto_generated|q_a[31]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[8]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[9]"
-        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[10]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[11]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[12]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[13]"
@@ -681,17 +919,38 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[23]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[24]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[25]"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[10]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[26]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[27]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[28]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[29]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[30]"
         Warning (14320): Synthesized away node "stageF:InsFetch|textMIPS:map_textMIPS|altsyncram:altsyncram_component|altsyncram_v2d1:auto_generated|q_a[31]"
-Error (12061): Can't synthesize current design -- Top partition does not contain any logic
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 144 warnings
-    Error: Peak virtual memory: 508 megabytes
-    Error: Processing ended: Thu Jul 09 18:48:48 2015
-    Error: Elapsed time: 00:00:13
-    Error: Total CPU time (on all processors): 00:00:03
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (17049): 177 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 172 warnings
+    Info: Peak virtual memory: 522 megabytes
+    Info: Processing ended: Fri Jul 10 16:04:04 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -34,7 +34,7 @@ architecture behavioral of stageEX is
 	signal SrcBE		: std_logic_vector(31 downto 0):= X"00000000";
 	signal SaidaMux2	: std_logic_vector(31 downto 0):= X"00000000";
 	
-	component Mux41
+	component Mux41_MIPS
 	port(
 		sel			: in  std_logic_vector(1 downto 0);
 		A,B,C			: in  std_logic_vector(31 downto 0);
@@ -64,8 +64,8 @@ architecture behavioral of stageEX is
 	end component;	
 begin
 		map_mux21_1:mux21 		  port map(RegDstE,RtE,RdE,WriteRegE);
-		map_Mux41_1:Mux41 		  port map(ForwardAE,RD1_E,ResultW,ALUOutM,SrcAE);
-		map_Mux41_2:Mux41 		  port map(ForwardBE,RD2_E,ResultW,AluOutM,saidaMux2);
+		map_Mux41_1:Mux41_MIPS 		  port map(ForwardAE,RD1_E,ResultW,ALUOutM,SrcAE);
+		map_Mux41_2:Mux41_MIPS 		  port map(ForwardBE,RD2_E,ResultW,AluOutM,saidaMux2);
 		map_mux21MIPS_2:mux21MIPS port map(ALUSrcE,saidaMux2,SignImmE,SrcBE);
 		map_ulaMIPS:ulaMIPS		  port map(ALUControlE,SrcAE,SrcBE,ALUOutE,ALUOutZero,ALUOutOvfl);
 		
