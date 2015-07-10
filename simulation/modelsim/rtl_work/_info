@@ -2,80 +2,86 @@ m255
 K3
 13
 cModel Technology
-Z0 dE:\ProjetoFinalDisciplina\simulation\modelsim
-Edatamips
-Z1 w1436369986
-Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 dE:\ProjetoFinalDisciplina\simulation\modelsim
-Z5 8E:/ProjetoFinalDisciplina/dataMIPS.vhd
-Z6 FE:/ProjetoFinalDisciplina/dataMIPS.vhd
+Z0 dC:\Users\Douglas\Documents\GitHub\OAC_mips_pipeline_forward\simulation\modelsim
+Econtrolemips
+Z1 w1436477403
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\Douglas\Documents\GitHub\OAC_mips_pipeline_forward\simulation\modelsim
+Z8 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
+Z9 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
 l0
-L42
-V_@c48o2;9f5;L8_ULdmcS3
-Z7 OV;C;10.1d;51
+L12
+VjdOYm;N6zLWfBPOK1>4SU1
+Z10 OV;C;10.1d;51
 31
-Z8 !s108 1436370004.849000
-Z9 !s90 -reportprogress|300|-93|-work|work|E:/ProjetoFinalDisciplina/dataMIPS.vhd|
-Z10 !s107 E:/ProjetoFinalDisciplina/dataMIPS.vhd|
-Z11 o-93 -work work -O0
-Z12 tExplicit 1
-!s100 ]ZV6TenHUeUaXF436NXRi1
+Z11 !s108 1436564978.414000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
+Z13 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 UFk`MfC^;Dj2IbHl[]4j]2
 !i10b 1
-Asyn
-R2
-R3
-DEx4 work 8 datamips 0 22 _@c48o2;9f5;L8_ULdmcS3
-l86
-L54
-VARf9Z9k_O0[2LF6Ho[3J13
-R7
-31
-R8
-R9
-R10
-R11
-R12
-!s100 XBSIiLRLlb@?FV]d77MGn2
-!i10b 1
-Etb_memoria
-Z13 w1436367545
-Z14 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z15 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Acontrolemips_op
 R2
 R3
 R4
-Z17 8E:/ProjetoFinalDisciplina/tb_memoria/tb_memoria.vhd
-Z18 FE:/ProjetoFinalDisciplina/tb_memoria/tb_memoria.vhd
-l0
-L6
-VN2naGznGDhX]CEJl5b92f0
-!s100 K^QU=T?S8i2B;jboH9;C11
-R7
+R5
+R6
+DEx4 work 12 controlemips 0 22 jdOYm;N6zLWfBPOK1>4SU1
+l36
+L30
+VZFMN<HSE5Pon=HS;zhAU10
+R10
 31
-!i10b 1
-Z19 !s108 1436370005.192000
-Z20 !s90 -reportprogress|300|-93|-work|work|E:/ProjetoFinalDisciplina/tb_memoria/tb_memoria.vhd|
-Z21 !s107 E:/ProjetoFinalDisciplina/tb_memoria/tb_memoria.vhd|
 R11
 R12
-Atb
+R13
 R14
 R15
-R16
+!s100 F=^84M<I4m=PB@7VIB4?H0
+!i10b 1
+Emipspipe_line
+Z16 w1436564821
 R2
 R3
-DEx4 work 10 tb_memoria 0 22 N2naGznGDhX]CEJl5b92f0
-l28
-L10
-V>AOcjbkDJnPJC^9`V]]H@3
-!s100 kN?1aDGlCfjk8@3J>h:PQ1
+R4
+R5
+R6
 R7
+Z17 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
+Z18 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
+l0
+L8
+VM0i<D0?Z0ML8=T<Q]kOE:2
+!s100 mGZ1eJVYQXDRjfXMCmOTm0
+R10
+31
+!i10b 1
+Z19 !s108 1436564979.116000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
+Z21 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
+R14
+R15
+Amipspipe_line_op
+R2
+R3
+R4
+R5
+R6
+DEx4 work 13 mipspipe_line 0 22 M0i<D0?Z0ML8=T<Q]kOE:2
+l272
+L11
+V=hHVzV_?kSoJgXcPA3f?O3
+!s100 b`I@>3mcidzGTcj?M0N<E1
+R10
 31
 !i10b 1
 R19
 R20
 R21
-R11
-R12
+R14
+R15

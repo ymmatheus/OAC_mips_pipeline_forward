@@ -21,7 +21,6 @@ entity stageEX is
 				WriteRegE		:out std_logic_vector(4 downto 0);
 				ALUOutZero		:out std_logic;
 				ALUOutOvfl		:out std_logic
-				
 				);
 end stageEX;
 
