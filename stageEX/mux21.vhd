@@ -12,17 +12,17 @@ end mux21;
 
 architecture behavioral of mux21 is
 
-begin
-	proc_mux: process(A,B,sel) 
 	begin
-      case sel is
+		proc_mux: process(A,B,sel) 
+			begin
+					case sel is
 
-			when  '0' => S <= A;
-			
-			when  '1' => S <= B;
-		
-			when others => S <= "00000";
-	  
-	  end case;
-	end process proc_mux;
+						when  '0' => S <= A;
+						
+						when  '1' => S <= B;
+					
+						when others => S <= "00000";
+				  
+					end case;
+			end process proc_mux;
 end architecture behavioral;

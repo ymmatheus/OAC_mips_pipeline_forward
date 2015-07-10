@@ -21,21 +21,22 @@ end stageF;
 architecture behavioral of stageF is
 
 	component pc
-		port(	
-			ent1					:in	std_logic_vector(7 downto 0);
-			clk					:in	std_logic;	
-			wren					:in	std_logic;
-			saida					:out	std_logic_vector(7 downto 0));
-	end component;
+	port(	
+		ent1					:in	std_logic_vector(7 downto 0);
+		clk					:in	std_logic;	
+		wren					:in	std_logic;
+		saida					:out	std_logic_vector(7 downto 0));
+	end component pc;
 	
 	component textMIPS
-		PORT(
-			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			clock			: IN STD_LOGIC  := '1';
-			data			: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-			wren			: IN STD_LOGIC ;
-			q				: OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
-		END component;
+	PORT
+	(
+		address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		clock			: IN STD_LOGIC  := '1';
+		data			: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		wren			: IN STD_LOGIC ;
+		q				: OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
+	END component textMIPS;
 
 	
 	signal plus4		: std_LOGIC_VECTOR(31 downto 0);
@@ -46,8 +47,7 @@ architecture behavioral of stageF is
 	signal mem_wren	: std_logic;
 	signal notclk		: std_logic;
 	signal notStallF	: std_logic;
-
-	begin
+begin
 	
 	plus4 	<= X"00000001";
 	mem_wren <= '0';

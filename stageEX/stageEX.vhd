@@ -4,7 +4,8 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity stageEX is
-	port (	RegWriteE		:in std_logic;
+	port (	
+				RegWriteE		:in std_logic;
 				MemtoRegE		:in std_logic;
 				MemWriteE		:in std_logic;
 				ALUControlE		:in std_logic_vector(3 downto 0); 
@@ -34,43 +35,46 @@ architecture behavioral of stageEX is
 	signal SrcBE		: std_logic_vector(31 downto 0):= X"00000000";
 	signal SaidaMux2	: std_logic_vector(31 downto 0):= X"00000000";
 	
+	component ulaMIPS
+		port (
+			opULA			: in  std_logic_vector(3 downto 0);
+			A,B			: in  std_logic_vector(31 downto 0);
+			S				: out std_logic_vector(31 downto 0);
+			zero, ovfl	: out std_logic);
+	end component;
+
 	component Mux41_MIPS
-	port(
-		sel			: in  std_logic_vector(1 downto 0);
-		A,B,C			: in  std_logic_vector(31 downto 0);
-		S				: out std_logic_vector(31 downto 0));
+		port(
+			sel			: in  std_logic_vector(1 downto 0);
+			A,B,C			: in  std_logic_vector(31 downto 0);
+			S				: out std_logic_vector(31 downto 0));
 	end component;
 	
 	component mux21MIPS
-	port(
-		sel			: in  std_logic;
-		A,B			: in  std_logic_vector(31 downto 0);
-		S				: out std_logic_vector(31 downto 0));
+		port(
+			sel			: in  std_logic;
+			A,B			: in  std_logic_vector(31 downto 0);
+			S				: out std_logic_vector(31 downto 0));
 	end component;
-	
-	component ulaMIPS
-	port (
-		opULA			: in  std_logic_vector(3 downto 0);
-		A,B			: in  std_logic_vector(31 downto 0);
-		S				: out std_logic_vector(31 downto 0);
-		zero, ovfl	: out std_logic);
-	end component;
-	
+		
 	component mux21
-	port (
-		sel			: in  std_logic;
-		A,B			: in  std_logic_vector(4 downto 0);
-		S				: out std_logic_vector(4 downto 0));
+		port (
+			sel			: in  std_logic;
+			A,B			: in  std_logic_vector(4 downto 0);
+			S				: out std_logic_vector(4 downto 0));
 	end component;	
-begin
-		map_mux21_1:mux21 		  port map(RegDstE,RtE,RdE,WriteRegE);
-		map_Mux41_1:Mux41_MIPS 		  port map(ForwardAE,RD1_E,ResultW,ALUOutM,SrcAE);
-		map_Mux41_2:Mux41_MIPS 		  port map(ForwardBE,RD2_E,ResultW,AluOutM,saidaMux2);
-		map_mux21MIPS_2:mux21MIPS port map(ALUSrcE,saidaMux2,SignImmE,SrcBE);
-		map_ulaMIPS:ulaMIPS		  port map(ALUControlE,SrcAE,SrcBE,ALUOutE,ALUOutZero,ALUOutOvfl);
+	
+	begin
+
+		map_mux21_1 : mux21 		 		port map(RegDstE,RtE,RdE,WriteRegE);
+		map_Mux41_1 : Mux41_MIPS 	  	port map(ForwardAE,RD1_E,ResultW,ALUOutM,SrcAE);
+		map_Mux41_2 : Mux41_MIPS 	  	port map(ForwardBE,RD2_E,ResultW,AluOutM,saidaMux2);
+		map_mux21MIPS_2 : mux21MIPS 	port map(ALUSrcE,saidaMux2,SignImmE,SrcBE);
+		map_ulaMIPS : ulaMIPS		  	port map(ALUControlE,SrcAE,SrcBE,ALUOutE,ALUOutZero,ALUOutOvfl);
 		
 		WriteDataE <= SaidaMux2;
 		RegWriteE_S <= RegWriteE;
 		MemtoRegE_S <= MemtoRegE;
 		MemWriteE_S <= MemWriteE;
+		
 end architecture behavioral;
