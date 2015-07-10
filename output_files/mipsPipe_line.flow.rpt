@@ -1,5 +1,5 @@
 Flow report for mipsPipe_line
-Fri Jul 10 16:04:04 2015
+Fri Jul 10 16:42:00 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Jul 10 16:04:04 2015           ;
+; Flow Status                        ; Successful - Fri Jul 10 16:42:00 2015           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; mipsPipe_line                                   ;
 ; Top-level Entity Name              ; mipsPipe_line                                   ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C70F896C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
+; Total logic elements               ; 0 / 68,416 ( 0 % )                              ;
+;     Total combinational functions  ; 0 / 68,416 ( 0 % )                              ;
+;     Dedicated logic registers      ; 0 / 68,416 ( 0 % )                              ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 1                                               ;
+; Total pins                         ; 1 / 622 ( < 1 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/10/2015 16:04:02 ;
+; Start date & time ; 07/10/2015 16:41:39 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mipsPipe_line       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 24288878852089.143655504204628        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 24288878852089.143655729806176        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; tb_mux21MIPS   ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_mux21MIPS                          ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                  ; --            ; --          ; eda_simulation ;
@@ -101,29 +101,41 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 522 MB              ; 00:00:02                           ;
-; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:02                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 514 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 765 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 427 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 405 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 382 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:17                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Flow OS Summary                                                                   ;
-+----------------------+------------------+-----------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
-+----------------------+------------------+-----------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DS               ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off mipsPipe_line -c mipsPipe_line
+quartus_fit --read_settings_files=off --write_settings_files=off mipsPipe_line -c mipsPipe_line
+quartus_asm --read_settings_files=off --write_settings_files=off mipsPipe_line -c mipsPipe_line
+quartus_sta mipsPipe_line -c mipsPipe_line
+quartus_eda --read_settings_files=off --write_settings_files=off mipsPipe_line -c mipsPipe_line
 
 
 

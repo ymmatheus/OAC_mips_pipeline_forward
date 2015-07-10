@@ -1,6 +1,7 @@
 |mipsPipe_line
 clk => stageF:InsFetch.clk
 clk => RegIFID:registrador1.clk
+clk => stageD:InsDecode.clk
 clk => RegIDEX:registrador2.clk
 clk => regEXMEM:registrador3.clk
 clk => stageMEM:Memory.clk
