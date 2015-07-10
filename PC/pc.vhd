@@ -10,20 +10,24 @@ entity pc is
 			saida					:out	std_logic_vector(7 downto 0));
 end pc;
 
-architecture PC of pc is
-signal reg_interno: std_logic_vector(7 downto 0):= X"00";
+architecture PC_Op of pc is
 
-begin
-	proc_escrita: process (ent1, clk, wren)
+	signal reg_interno: std_logic_vector(7 downto 0):= X"00";
+
 	begin
-	
-	if (rising_edge(clk) and wren = '1') then
-		reg_interno <= ent1;
-		end if;
-	end process;
-	
-	proc_leitura: process (clk, reg_interno, ent1)
-	begin
-		saida <= reg_interno;
-	end process;
-end PC;
+
+		proc_escrita: process (ent1, clk, wren)
+			
+			begin				
+				if (rising_edge(clk) and wren = '1') then
+					reg_interno <= ent1;
+					end if;
+			end process;
+			
+		proc_leitura: process (clk, reg_interno, ent1)
+			
+			begin
+				saida <= reg_interno;
+			end process;
+			
+end PC_Op;
