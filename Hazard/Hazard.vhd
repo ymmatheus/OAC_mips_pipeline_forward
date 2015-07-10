@@ -22,8 +22,8 @@ entity Hazard is
 				RegWriteW	:in std_logic_vector(4 downto 0);
 				StallF		:out std_logic;
 				StallD		:out std_logic;
-				ForwardAD	:out std_logic_vector(1 downto 0);
-				ForwardBD	:out std_logic_vector(1 downto 0);
+				ForwardAD	:out std_logic;
+				ForwardBD	:out std_logic;
 				ForwardAE	:out std_logic_vector(1 downto 0);
 				ForwardBE	:out std_logic_vector(1 downto 0));
 end Hazard;

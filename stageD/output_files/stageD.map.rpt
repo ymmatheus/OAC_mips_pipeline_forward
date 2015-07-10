@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stageD
-Thu Jul 09 14:42:09 2015
+Fri Jul 10 12:16:41 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,12 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "bregMIPS:map_breg"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +44,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 09 14:42:09 2015           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 10 12:16:41 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; stageD                                          ;
 ; Top-level Entity Name              ; stageD                                          ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
+; Total logic elements               ; 41                                              ;
+;     Total combinational functions  ; 41                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 277                                             ;
+; Total pins                         ; 325                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -154,38 +157,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; stageD.vhd                       ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/stageD/stageD.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+; ../bregMIPS/bregMIPS.vhdl        ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/bregMIPS/bregMIPS.vhdl ;         ;
+; ../Mux21/mux21MIPS.vhd           ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/Mux21/mux21MIPS.vhd    ;         ;
+; stageD.vhd                       ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/stageD/stageD.vhd      ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 277   ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 41        ;
+;                                             ;           ;
+; Total combinational functions               ; 41        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 10        ;
+;     -- 3 input functions                    ; 30        ;
+;     -- <=2 input functions                  ; 1         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 12        ;
+;     -- arithmetic mode                      ; 29        ;
+;                                             ;           ;
+; Total registers                             ; 0         ;
+;     -- Dedicated logic registers            ; 0         ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 325       ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; InstD[15] ;
+; Maximum fan-out                             ; 34        ;
+; Total fan-out                               ; 254       ;
+; Average fan-out                             ; 0.69      ;
++---------------------------------------------+-----------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,9 +203,1042 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |stageD                    ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 277  ; 0            ; |stageD             ; work         ;
+; |stageD                    ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 325  ; 0            ; |stageD             ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; bregMIPS:map_breg|breg~38                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~70                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~102               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~134               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~166               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~198               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~230               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~262               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~294               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~326               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~358               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~390               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~422               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~454               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~486               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~518               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~550               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~582               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~614               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~646               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~678               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~710               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~742               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~774               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~806               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~838               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~870               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~902               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~934               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~966               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~998               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1030              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~39                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~71                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~103               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~135               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~167               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~199               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~231               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~263               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~295               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~327               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~359               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~391               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~423               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~455               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~487               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~519               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~551               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~583               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~615               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~647               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~679               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~711               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~743               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~775               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~807               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~839               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~871               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~903               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~935               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~967               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~999               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1031              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~40                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~72                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~104               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~136               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~168               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~200               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~232               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~264               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~296               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~328               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~360               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~392               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~424               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~456               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~488               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~520               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~552               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~584               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~616               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~648               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~680               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~712               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~744               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~776               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~808               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~840               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~872               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~904               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~936               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~968               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1000              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1032              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~41                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~73                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~105               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~137               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~169               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~201               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~233               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~265               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~297               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~329               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~361               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~393               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~425               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~457               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~489               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~521               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~553               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~585               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~617               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~649               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~681               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~713               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~745               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~777               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~809               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~841               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~873               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~905               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~937               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~969               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1001              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1033              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~42                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~74                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~106               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~138               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~170               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~202               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~234               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~266               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~298               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~330               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~362               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~394               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~426               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~458               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~490               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~522               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~554               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~586               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~618               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~650               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~682               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~714               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~746               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~778               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~810               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~842               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~874               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~906               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~938               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~970               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1002              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1034              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~43                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~75                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~107               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~139               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~171               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~203               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~235               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~267               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~299               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~331               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~363               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~395               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~427               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~459               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~491               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~523               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~555               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~587               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~619               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~651               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~683               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~715               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~747               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~779               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~811               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~843               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~875               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~907               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~939               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~971               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1003              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1035              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~44                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~76                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~108               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~140               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~172               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~204               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~236               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~268               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~300               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~332               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~364               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~396               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~428               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~460               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~492               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~524               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~556               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~588               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~620               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~652               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~684               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~716               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~748               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~780               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~812               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~844               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~876               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~908               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~940               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~972               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1004              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1036              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~45                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~77                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~109               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~141               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~173               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~205               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~237               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~269               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~301               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~333               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~365               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~397               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~429               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~461               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~493               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~525               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~557               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~589               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~621               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~653               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~685               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~717               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~749               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~781               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~813               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~845               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~877               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~909               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~941               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~973               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1005              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1037              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~46                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~78                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~110               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~142               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~174               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~206               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~238               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~270               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~302               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~334               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~366               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~398               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~430               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~462               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~494               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~526               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~558               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~590               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~622               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~654               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~686               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~718               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~750               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~782               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~814               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~846               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~878               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~910               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~942               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~974               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1006              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1038              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~47                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~79                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~111               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~143               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~175               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~207               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~239               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~271               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~303               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~335               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~367               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~399               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~431               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~463               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~495               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~527               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~559               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~591               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~623               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~655               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~687               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~719               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~751               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~783               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~815               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~847               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~879               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~911               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~943               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~975               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1007              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1039              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~48                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~80                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~112               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~144               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~176               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~208               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~240               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~272               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~304               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~336               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~368               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~400               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~432               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~464               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~496               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~528               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~560               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~592               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~624               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~656               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~688               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~720               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~752               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~784               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~816               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~848               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~880               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~912               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~944               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~976               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1008              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1040              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~49                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~81                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~113               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~145               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~177               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~209               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~241               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~273               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~305               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~337               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~369               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~401               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~433               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~465               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~497               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~529               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~561               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~593               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~625               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~657               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~689               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~721               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~753               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~785               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~817               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~849               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~881               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~913               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~945               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~977               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1009              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1041              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~50                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~82                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~114               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~146               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~178               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~210               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~242               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~274               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~306               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~338               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~370               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~402               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~434               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~466               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~498               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~530               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~562               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~594               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~626               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~658               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~690               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~722               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~754               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~786               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~818               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~850               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~882               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~914               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~946               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~978               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1010              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1042              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~51                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~83                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~115               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~147               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~179               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~211               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~243               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~275               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~307               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~339               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~371               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~403               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~435               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~467               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~499               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~531               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~563               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~595               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~627               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~659               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~691               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~723               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~755               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~787               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~819               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~851               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~883               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~915               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~947               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~979               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1011              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1043              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~52                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~84                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~116               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~148               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~180               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~212               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~244               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~276               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~308               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~340               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~372               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~404               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~436               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~468               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~500               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~532               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~564               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~596               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~628               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~660               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~692               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~724               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~756               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~788               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~820               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~852               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~884               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~916               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~948               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~980               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1012              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1044              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~53                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~85                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~117               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~149               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~181               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~213               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~245               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~277               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~309               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~341               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~373               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~405               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~437               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~469               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~501               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~533               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~565               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~597               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~629               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~661               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~693               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~725               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~757               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~789               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~821               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~853               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~885               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~917               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~949               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~981               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1013              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1045              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~54                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~86                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~118               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~150               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~182               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~214               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~246               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~278               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~310               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~342               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~374               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~406               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~438               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~470               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~502               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~534               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~566               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~598               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~630               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~662               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~694               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~726               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~758               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~790               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~822               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~854               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~886               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~918               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~950               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~982               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1014              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1046              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~55                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~87                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~119               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~151               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~183               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~215               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~247               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~279               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~311               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~343               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~375               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~407               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~439               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~471               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~503               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~535               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~567               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~599               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~631               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~663               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~695               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~727               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~759               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~791               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~823               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~855               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~887               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~919               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~951               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~983               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1015              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1047              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~56                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~88                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~120               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~152               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~184               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~216               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~248               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~280               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~312               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~344               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~376               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~408               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~440               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~472               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~504               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~536               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~568               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~600               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~632               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~664               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~696               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~728               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~760               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~792               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~824               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~856               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~888               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~920               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~952               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~984               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1016              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1048              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~57                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~89                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~121               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~153               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~185               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~217               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~249               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~281               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~313               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~345               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~377               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~409               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~441               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~473               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~505               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~537               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~569               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~601               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~633               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~665               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~697               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~729               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~761               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~793               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~825               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~857               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~889               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~921               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~953               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~985               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1017              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1049              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~58                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~90                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~122               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~154               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~186               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~218               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~250               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~282               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~314               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~346               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~378               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~410               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~442               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~474               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~506               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~538               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~570               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~602               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~634               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~666               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~698               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~730               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~762               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~794               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~826               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~858               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~890               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~922               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~954               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~986               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1018              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1050              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~59                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~91                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~123               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~155               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~187               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~219               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~251               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~283               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~315               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~347               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~379               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~411               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~443               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~475               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~507               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~539               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~571               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~603               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~635               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~667               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~699               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~731               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~763               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~795               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~827               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~859               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~891               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~923               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~955               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~987               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1019              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1051              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~60                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~92                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~124               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~156               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~188               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~220               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~252               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~284               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~316               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~348               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~380               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~412               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~444               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~476               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~508               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~540               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~572               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~604               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~636               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~668               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~700               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~732               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~764               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~796               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~828               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~860               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~892               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~924               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~956               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~988               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1020              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1052              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~61                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~93                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~125               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~157               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~189               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~221               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~253               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~285               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~317               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~349               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~381               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~413               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~445               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~477               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~509               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~541               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~573               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~605               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~637               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~669               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~701               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~733               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~765               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~797               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~829               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~861               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~893               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~925               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~957               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~989               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1021              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1053              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~62                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~94                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~126               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~158               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~190               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~222               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~254               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~286               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~318               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~350               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~382               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~414               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~446               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~478               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~510               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~542               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~574               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~606               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~638               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~670               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~702               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~734               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~766               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~798               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~830               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~862               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~894               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~926               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~958               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~990               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1022              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1054              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~63                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~95                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~127               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~159               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~191               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~223               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~255               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~287               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~319               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~351               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~383               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~415               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~447               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~479               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~511               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~543               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~575               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~607               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~639               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~671               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~703               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~735               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~767               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~799               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~831               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~863               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~895               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~927               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~959               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~991               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1023              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1055              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~64                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~96                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~128               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~160               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~192               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~224               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~256               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~288               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~320               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~352               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~384               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~416               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~448               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~480               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~512               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~544               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~576               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~608               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~640               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~672               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~704               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~736               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~768               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~800               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~832               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~864               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~896               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~928               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~960               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~992               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1024              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1056              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~65                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~97                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~129               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~161               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~193               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~225               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~257               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~289               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~321               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~353               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~385               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~417               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~449               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~481               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~513               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~545               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~577               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~609               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~641               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~673               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~705               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~737               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~769               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~801               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~833               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~865               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~897               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~929               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~961               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~993               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1025              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1057              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~66                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~98                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~130               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~162               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~194               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~226               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~258               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~290               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~322               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~354               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~386               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~418               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~450               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~482               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~514               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~546               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~578               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~610               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~642               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~674               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~706               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~738               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~770               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~802               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~834               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~866               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~898               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~930               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~962               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~994               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1026              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1058              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~67                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~99                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~131               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~163               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~195               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~227               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~259               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~291               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~323               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~355               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~387               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~419               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~451               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~483               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~515               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~547               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~579               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~611               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~643               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~675               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~707               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~739               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~771               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~803               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~835               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~867               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~899               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~931               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~963               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~995               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1027              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1059              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~68                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~100               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~132               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~164               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~196               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~228               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~260               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~292               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~324               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~356               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~388               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~420               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~452               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~484               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~516               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~548               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~580               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~612               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~644               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~676               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~708               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~740               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~772               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~804               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~836               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~868               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~900               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~932               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~964               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~996               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1028              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1060              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~69                ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~101               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~133               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~165               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~197               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~229               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~261               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~293               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~325               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~357               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~389               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~421               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~453               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~485               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~517               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~549               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~581               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~613               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~645               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~677               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~709               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~741               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~773               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~805               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~837               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~869               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~901               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~933               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~965               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~997               ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1029              ; Stuck at GND due to stuck port data_in ;
+; bregMIPS:map_breg|breg~1061              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1024 ;                                        ;
++------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -213,6 +1256,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+; 1:1                ; 32 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |stageD|mux21MIPS:map_mux1|S[8] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bregMIPS:map_breg"                                                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; r2   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -228,24 +1289,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul 09 14:42:06 2015
+    Info: Processing started: Fri Jul 10 12:16:38 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stageD -c stageD
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/bregmips.vhdl
+Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/bregmips/bregmips.vhdl
     Info (12022): Found design unit 1: bregMIPS-behavioral
     Info (12023): Found entity 1: bregMIPS
+Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/mux21/mux21mips.vhd
+    Info (12022): Found design unit 1: mux21MIPS-behavioral
+    Info (12023): Found entity 1: mux21MIPS
 Info (12021): Found 2 design units, including 1 entities, in source file staged.vhd
     Info (12022): Found design unit 1: stageD-behavioral
     Info (12023): Found entity 1: stageD
 Info (12127): Elaborating entity "stageD" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(16): used implicit default value for signal "RD1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(17): used implicit default value for signal "RD2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(19): used implicit default value for signal "signImmD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(21): used implicit default value for signal "RsD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(22): used implicit default value for signal "RtD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(23): used implicit default value for signal "RdD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(25): used implicit default value for signal "equalD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(28): used implicit default value for signal "PCBranchD" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(59): used implicit default value for signal "RD1sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at stageD.vhd(65): object "rd" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "RD1sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "RD2sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(79): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(80): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(81): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(82): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(83): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(84): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(85): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(86): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(87): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(89): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(90): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(92): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(95): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "bregMIPS" for hierarchy "bregMIPS:map_breg"
+Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(46): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(52): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "mux21MIPS" for hierarchy "mux21MIPS:map_mux1"
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "bregMIPS:map_breg|breg" is uninferred due to asynchronous read logic
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "RD1[0]" is stuck at GND
     Warning (13410): Pin "RD1[1]" is stuck at GND
@@ -311,153 +1396,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "RD2[29]" is stuck at GND
     Warning (13410): Pin "RD2[30]" is stuck at GND
     Warning (13410): Pin "RD2[31]" is stuck at GND
-    Warning (13410): Pin "signImmD[0]" is stuck at GND
-    Warning (13410): Pin "signImmD[1]" is stuck at GND
-    Warning (13410): Pin "signImmD[2]" is stuck at GND
-    Warning (13410): Pin "signImmD[3]" is stuck at GND
-    Warning (13410): Pin "signImmD[4]" is stuck at GND
-    Warning (13410): Pin "signImmD[5]" is stuck at GND
-    Warning (13410): Pin "signImmD[6]" is stuck at GND
-    Warning (13410): Pin "signImmD[7]" is stuck at GND
-    Warning (13410): Pin "signImmD[8]" is stuck at GND
-    Warning (13410): Pin "signImmD[9]" is stuck at GND
-    Warning (13410): Pin "signImmD[10]" is stuck at GND
-    Warning (13410): Pin "signImmD[11]" is stuck at GND
-    Warning (13410): Pin "signImmD[12]" is stuck at GND
-    Warning (13410): Pin "signImmD[13]" is stuck at GND
-    Warning (13410): Pin "signImmD[14]" is stuck at GND
-    Warning (13410): Pin "signImmD[15]" is stuck at GND
-    Warning (13410): Pin "signImmD[16]" is stuck at GND
-    Warning (13410): Pin "signImmD[17]" is stuck at GND
-    Warning (13410): Pin "signImmD[18]" is stuck at GND
-    Warning (13410): Pin "signImmD[19]" is stuck at GND
-    Warning (13410): Pin "signImmD[20]" is stuck at GND
-    Warning (13410): Pin "signImmD[21]" is stuck at GND
-    Warning (13410): Pin "signImmD[22]" is stuck at GND
-    Warning (13410): Pin "signImmD[23]" is stuck at GND
-    Warning (13410): Pin "signImmD[24]" is stuck at GND
-    Warning (13410): Pin "signImmD[25]" is stuck at GND
-    Warning (13410): Pin "signImmD[26]" is stuck at GND
-    Warning (13410): Pin "signImmD[27]" is stuck at GND
-    Warning (13410): Pin "signImmD[28]" is stuck at GND
-    Warning (13410): Pin "signImmD[29]" is stuck at GND
-    Warning (13410): Pin "signImmD[30]" is stuck at GND
-    Warning (13410): Pin "signImmD[31]" is stuck at GND
-    Warning (13410): Pin "RsD[0]" is stuck at GND
-    Warning (13410): Pin "RsD[1]" is stuck at GND
-    Warning (13410): Pin "RsD[2]" is stuck at GND
-    Warning (13410): Pin "RsD[3]" is stuck at GND
-    Warning (13410): Pin "RsD[4]" is stuck at GND
-    Warning (13410): Pin "RtD[0]" is stuck at GND
-    Warning (13410): Pin "RtD[1]" is stuck at GND
-    Warning (13410): Pin "RtD[2]" is stuck at GND
-    Warning (13410): Pin "RtD[3]" is stuck at GND
-    Warning (13410): Pin "RtD[4]" is stuck at GND
-    Warning (13410): Pin "RdD[0]" is stuck at GND
-    Warning (13410): Pin "RdD[1]" is stuck at GND
-    Warning (13410): Pin "RdD[2]" is stuck at GND
-    Warning (13410): Pin "RdD[3]" is stuck at GND
-    Warning (13410): Pin "RdD[4]" is stuck at GND
-    Warning (13410): Pin "equalD" is stuck at GND
-    Warning (13410): Pin "PCBranchD[0]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[1]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[2]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[3]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[4]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[5]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[6]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[7]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[8]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[9]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[10]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[11]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[12]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[13]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[14]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[15]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[16]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[17]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[18]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[19]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[20]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[21]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[22]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[23]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[24]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[25]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[26]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[27]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[28]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[29]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[30]" is stuck at GND
-    Warning (13410): Pin "PCBranchD[31]" is stuck at GND
+    Warning (13410): Pin "PCJumpD[0]" is stuck at GND
+    Warning (13410): Pin "PCJumpD[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 133 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "InstD[0]"
-    Warning (15610): No output dependent on input pin "InstD[1]"
-    Warning (15610): No output dependent on input pin "InstD[2]"
-    Warning (15610): No output dependent on input pin "InstD[3]"
-    Warning (15610): No output dependent on input pin "InstD[4]"
-    Warning (15610): No output dependent on input pin "InstD[5]"
-    Warning (15610): No output dependent on input pin "InstD[6]"
-    Warning (15610): No output dependent on input pin "InstD[7]"
-    Warning (15610): No output dependent on input pin "InstD[8]"
-    Warning (15610): No output dependent on input pin "InstD[9]"
-    Warning (15610): No output dependent on input pin "InstD[10]"
-    Warning (15610): No output dependent on input pin "InstD[11]"
-    Warning (15610): No output dependent on input pin "InstD[12]"
-    Warning (15610): No output dependent on input pin "InstD[13]"
-    Warning (15610): No output dependent on input pin "InstD[14]"
-    Warning (15610): No output dependent on input pin "InstD[15]"
-    Warning (15610): No output dependent on input pin "InstD[16]"
-    Warning (15610): No output dependent on input pin "InstD[17]"
-    Warning (15610): No output dependent on input pin "InstD[18]"
-    Warning (15610): No output dependent on input pin "InstD[19]"
-    Warning (15610): No output dependent on input pin "InstD[20]"
-    Warning (15610): No output dependent on input pin "InstD[21]"
-    Warning (15610): No output dependent on input pin "InstD[22]"
-    Warning (15610): No output dependent on input pin "InstD[23]"
-    Warning (15610): No output dependent on input pin "InstD[24]"
-    Warning (15610): No output dependent on input pin "InstD[25]"
-    Warning (15610): No output dependent on input pin "InstD[26]"
-    Warning (15610): No output dependent on input pin "InstD[27]"
-    Warning (15610): No output dependent on input pin "InstD[28]"
-    Warning (15610): No output dependent on input pin "InstD[29]"
-    Warning (15610): No output dependent on input pin "InstD[30]"
-    Warning (15610): No output dependent on input pin "InstD[31]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[0]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[1]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[2]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[3]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[4]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[5]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[6]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[7]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[8]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[9]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[10]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[11]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[12]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[13]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[14]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[15]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[16]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[17]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[18]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[19]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[20]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[21]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[22]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[23]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[24]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[25]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[26]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[27]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[28]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[29]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[30]"
-    Warning (15610): No output dependent on input pin "PCPlus4D[31]"
+Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ResultW[0]"
     Warning (15610): No output dependent on input pin "ResultW[1]"
     Warning (15610): No output dependent on input pin "ResultW[2]"
@@ -490,49 +1433,21 @@ Warning (21074): Design contains 133 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ResultW[29]"
     Warning (15610): No output dependent on input pin "ResultW[30]"
     Warning (15610): No output dependent on input pin "ResultW[31]"
+    Warning (15610): No output dependent on input pin "ForwardAD"
+    Warning (15610): No output dependent on input pin "RegWriteW"
+    Warning (15610): No output dependent on input pin "WriteRegW[4]"
     Warning (15610): No output dependent on input pin "WriteRegW[0]"
     Warning (15610): No output dependent on input pin "WriteRegW[1]"
     Warning (15610): No output dependent on input pin "WriteRegW[2]"
     Warning (15610): No output dependent on input pin "WriteRegW[3]"
-    Warning (15610): No output dependent on input pin "WriteRegW[4]"
-    Warning (15610): No output dependent on input pin "AluOutM[0]"
-    Warning (15610): No output dependent on input pin "AluOutM[1]"
-    Warning (15610): No output dependent on input pin "AluOutM[2]"
-    Warning (15610): No output dependent on input pin "AluOutM[3]"
-    Warning (15610): No output dependent on input pin "AluOutM[4]"
-    Warning (15610): No output dependent on input pin "AluOutM[5]"
-    Warning (15610): No output dependent on input pin "AluOutM[6]"
-    Warning (15610): No output dependent on input pin "AluOutM[7]"
-    Warning (15610): No output dependent on input pin "AluOutM[8]"
-    Warning (15610): No output dependent on input pin "AluOutM[9]"
-    Warning (15610): No output dependent on input pin "AluOutM[10]"
-    Warning (15610): No output dependent on input pin "AluOutM[11]"
-    Warning (15610): No output dependent on input pin "AluOutM[12]"
-    Warning (15610): No output dependent on input pin "AluOutM[13]"
-    Warning (15610): No output dependent on input pin "AluOutM[14]"
-    Warning (15610): No output dependent on input pin "AluOutM[15]"
-    Warning (15610): No output dependent on input pin "AluOutM[16]"
-    Warning (15610): No output dependent on input pin "AluOutM[17]"
-    Warning (15610): No output dependent on input pin "AluOutM[18]"
-    Warning (15610): No output dependent on input pin "AluOutM[19]"
-    Warning (15610): No output dependent on input pin "AluOutM[20]"
-    Warning (15610): No output dependent on input pin "AluOutM[21]"
-    Warning (15610): No output dependent on input pin "AluOutM[22]"
-    Warning (15610): No output dependent on input pin "AluOutM[23]"
-    Warning (15610): No output dependent on input pin "AluOutM[24]"
-    Warning (15610): No output dependent on input pin "AluOutM[25]"
-    Warning (15610): No output dependent on input pin "AluOutM[26]"
-    Warning (15610): No output dependent on input pin "AluOutM[27]"
-    Warning (15610): No output dependent on input pin "AluOutM[28]"
-    Warning (15610): No output dependent on input pin "AluOutM[29]"
-    Warning (15610): No output dependent on input pin "AluOutM[30]"
-    Warning (15610): No output dependent on input pin "AluOutM[31]"
-Info (21057): Implemented 277 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 133 input pins
-    Info (21059): Implemented 144 output pins
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 288 warnings
-    Info: Peak virtual memory: 371 megabytes
-    Info: Processing ended: Thu Jul 09 14:42:09 2015
+    Warning (15610): No output dependent on input pin "clk"
+Info (21057): Implemented 366 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 137 input pins
+    Info (21059): Implemented 188 output pins
+    Info (21061): Implemented 41 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 134 warnings
+    Info: Peak virtual memory: 374 megabytes
+    Info: Processing ended: Fri Jul 10 12:16:41 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
