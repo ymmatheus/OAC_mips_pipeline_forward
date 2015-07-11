@@ -6,9 +6,12 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity mipsPipe_line is
+	port(
+		clk : in STD_LOGIC);
 end mipsPipe_line;
 
 architecture mipsPipe_line_op of mipsPipe_line is
+
 	-- Unidade de Controle
 	component controleMIPS
 		port(
@@ -26,6 +29,26 @@ architecture mipsPipe_line_op of mipsPipe_line is
 			BranchClear		: out std_logic;
 			JumpD 			: out std_logic;
 			PCsrcD			: out std_logic_vector(1 downto 0));
+	end component;
+
+	-- Unidade de Hazard
+	component Hazard 
+		port (	
+				RsD			:in std_logic_vector(4 downto 0);
+				RtD			:in std_logic_vector(4 downto 0);				
+				RsE			:in std_logic_vector(4 downto 0);
+				RtE			:in std_logic_vector(4 downto 0);
+				MemtoRegE	:in std_logic;
+				WriteRegM	:in std_logic_vector(4 downto 0);
+				WriteRegE	:in std_logic_vector(4 downto 0);
+				WriteRegW	:in std_logic_vector(4 downto 0);
+				RegWriteW	:in std_logic;
+				RegWriteM	:in std_logic;
+				
+				StallF		:out std_logic;
+				StallD		:out std_logic;
+				ForwardA		:out std_logic_vector(1 downto 0);
+				ForwardB		:out std_logic_vector(1 downto 0));
 	end component;
 
 
@@ -132,35 +155,35 @@ architecture mipsPipe_line_op of mipsPipe_line is
 	-- Stage Decode
 	component stageD 
 		port(
-			clk			: in std_logic;
-			InstD 		: in std_logic_vector(31 downto 0);
-			PCPlus4D		: in std_logic_vector(31 downto 0);
+		clk			: in std_logic;
+		InstD 		: in std_logic_vector(31 downto 0);
+		PCPlus4D		: in std_logic_vector(31 downto 0);
 
-			ResultW		: in std_logic_vector(31 downto 0); -- wb
-			WriteRegW	: in std_logic_vector(4 downto 0); 	-- wb
-			RegWriteW	: in std_logic;						  	-- wb
-			
-			AluOutM		: in std_logic_vector(31 downto 0); -- forward
-			ForwardAD	: in std_logic;
-			ForwardBD	: in std_logic;
-			
-			
-			RD1			: out std_logic_vector(31 downto 0); -- Reg D\X
-			RD2			: out std_logic_vector(31 downto 0);  -- Reg D\X
-			
-			signImmD		: out std_logic_vector(31 downto 0);  -- Reg D\X
-			
-			RsD			: out std_logic_vector(4 downto 0);  -- Reg D\X
-			RtD			: out std_logic_vector(4 downto 0);  -- Reg D\X
-			RdD			: out std_logic_vector(4 downto 0);  -- Reg D\X
-			
-			equalD		: out std_logic;							 -- Controle
+		ResultW		: in std_logic_vector(31 downto 0); -- wb
+		WriteRegW	: in std_logic_vector(4 downto 0); 	-- wb
+		RegWriteW	: in std_logic;						  	-- wb
 		
-			Op				: out std_logic_vector(5 downto 0);   -- Reg D\X
-			Funct 		: out std_logic_vector(5 downto 0);   -- Reg D\X
-			PCJumpD		: out std_logic_vector(31 downto 0);  -- Fetch
-			PCBranchD	: out std_logic_vector(31 downto 0));    -- Fetch
-	end component;
+		AluOutM		: in std_logic_vector(31 downto 0); -- forward
+		ForwardA		: in std_logic_vector(1 downto 0);
+		ForwardB		: in std_logic_vector(1 downto 0);
+		
+		
+		RD1			: out std_logic_vector(31 downto 0); -- Reg D\X
+		RD2			: out std_logic_vector(31 downto 0);  -- Reg D\X
+		
+		signImmD		: out std_logic_vector(31 downto 0);  -- Reg D\X
+		
+		RsD			: out std_logic_vector(4 downto 0);  -- Reg D\X
+		RtD			: out std_logic_vector(4 downto 0);  -- Reg D\X
+		RdD			: out std_logic_vector(4 downto 0);  -- Reg D\X
+		
+		equalD		: out std_logic;							 -- Controle
+	
+		Op				: out std_logic_vector(5 downto 0);   -- Reg D\X
+		Funct 		: out std_logic_vector(5 downto 0);   -- Reg D\X
+		PCJumpD		: out std_logic_vector(31 downto 0);  -- Fetch
+		PCBranchD	: out std_logic_vector(31 downto 0));    -- Fetch	
+		end component;
 
 	-- Stage Execute
 	component stageEX 
@@ -209,10 +232,7 @@ architecture mipsPipe_line_op of mipsPipe_line is
 			
 			ResultW 		: out std_logic_vector(31 downto 0));
 	end component;
-	
-	--
-	signal clk : STD_LOGIC;
-	
+		
 	-- signal Unidade de Controle
 	signal equalD, RegWriteD, MemtoRegD, MemWriteD: STD_LOGIC; 
 	signal ALUsrcD, RegDstD, BranchD, BranchClear, JumpD: STD_LOGIC;
@@ -220,8 +240,13 @@ architecture mipsPipe_line_op of mipsPipe_line is
 	signal ALUControlD: STD_LOGIC_VECTOR(3 downto 0);
 	signal Op, Funct: STD_LOGIC_VECTOR(5 downto 0);
 
+	-- signals Unidade de Hazard
+	signal MemtoRegE, RegWriteW, RegWriteM, StallF, StallD : STD_LOGIC;
+	signal ForwardA, ForwardB : STD_LOGIC_VECTOR(1 downto 0);
+	signal RsD, RtD, RsE, RtE, WriteRegM, WriteRegE, WriteRegW : STD_LOGIC_VECTOR(4 downto 0);
+	
 	-- signals stage IF
-	signal StallF : STD_LOGIC;
+	--StallF : STD_LOGIC;
 	signal PCSrcF : STD_LOGIC_VECTOR(1 downto 0);
 	signal PCJumpF, PCBranchF : STD_LOGIC_VECTOR(31 downto 0);--PCPlus4F, InstrF
 	
@@ -231,29 +256,29 @@ architecture mipsPipe_line_op of mipsPipe_line is
 
 	-- signals stage DE
 	--equalD, clk: STD_LOGIC;
-	signal RegWriteW, ForwardAD, ForwardBD : STD_LOGIC;
-	signal WriteRegW, RsD, RtD, RdD: STD_LOGIC_VECTOR(4 downto 0);
+	--RegWriteW, ForwardA, ForwardB : STD_LOGIC;
+	signal RdD: STD_LOGIC_VECTOR(4 downto 0);--WriteRegW, RsD, RtD, 
 	-- Op, Funct : STD_LOGIC_VECTOR(5 downto 0);
 	signal ResultW, AluOutM, RD1, RD2, signImmD, PCBranchD, PCJumpD: STD_LOGIC_VECTOR(31 downto 0); --InstrD, PCPlus4D, 
 	
 	-- signals RegIDEX
 	signal CLR_IDEX : STD_LOGIC; --clk, RegWriteD, MemtoRegD, MemWriteD, ALUSrcD, RegDstD
-	signal RegWriteE, MemtoRegE, MemWriteE, ALUSrcE, RegDstE: STD_LOGIC;
+	signal MemWriteE, ALUSrcE, RegDstE, RegWriteE: STD_LOGIC;--, MemtoRegE, 
 	signal ALUControlE: STD_LOGIC_VECTOR(3 downto 0);--ALUControlD,
-	signal RsE, RtE, RdE: STD_LOGIC_VECTOR(4 downto 0);--RsD, RtD, RdD,
+	signal RdE : STD_LOGIC_VECTOR(4 downto 0);--RsD, RtD, RdD, RsE, RtE, 
 	signal SignImmE, RD1_E, RD2_E: STD_LOGIC_VECTOR(31 downto 0);--RD1, RD2, SignImmD,
 
 	-- signals stage EX
 	signal ALUOutOvfl, ALUOutZero, RegWriteE_S, MemtoRegE_S, MemWriteE_S: STD_LOGIC;
-	signal ForwardAE, ForwardBE : STD_LOGIC_VECTOR(1 downto 0);
+	--ForwardAE, ForwardBE : STD_LOGIC_VECTOR(1 downto 0);
 	--ALUControlE std_LOGIC_VECTOR(3 downto 0)
-	signal WriteRegE: STD_LOGIC_VECTOR(4 downto 0);--RtE, RdE,
+	--WriteRegE: STD_LOGIC_VECTOR(4 downto 0);--RtE, RdE,
 	signal ALUOutE, WriteDataE: STD_LOGIC_VECTOR(31 downto 0);--ResultW, ALUOutM, RD1_E, RD2_E, SignImmE, 
 				
 	-- signals RegEXMEM
-	signal wren_EXMEM, RegWriteM, MemtoRegM, MemWriteM: STD_LOGIC;--clk, RegWriteE, MemtoRegE, MemWriteE
+	signal wren_EXMEM, MemWriteM, MemtoRegM : STD_LOGIC;--clk, RegWriteE, MemtoRegE, MemWriteE, RegWriteM
 	signal WriteDataM: STD_LOGIC_VECTOR(31 downto 0);--ALUoutE, WriteDataE, ALUoutM, 
-	signal WriteRegM: STD_LOGIC_VECTOR(4 downto 0);--WriteRegE, 
+	--WriteRegE, WriteRegM: STD_LOGIC_VECTOR(4 downto 0); 
 
 	-- signals stage MEM
 	signal RegWriteM_S, MemtoRegM_S : STD_LOGIC;--clk, MemtoRegM, RegWriteM, MemWriteM, 
@@ -264,20 +289,21 @@ architecture mipsPipe_line_op of mipsPipe_line is
 	signal wren_MEMWB, MemtoRegW	: STD_LOGIC;--clk, regWriteM, MemtoRegM,RegWriteW
 	signal ReadDataW, ALUoutW : STD_LOGIC_VECTOR(31 downto 0);--ALUoutM, ReadDataM, 
 	--WriteRegM, WriteRegW: STD_LOGIC_VECTOR(4 downto 0)
-					
+	
 	-- signals stage WB
 	--MemtoRegW	: STD_LOGIC;
 	--ALUoutW, ReadDataW, ResultW : STD_LOGIC_VECTOR(31 downto 0)
 	
 	begin	
+	
+			UnidadeControle : controleMIPS port map (Op, Funct, equalD, RegWriteD, MemtoRegD, MemWriteD, ALUControlD, ALUsrcD, REgDstD, BranchD, BranchClear, JumpD, PCsrcD);
 
-
-			UnidadeControle: controleMIPS port map (Op, Funct, equalD, RegWriteD, MemtoRegD, MemWriteD, ALUControlD, ALUsrcD, REgDstD, BranchD, BranchClear, JumpD, PCsrcD);
-			
+			UnidadeHazard : hazard port map (RsD, RtD, RsE, RtE, MemtoRegE, WriteRegM, WriteRegE, WriteRegW, RegWriteW, RegWriteM, StallF, StallD, ForwardA, ForwardB);
+	
 			InsFetch : stageF 		port map(clk, PCSrcF, StallF, PCJumpF, PCBranchF, PCPlus4F, InstrF);
 			registrador1: regIFID 	port map (InstrF, PCplus4F, EN, CLR_IFID, clk, InstrD, PCplus4D);
 
-			InsDecode : stageD 		port map (clk, InstrD, PCPlus4D, ResultW, WriteRegW, regWriteW, AluOutM, ForwardAD, ForwardBD, RD1, RD2, signImmD, RsD, RtD, RdD, equalD, Op, Funct, PCJumpD, PCBranchD);
+			InsDecode : stageD 		port map (clk, InstrD, PCPlus4D, ResultW, WriteRegW, regWriteW, AluOutM, ForwardA, ForwardB, RD1, RD2, signImmD, RsD, RtD, RdD, equalD, Op, Funct, PCJumpD, PCBranchD);
 			registrador2: regIDEX 	port map (RD1, RD2, RegWriteD, MemtoRegD, MemWriteD, ALUControlD, ALUSrcD, RegDstD, RsD, RtD, RdD, SignImmD, CLR_IDEX, clk, RegWriteE, MemtoRegE, MemWriteE, ALUControlE, ALUSrcE, RegDstE, RsE, RtE, RdE, SignImmE, RD1_E, RD2_E);
 
 			Execute : stageEX 		port map (ALUControlE, ALUSrcE, RegDstE, RD1_E, RD2_E, RtE, RdE, SignImmE, ALUOutE, WriteDataE, WriteRegE, ALUOutOvfl, ALUOutZero);
@@ -288,17 +314,5 @@ architecture mipsPipe_line_op of mipsPipe_line is
 			
 			WriteBack : stageWB 		port map (memtoregW, ALUoutW, ReadDataW, ResultW);		
 
-			process	
-				begin
-					clk <= '1'; wait for 100 ns;
-					clk <= '0'; wait for 100 ns;
-					clk <= '1'; wait for 100 ns;
-					clk <= '0'; wait for 100 ns;
-					clk <= '1'; wait for 100 ns;
-					clk <= '0'; wait for 100 ns;
-					clk <= '1'; wait for 100 ns;
-					clk <= '0'; wait for 100 ns;					
-				end process;
-
-			
+					
 end architecture mipsPipe_line_op;

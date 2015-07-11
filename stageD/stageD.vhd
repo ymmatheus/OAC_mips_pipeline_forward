@@ -51,7 +51,7 @@ architecture behavioral of stageD is
 	component mux41_MIPS
 	port(
 		sel			: in  std_logic_vector(1 downto 0);
-		A,B			: in  std_logic_vector(31 downto 0);
+		A,B,C		: in  std_logic_vector(31 downto 0);
 		S				: out std_logic_vector(31 downto 0));
 	end component;
 

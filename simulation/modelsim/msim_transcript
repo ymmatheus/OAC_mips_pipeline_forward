@@ -10,7 +10,7 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd}
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Hazard/Hazard.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -18,9 +18,32 @@
 # -- Loading package std_logic_arith
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Loading package NUMERIC_STD
-# -- Compiling entity controleMIPS
-# -- Compiling architecture controleMIPS_op of controleMIPS
-# 
+# -- Compiling entity Hazard
+# -- Compiling architecture behavioral of Hazard
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux41_MIPS
+# -- Compiling architecture behavioral of mux41_MIPS
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity textMIPS
+# -- Compiling architecture SYN of textmips
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dataMIPS
+# -- Compiling architecture SYN of datamips
 # vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -31,50 +54,199 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity mipsPipe_line
 # -- Compiling architecture mipsPipe_line_op of mipsPipe_line
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ulaMIPS
+# -- Compiling architecture behavioral of ulaMIPS
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity stageWB
+# -- Compiling architecture behavioral of stageWB
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity stageMEM
+# -- Compiling architecture behavioral of stageMEM
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity stageF
+# -- Compiling architecture behavioral of stageF
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity stageEX
+# -- Compiling architecture behavioral of stageEX
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux21
+# -- Compiling architecture behavioral of mux21
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity stageD
+# -- Compiling architecture behavioral of stageD
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity regMEMWB
+# -- Compiling architecture behavioral of regMEMWB
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity RegIFID
+# -- Compiling architecture reg_ifid of RegIFID
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity RegIDEX
+# -- Compiling architecture reg_idex of RegIDEX
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity regEXMEM
+# -- Compiling architecture behavioral of regEXMEM
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity pc
+# -- Compiling architecture PC_Op of pc
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mux21MIPS
+# -- Compiling architecture behavioral of mux21MIPS
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity controleMIPS
+# -- Compiling architecture controleMIPS_op of controleMIPS
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity bregMIPS
+# -- Compiling architecture behavioral of bregMIPS
 # 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  mipsPipe_line
-# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps mipsPipe_line 
+# vcom -93 -work work {C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity MIPS_Pipeline_test
+# -- Compiling architecture MIPS_Pipeline_testOp of MIPS_Pipeline_test
+# ** Warning: [2] C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd(26): (vcom-1090) Possible infinite loop: Process contains no WAIT statement.
+# 
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  MIPS_Pipeline_Test
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps MIPS_Pipeline_Test 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
 # Loading ieee.numeric_std(body)
+# Loading work.mips_pipeline_test(mips_pipeline_testop)
 # Loading work.mipspipe_line(mipspipe_line_op)
 # Loading work.controlemips(controlemips_op)
-# ** Warning: (vsim-3473) Component instance "InsFetch : stageF" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "registrador1 : RegIFID" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "InsDecode : stageD" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "registrador2 : RegIDEX" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "Execute : stageEX" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "registrador3 : regEXMEM" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "Memory : stageMEM" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "registrador4 : regMEMWB" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# ** Warning: (vsim-3473) Component instance "WriteBack : stageWB" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /mipspipe_line File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-# 
-# add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
-#           File in use by: matheus  Hostname: MATHEUS-PC  ProcessID: 3580
-# 
-#           Attempting to use alternate WLF file "./wlftc45f2v".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftc45f2v
-# 
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
-# Break key hit 
-# Break in Process line__292 at C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd line 296
+# Loading work.hazard(behavioral)
+# Loading work.stagef(behavioral)
+# Loading work.textmips(syn)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.pc(pc_op)
+# Loading work.regifid(reg_ifid)
+# Loading work.staged(behavioral)
+# Loading work.bregmips(behavioral)
+# Loading work.mux41_mips(behavioral)
+# ** Failure: (vsim-3817) Port "C" of entity "mux41_mips" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /mips_pipeline_test/test1/InsDecode/map_mux1 File: C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd Line: 9
+# Fatal error in file C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd
+#  while elaborating region: /mips_pipeline_test/test1/InsDecode/map_mux1
+# Load interrupted
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./mipsPipe_line_run_msim_rtl_vhdl.do PAUSED at line 31
+# A time value could not be extracted from the current line

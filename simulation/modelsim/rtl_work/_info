@@ -3,26 +3,67 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\Douglas\Documents\GitHub\OAC_mips_pipeline_forward\simulation\modelsim
-Econtrolemips
-Z1 w1436477403
+Ebregmips
+Z1 w1436205563
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z7 dC:\Users\Douglas\Documents\GitHub\OAC_mips_pipeline_forward\simulation\modelsim
-Z8 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
-Z9 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
+Z8 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl
+Z9 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl
+l0
+L23
+V87_hRjcdYVmbNRiKOiY101
+Z10 OV;C;10.1d;51
+31
+Z11 !s108 1436624485.770000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl|
+Z13 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/bregMIPS/bregMIPS.vhdl|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 WY=X>Bnl?RUMSEnAjh5LQ1
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 bregmips 0 22 87_hRjcdYVmbNRiKOiY101
+l38
+L32
+VPj3LG_T4>C8E;A0MVfYon2
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 MUBF3N?^OO``95m6cGJmB1
+!i10b 1
+Econtrolemips
+Z16 w1436477403
+R2
+R3
+R4
+R5
+R6
+R7
+Z17 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
+Z18 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd
 l0
 L12
 VjdOYm;N6zLWfBPOK1>4SU1
-Z10 OV;C;10.1d;51
+R10
 31
-Z11 !s108 1436564978.414000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
-Z13 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
-Z14 o-93 -work work -O0
-Z15 tExplicit 1
+Z19 !s108 1436624485.254000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
+Z21 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/controleMIPS/controleMIPS.vhd|
+R14
+R15
 !s100 UFk`MfC^;Dj2IbHl[]4j]2
 !i10b 1
 Acontrolemips_op
@@ -37,51 +78,777 @@ L30
 VZFMN<HSE5Pon=HS;zhAU10
 R10
 31
-R11
-R12
-R13
+R19
+R20
+R21
 R14
 R15
 !s100 F=^84M<I4m=PB@7VIB4?H0
 !i10b 1
-Emipspipe_line
-Z16 w1436564821
+Edatamips
+Z22 w1436461049
+R5
+R6
+R7
+Z23 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd
+Z24 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd
+l0
+L42
+V_@c48o2;9f5;L8_ULdmcS3
+R10
+31
+Z25 !s108 1436624478.250000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd|
+Z27 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/dataMIPS.vhd|
+R14
+R15
+!s100 ]ZV6TenHUeUaXF436NXRi1
+!i10b 1
+Asyn
+R5
+R6
+DEx4 work 8 datamips 0 22 _@c48o2;9f5;L8_ULdmcS3
+l86
+L54
+VARf9Z9k_O0[2LF6Ho[3J13
+R10
+31
+R25
+R26
+R27
+R14
+R15
+!s100 XBSIiLRLlb@?FV]d77MGn2
+!i10b 1
+Ehazard
+Z28 w1436618773
 R2
 R3
 R4
 R5
 R6
 R7
-Z17 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
-Z18 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
+Z29 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Hazard/Hazard.vhd
+Z30 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Hazard/Hazard.vhd
+l0
+L6
+VW7;RN<c8KYmCDLS;4K>9k0
+R10
+31
+Z31 !s108 1436624476.758000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Hazard/Hazard.vhd|
+Z33 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Hazard/Hazard.vhd|
+R14
+R15
+!s100 WJFKgmE;Q_V>gXXZI<C>]3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 hazard 0 22 W7;RN<c8KYmCDLS;4K>9k0
+l27
+L25
+VSe5PQmShF_44RY:j4kG:=1
+R10
+31
+R31
+R32
+R33
+R14
+R15
+!s100 X`JCfT8EiQ<IeEXEKZGMA3
+!i10b 1
+Emips_pipeline_test
+Z34 w1436624132
+R2
+R3
+R4
+R5
+R6
+R7
+Z35 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd
+Z36 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd
 l0
 L8
-VM0i<D0?Z0ML8=T<Q]kOE:2
-!s100 mGZ1eJVYQXDRjfXMCmOTm0
+VF>mSbKYZf19I@N_8YdBPK2
+!s100 od3aGkl`=h5?Y7fomJSC^0
 R10
 31
 !i10b 1
-Z19 !s108 1436564979.116000
-Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
-Z21 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
+Z37 !s108 1436624486.162000
+Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd|
+Z39 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/MIPS_Pipeline_Test.vhd|
 R14
 R15
+Amips_pipeline_testop
+R2
+R3
+R4
+R5
+R6
+DEx4 work 18 mips_pipeline_test 0 22 F>mSbKYZf19I@N_8YdBPK2
+l20
+L11
+VYZSUXoIz<4M2jQDS57e;N0
+!s100 B]PdOhZ4HQXO9Xhh<JFH]3
+R10
+31
+!i10b 1
+R37
+R38
+R39
+R14
+R15
+Emipspipe_line
+Z40 w1436624056
+R2
+R3
+R4
+R5
+R6
+R7
+Z41 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
+Z42 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd
+l0
+L8
+V@TYiEeVAAA68[3?_BdQNV3
+R10
+31
+Z43 !s108 1436624478.766000
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
+Z45 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/mipsPipe_line.vhd|
+R14
+R15
+!s100 1L_:[4gAURNo<dHQKgL`d1
+!i10b 1
 Amipspipe_line_op
 R2
 R3
 R4
 R5
 R6
-DEx4 work 13 mipspipe_line 0 22 M0i<D0?Z0ML8=T<Q]kOE:2
-l272
-L11
-V=hHVzV_?kSoJgXcPA3f?O3
-!s100 b`I@>3mcidzGTcj?M0N<E1
+DEx4 work 13 mipspipe_line 0 22 @TYiEeVAAA68[3?_BdQNV3
+l297
+L13
+V?S=X>UQZYk^OHWllocFRA3
 R10
 31
-!i10b 1
-R19
-R20
-R21
+R43
+R44
+R45
 R14
 R15
+!s100 ;;S:=?OKK57jI<3n6aMi73
+!i10b 1
+Emux21
+Z46 w1436560406
+R2
+R3
+R4
+R5
+R6
+R7
+Z47 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd
+Z48 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd
+l0
+L6
+VM`U]SEnOioezUjd>N5@iF3
+R10
+31
+Z49 !s108 1436624481.538000
+Z50 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd|
+Z51 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/mux21.vhd|
+R14
+R15
+!s100 iIKJ5<_SDTWVJm1U6dlI=3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 5 mux21 0 22 M`U]SEnOioezUjd>N5@iF3
+l15
+L13
+VDjgd4KLJHOOBSRW4nB8XC0
+R10
+31
+R49
+R50
+R51
+R14
+R15
+!s100 h1XCYFjo<9OiOQ?hk0bOY2
+!i10b 1
+Emux21mips
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z52 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd
+Z53 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd
+l0
+L6
+VhoFzj>ndB]WSaV0>ozbAE0
+R10
+31
+Z54 !s108 1436624484.774000
+Z55 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd|
+Z56 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux21/mux21MIPS.vhd|
+R14
+R15
+!s100 YzaZF;AX0DPA_e=10CzcK3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 9 mux21mips 0 22 hoFzj>ndB]WSaV0>ozbAE0
+l15
+L13
+VPK9V2i1R88o`6OKALCWe00
+R10
+31
+R54
+R55
+R56
+R14
+R15
+!s100 mReWRHJQFj33m[=_BD?=Q2
+!i10b 1
+Emux41_mips
+Z57 w1436554951
+R2
+R3
+R4
+R5
+R6
+R7
+Z58 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd
+Z59 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd
+l0
+L6
+V:EIYF3_a3:eS8gC?YEHib3
+R10
+31
+Z60 !s108 1436624477.270000
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd|
+Z62 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/Mux41/mux41_MIPS.vhd|
+R14
+R15
+!s100 bilT@C=Xgi:U@gAhW1@kL0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 mux41_mips 0 22 :EIYF3_a3:eS8gC?YEHib3
+l15
+L13
+V6bidYin34S@FZ5b1j6ObH2
+R10
+31
+R60
+R61
+R62
+R14
+R15
+!s100 41]:0Se`[`AM<MDE[FzhN3
+!i10b 1
+Epc
+Z63 w1436559563
+R3
+R4
+R2
+R5
+R6
+R7
+Z64 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd
+Z65 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd
+l0
+L6
+V4GZ4>GCkX1KW<mNWmZ=MA1
+R10
+31
+Z66 !s108 1436624484.354000
+Z67 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd|
+Z68 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/PC/pc.vhd|
+R14
+R15
+!s100 ggj8TdDfPnzi?g<76Uk4W3
+!i10b 1
+Apc_op
+R3
+R4
+R2
+R5
+R6
+DEx4 work 2 pc 0 22 4GZ4>GCkX1KW<mNWmZ=MA1
+l17
+L13
+VZ17NC_aEkbeYON2RI?7GJ0
+R10
+31
+R66
+R67
+R68
+R14
+R15
+!s100 R8a4V?Zd[X=2l_elgoeB90
+!i10b 1
+Eregexmem
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z69 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd
+Z70 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd
+l0
+L6
+VmM8ao_FG;22oNcd5kQaS11
+R10
+31
+Z71 !s108 1436624483.930000
+Z72 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd|
+Z73 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regEXMEM/regEXMEM.vhd|
+R14
+R15
+!s100 j4^389[6>DNP;35WlScI:0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 regexmem 0 22 mM8ao_FG;22oNcd5kQaS11
+l37
+L28
+V`K=S^GeYb:B6P[a:M]InV0
+R10
+31
+R71
+R72
+R73
+R14
+R15
+!s100 gUHh1ozf;3hoC=SO1]LBh1
+!i10b 1
+Eregidex
+Z74 w1436461048
+R3
+R4
+R2
+R5
+R6
+R7
+Z75 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd
+Z76 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd
+l0
+L6
+Vb[2eeAf]CXU62e:MfMWmK2
+R10
+31
+Z77 !s108 1436624483.358000
+Z78 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd|
+Z79 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIDEX/RegIDEX.vhd|
+R14
+R15
+!s100 OhEAOX9oJ<li:N<[5Wo2D3
+!i10b 1
+Areg_idex
+R3
+R4
+R2
+R5
+R6
+DEx4 work 7 regidex 0 22 b[2eeAf]CXU62e:MfMWmK2
+l49
+L35
+VHOHOAQR<64f:lDGnJ=ag]2
+R10
+31
+R77
+R78
+R79
+R14
+R15
+!s100 <GgTU:fU3o0Z6HC`5cjIQ3
+!i10b 1
+Eregifid
+R74
+R3
+R4
+R2
+R5
+R6
+R7
+Z80 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd
+Z81 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd
+l0
+L6
+VB3O7NzN`S3gJLj719J4HC1
+R10
+31
+Z82 !s108 1436624482.794000
+Z83 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd|
+Z84 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/RegIFID/RegIFID.vhd|
+R14
+R15
+!s100 ?:dS0a<fDm>HEE<o[:`ba2
+!i10b 1
+Areg_ifid
+R3
+R4
+R2
+R5
+R6
+DEx4 work 7 regifid 0 22 B3O7NzN`S3gJLj719J4HC1
+l20
+L16
+VKd8`h`5lliUo]KcgN[53J1
+R10
+31
+R82
+R83
+R84
+R14
+R15
+!s100 GG4Vi1Z`XiOEZTlW22A5z3
+!i10b 1
+Eregmemwb
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z85 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd
+Z86 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd
+l0
+L6
+VPEjOA7X]PH0kf3T?ZQJz51
+R10
+31
+Z87 !s108 1436624482.402000
+Z88 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd|
+Z89 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/regMEMWB/regMEMWB.vhd|
+R14
+R15
+!s100 ARkWMcUc17:Agn?adCO^;2
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 regmemwb 0 22 PEjOA7X]PH0kf3T?ZQJz51
+l33
+L25
+V_bj;n]1=ikokTf;X]GU=@2
+R10
+31
+R87
+R88
+R89
+R14
+R15
+!s100 BoCg6ej:1U0EiR0hL=[Si0
+!i10b 1
+Estaged
+Z90 w1436618775
+R2
+R3
+R4
+R5
+R6
+R7
+Z91 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd
+Z92 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd
+l0
+L6
+V5OFjGm^e4z45e[P1OADLG0
+R10
+31
+Z93 !s108 1436624481.934000
+Z94 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd|
+Z95 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageD/stageD.vhd|
+R14
+R15
+!s100 XWM1_R6d?8II0PHda?]z[2
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 staged 0 22 5OFjGm^e4z45e[P1OADLG0
+l70
+L40
+V88@Dk93b;8mNKE@ZTS4C_2
+R10
+31
+R93
+R94
+R95
+R14
+R15
+!s100 SA@<3MPP>ac[TzIM9kgS42
+!i10b 1
+Estageex
+Z96 w1436563833
+R2
+R3
+R4
+R5
+R6
+R7
+Z97 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd
+Z98 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd
+l0
+L6
+V_dPb2neGckbfTlVV8M?6h0
+R10
+31
+Z99 !s108 1436624481.022000
+Z100 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd|
+Z101 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageEX/stageEX.vhd|
+R14
+R15
+!s100 :lhf556MQPc8b5NbeC_B63
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 stageex 0 22 _dPb2neGckbfTlVV8M?6h0
+l52
+L27
+VZ^R;MIEHzVPcQMaYY^_h_0
+R10
+31
+R99
+R100
+R101
+R14
+R15
+!s100 f=[XBmTPTooOijC5am1[I2
+!i10b 1
+Estagef
+Z102 w1436621410
+R2
+R3
+R4
+R5
+R6
+R7
+Z103 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd
+Z104 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd
+l0
+L6
+VKmoAn9JEJ?kBQRcPT_GJU0
+R10
+31
+Z105 !s108 1436624480.634000
+Z106 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd|
+Z107 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageF/stageF.vhd|
+R14
+R15
+!s100 K[DZzc@j1UZhME2JlTdRm0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 6 stagef 0 22 KmoAn9JEJ?kBQRcPT_GJU0
+l50
+L21
+VaBM>i_;86G]UFia3K;Ef^0
+R10
+31
+R105
+R106
+R107
+R14
+R15
+!s100 8?nBHoRB7@blMF5ZS7Ig31
+!i10b 1
+Estagemem
+Z108 w1436475279
+R2
+R3
+R4
+R5
+R6
+R7
+Z109 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd
+Z110 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd
+l0
+L6
+VEoL`HFVZQ@7;MDSdBe[4U2
+R10
+31
+Z111 !s108 1436624480.142000
+Z112 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd|
+Z113 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageMEM/stageMEM.vhd|
+R14
+R15
+!s100 z>[X04X[eX_g9=4kV5:k>0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 8 stagemem 0 22 EoL`HFVZQ@7;MDSdBe[4U2
+l30
+L20
+V62bM0RKoTelMY=Gkc]NEX3
+R10
+31
+R111
+R112
+R113
+R14
+R15
+!s100 db`_i6mWH=C8VFHT:kT7o0
+!i10b 1
+Estagewb
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z114 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd
+Z115 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd
+l0
+L6
+VMen=F:kK1HAjI`LLiQB3i1
+R10
+31
+Z116 !s108 1436624479.678000
+Z117 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd|
+Z118 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/stageWB/stageWB.vhd|
+R14
+R15
+!s100 6>?zCZObUTN;IH69ak?dM0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 stagewb 0 22 Men=F:kK1HAjI`LLiQB3i1
+l27
+L17
+V3f=P9CQaCLiXTUJ??UaHk2
+R10
+31
+R116
+R117
+R118
+R14
+R15
+!s100 QeID_aHN<Zm=Cl8D=U0991
+!i10b 1
+Etextmips
+R22
+R5
+R6
+R7
+Z119 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd
+Z120 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd
+l0
+L42
+VR0k`aa6YAX3>`QIU7:l6j0
+R10
+31
+Z121 !s108 1436624477.790000
+Z122 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd|
+Z123 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/textMIPS.vhd|
+R14
+R15
+!s100 XdkJoH0eI9Fdd99dbX@bC3
+!i10b 1
+Asyn
+R5
+R6
+DEx4 work 8 textmips 0 22 R0k`aa6YAX3>`QIU7:l6j0
+l86
+L54
+VTX>HB2GAi_mk:;V:CoXP41
+R10
+31
+R121
+R122
+R123
+R14
+R15
+!s100 lk@HhRU^_XKe`hJGO8b;N3
+!i10b 1
+Eulamips
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z124 8C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl
+Z125 FC:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl
+l0
+L22
+VZg5Q[m2IE0UaBClP6?@z[2
+R10
+31
+Z126 !s108 1436624479.238000
+Z127 !s90 -reportprogress|300|-93|-work|work|C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl|
+Z128 !s107 C:/Users/Douglas/Documents/GitHub/OAC_mips_pipeline_forward/UlaMIPS/ulaMIPS.vhdl|
+R14
+R15
+!s100 mA_RmlF:z30hVgCL@C3R>0
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R6
+DEx4 work 7 ulamips 0 22 Zg5Q[m2IE0UaBClP6?@z[2
+l34
+L30
+Vo4T2`MF^ZzaLA1R;k2;jC1
+R10
+31
+R126
+R127
+R128
+R14
+R15
+!s100 m?K1B2YKO`84T8S[f>1iY3
+!i10b 1

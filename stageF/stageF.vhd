@@ -60,16 +60,18 @@ architecture behavioral of stageF is
 	proc_stageF: process( clk )
 	begin
 	
-		PCPlus4F 	<= X"000000"&PCF + plus4;
-		PCPlus4Sig	<= X"000000"&PCF + plus4;	
-	
-		case PCSrcF is
-			when "00" => PCsig <= PCPlus4Sig(7 downto 0);
-			when "01" => PCsig <= PCBranchF(7 downto 0);
-			when "10" => PCsig <= PCJumpF(7 downto 0);
-			when others => null;
-		end case;
-		
+		if (rising_edge(clk)) 
+			then
+				PCPlus4F 	<= X"000000"&PCF + plus4;
+				PCPlus4Sig	<= X"000000"&PCF + plus4;	
+			
+				case PCSrcF is
+					when "00" => PCsig <= PCPlus4Sig(7 downto 0);
+					when "01" => PCsig <= PCBranchF(7 downto 0);
+					when "10" => PCsig <= PCJumpF(7 downto 0);
+					when others => null;
+				end case;
+		end if;	
 	end process proc_stageF;
 	
 	
