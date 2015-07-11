@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stageD
-Fri Jul 10 12:16:41 2015
+Fri Jul 10 17:42:37 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,9 +16,11 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "bregMIPS:map_breg"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 11. Port Connectivity Checks: "mux41_MIPS:map_mux2"
+ 12. Port Connectivity Checks: "mux41_MIPS:map_mux1"
+ 13. Port Connectivity Checks: "bregMIPS:map_breg"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 10 12:16:41 2015           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 10 17:42:37 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; stageD                                          ;
 ; Top-level Entity Name              ; stageD                                          ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 41                                              ;
-;     Total combinational functions  ; 41                                              ;
+; Total logic elements               ; 115                                             ;
+;     Total combinational functions  ; 115                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 325                                             ;
+; Total pins                         ; 327                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -162,8 +164,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ; Library ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
+; ../Mux41/mux41_MIPS.vhd          ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/Mux41/mux41_MIPS.vhd   ;         ;
 ; ../bregMIPS/bregMIPS.vhdl        ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/bregMIPS/bregMIPS.vhdl ;         ;
-; ../Mux21/mux21MIPS.vhd           ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/Mux21/mux21MIPS.vhd    ;         ;
 ; stageD.vhd                       ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/stageD/stageD.vhd      ;         ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
 
@@ -173,38 +175,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 41        ;
+; Estimated Total logic elements              ; 115       ;
 ;                                             ;           ;
-; Total combinational functions               ; 41        ;
+; Total combinational functions               ; 115       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 10        ;
-;     -- 3 input functions                    ; 30        ;
-;     -- <=2 input functions                  ; 1         ;
+;     -- 4 input functions                    ; 21        ;
+;     -- 3 input functions                    ; 61        ;
+;     -- <=2 input functions                  ; 33        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 12        ;
+;     -- normal mode                          ; 86        ;
 ;     -- arithmetic mode                      ; 29        ;
 ;                                             ;           ;
 ; Total registers                             ; 0         ;
 ;     -- Dedicated logic registers            ; 0         ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 325       ;
+; I/O pins                                    ; 327       ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; InstD[15] ;
 ; Maximum fan-out                             ; 34        ;
-; Total fan-out                               ; 254       ;
-; Average fan-out                             ; 0.69      ;
+; Total fan-out                               ; 519       ;
+; Average fan-out                             ; 1.17      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |stageD                    ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 325  ; 0            ; |stageD             ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
+; |stageD                    ; 115 (51)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 327  ; 0            ; |stageD                     ; work         ;
+;    |mux41_MIPS:map_mux1|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stageD|mux41_MIPS:map_mux1 ; work         ;
+;    |mux41_MIPS:map_mux2|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stageD|mux41_MIPS:map_mux2 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1256,13 +1260,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 1:1                ; 32 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |stageD|mux21MIPS:map_mux1|S[8] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |stageD|mux41_MIPS:map_mux1|Mux31 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |stageD|mux41_MIPS:map_mux2|Mux31 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux41_MIPS:map_mux2"                                                                                                                        ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; c    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux41_MIPS:map_mux1"                                                                                                                        ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; c    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -1289,23 +1312,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 10 12:16:38 2015
+    Info: Processing started: Fri Jul 10 17:42:34 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stageD -c stageD
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/mux41/mux41_mips.vhd
+    Info (12022): Found design unit 1: mux41_MIPS-behavioral
+    Info (12023): Found entity 1: mux41_MIPS
 Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/bregmips/bregmips.vhdl
     Info (12022): Found design unit 1: bregMIPS-behavioral
     Info (12023): Found entity 1: bregMIPS
-Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/mux21/mux21mips.vhd
-    Info (12022): Found design unit 1: mux21MIPS-behavioral
-    Info (12023): Found entity 1: mux21MIPS
 Info (12021): Found 2 design units, including 1 entities, in source file staged.vhd
     Info (12022): Found design unit 1: stageD-behavioral
     Info (12023): Found entity 1: stageD
 Info (12127): Elaborating entity "stageD" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at stageD.vhd(59): used implicit default value for signal "RD1sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at stageD.vhd(65): object "rd" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "RD1sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "RD2sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at stageD.vhd(79): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at stageD.vhd(80): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at stageD.vhd(81): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1328,74 +1351,11 @@ Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "Inst
 Info (12128): Elaborating entity "bregMIPS" for hierarchy "bregMIPS:map_breg"
 Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(46): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(52): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "mux21MIPS" for hierarchy "mux21MIPS:map_mux1"
+Info (12128): Elaborating entity "mux41_MIPS" for hierarchy "mux41_MIPS:map_mux1"
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "bregMIPS:map_breg|breg" is uninferred due to asynchronous read logic
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RD1[0]" is stuck at GND
-    Warning (13410): Pin "RD1[1]" is stuck at GND
-    Warning (13410): Pin "RD1[2]" is stuck at GND
-    Warning (13410): Pin "RD1[3]" is stuck at GND
-    Warning (13410): Pin "RD1[4]" is stuck at GND
-    Warning (13410): Pin "RD1[5]" is stuck at GND
-    Warning (13410): Pin "RD1[6]" is stuck at GND
-    Warning (13410): Pin "RD1[7]" is stuck at GND
-    Warning (13410): Pin "RD1[8]" is stuck at GND
-    Warning (13410): Pin "RD1[9]" is stuck at GND
-    Warning (13410): Pin "RD1[10]" is stuck at GND
-    Warning (13410): Pin "RD1[11]" is stuck at GND
-    Warning (13410): Pin "RD1[12]" is stuck at GND
-    Warning (13410): Pin "RD1[13]" is stuck at GND
-    Warning (13410): Pin "RD1[14]" is stuck at GND
-    Warning (13410): Pin "RD1[15]" is stuck at GND
-    Warning (13410): Pin "RD1[16]" is stuck at GND
-    Warning (13410): Pin "RD1[17]" is stuck at GND
-    Warning (13410): Pin "RD1[18]" is stuck at GND
-    Warning (13410): Pin "RD1[19]" is stuck at GND
-    Warning (13410): Pin "RD1[20]" is stuck at GND
-    Warning (13410): Pin "RD1[21]" is stuck at GND
-    Warning (13410): Pin "RD1[22]" is stuck at GND
-    Warning (13410): Pin "RD1[23]" is stuck at GND
-    Warning (13410): Pin "RD1[24]" is stuck at GND
-    Warning (13410): Pin "RD1[25]" is stuck at GND
-    Warning (13410): Pin "RD1[26]" is stuck at GND
-    Warning (13410): Pin "RD1[27]" is stuck at GND
-    Warning (13410): Pin "RD1[28]" is stuck at GND
-    Warning (13410): Pin "RD1[29]" is stuck at GND
-    Warning (13410): Pin "RD1[30]" is stuck at GND
-    Warning (13410): Pin "RD1[31]" is stuck at GND
-    Warning (13410): Pin "RD2[0]" is stuck at GND
-    Warning (13410): Pin "RD2[1]" is stuck at GND
-    Warning (13410): Pin "RD2[2]" is stuck at GND
-    Warning (13410): Pin "RD2[3]" is stuck at GND
-    Warning (13410): Pin "RD2[4]" is stuck at GND
-    Warning (13410): Pin "RD2[5]" is stuck at GND
-    Warning (13410): Pin "RD2[6]" is stuck at GND
-    Warning (13410): Pin "RD2[7]" is stuck at GND
-    Warning (13410): Pin "RD2[8]" is stuck at GND
-    Warning (13410): Pin "RD2[9]" is stuck at GND
-    Warning (13410): Pin "RD2[10]" is stuck at GND
-    Warning (13410): Pin "RD2[11]" is stuck at GND
-    Warning (13410): Pin "RD2[12]" is stuck at GND
-    Warning (13410): Pin "RD2[13]" is stuck at GND
-    Warning (13410): Pin "RD2[14]" is stuck at GND
-    Warning (13410): Pin "RD2[15]" is stuck at GND
-    Warning (13410): Pin "RD2[16]" is stuck at GND
-    Warning (13410): Pin "RD2[17]" is stuck at GND
-    Warning (13410): Pin "RD2[18]" is stuck at GND
-    Warning (13410): Pin "RD2[19]" is stuck at GND
-    Warning (13410): Pin "RD2[20]" is stuck at GND
-    Warning (13410): Pin "RD2[21]" is stuck at GND
-    Warning (13410): Pin "RD2[22]" is stuck at GND
-    Warning (13410): Pin "RD2[23]" is stuck at GND
-    Warning (13410): Pin "RD2[24]" is stuck at GND
-    Warning (13410): Pin "RD2[25]" is stuck at GND
-    Warning (13410): Pin "RD2[26]" is stuck at GND
-    Warning (13410): Pin "RD2[27]" is stuck at GND
-    Warning (13410): Pin "RD2[28]" is stuck at GND
-    Warning (13410): Pin "RD2[29]" is stuck at GND
-    Warning (13410): Pin "RD2[30]" is stuck at GND
-    Warning (13410): Pin "RD2[31]" is stuck at GND
     Warning (13410): Pin "PCJumpD[0]" is stuck at GND
     Warning (13410): Pin "PCJumpD[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -1433,7 +1393,7 @@ Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ResultW[29]"
     Warning (15610): No output dependent on input pin "ResultW[30]"
     Warning (15610): No output dependent on input pin "ResultW[31]"
-    Warning (15610): No output dependent on input pin "ForwardAD"
+    Warning (15610): No output dependent on input pin "ForwardA[0]"
     Warning (15610): No output dependent on input pin "RegWriteW"
     Warning (15610): No output dependent on input pin "WriteRegW[4]"
     Warning (15610): No output dependent on input pin "WriteRegW[0]"
@@ -1441,13 +1401,13 @@ Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "WriteRegW[2]"
     Warning (15610): No output dependent on input pin "WriteRegW[3]"
     Warning (15610): No output dependent on input pin "clk"
-Info (21057): Implemented 366 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 137 input pins
+Info (21057): Implemented 442 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 139 input pins
     Info (21059): Implemented 188 output pins
-    Info (21061): Implemented 41 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 134 warnings
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Fri Jul 10 12:16:41 2015
+    Info (21061): Implemented 115 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 71 warnings
+    Info: Peak virtual memory: 370 megabytes
+    Info: Processing ended: Fri Jul 10 17:42:37 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

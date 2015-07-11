@@ -14,8 +14,8 @@ entity stageD is
 		RegWriteW	: in std_logic;						  	-- wb
 		
 		AluOutM		: in std_logic_vector(31 downto 0); -- forward
-		ForwardAD	: in std_logic;
-		ForwardBD	: in std_logic;
+		ForwardA		: in std_logic_vector(1 downto 0);
+		ForwardB		: in std_logic_vector(1 downto 0);
 		
 		
 		RD1			: out std_logic_vector(31 downto 0); -- Reg D\X
@@ -48,9 +48,9 @@ architecture behavioral of stageD is
 	);
 	end component;
 
-	component mux21MIPS
+	component mux41_MIPS
 	port(
-		sel			: in  std_logic;
+		sel			: in  std_logic_vector(1 downto 0);
 		A,B			: in  std_logic_vector(31 downto 0);
 		S				: out std_logic_vector(31 downto 0));
 	end component;
@@ -69,13 +69,13 @@ architecture behavioral of stageD is
 		
 begin
 	map_breg: bregMIPS	port map(clk, RegWriteW, rs, rt, WriteRegW, RD1sig, RD2sig);
-	map_mux1: mux21MIPS port map(ForwardAD,RD1sig,AluOutM,RfD1);
-	map_mux2: mux21MIPS port map(ForwardBD,RD2sig,AluOutM,RfD2);
+	map_mux1: mux41_MIPS port map(ForwardA,RD1sig,AluOutM,RfD1);
+	map_mux2: mux41_MIPS port map(ForwardB,RD2sig,AluOutM,RfD2);
 	
 	proc : process(clk)
 	begin
-		RD1		<= RD1sig;
-		RD2 		<= RD2sig;
+		RD1		<= RfD1;
+		RD2 		<= RfD2;
 		Op			<= InstD(31 downto 26);
 		Funct		<= InstD(5 downto 0);
 		rs			<= InstD(25 downto 21);
