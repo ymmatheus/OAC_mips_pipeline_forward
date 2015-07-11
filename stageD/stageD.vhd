@@ -47,14 +47,6 @@ architecture behavioral of stageD is
 		r1,r2					: out std_logic_vector(31 downto 0)
 	);
 	end component;
-
-	component mux41_MIPS
-	port(
-		sel			: in  std_logic_vector(1 downto 0);
-		A,B,C		: in  std_logic_vector(31 downto 0);
-		S				: out std_logic_vector(31 downto 0));
-	end component;
-
 	
 	signal RD1sig		: std_logic_vector(31 downto 0);
 	signal RD2sig		: std_logic_vector(31 downto 0);
@@ -68,9 +60,8 @@ architecture behavioral of stageD is
 		
 		
 begin
+
 	map_breg: bregMIPS	port map(clk, RegWriteW, rs, rt, WriteRegW, RD1sig, RD2sig);
-	map_mux1: mux41_MIPS port map(ForwardA,RD1sig,AluOutM,RfD1);
-	map_mux2: mux41_MIPS port map(ForwardB,RD2sig,AluOutM,RfD2);
 	
 	proc : process(clk)
 	begin
@@ -86,6 +77,20 @@ begin
 		RdD		<= InstD(15 downto 11);
 		signToEx	<= InstD(15 downto 0);
 
+		case ForwardA is
+			when "00" => RfD1 <= RD1sig;
+			when "01" => RfD1 <= AluOutM;
+			when "10" => RfD1 <= ResultW;
+			when others => null;
+		end case;
+		
+		case ForwardB is
+			when "00" => RfD2 <= RD2sig;
+			when "01" => RfD2 <= AluOutM;
+			when "10" => RfD2 <= ResultW;
+			when others => null;
+		end case;
+		
 		if signToEx(15) = '1' then
 			signExtd <= X"ffff"&signToEx;
 		else

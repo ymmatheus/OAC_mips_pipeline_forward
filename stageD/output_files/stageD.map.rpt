@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stageD
-Fri Jul 10 17:42:37 2015
+Sat Jul 11 16:49:04 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,14 +13,13 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "mux41_MIPS:map_mux2"
- 12. Port Connectivity Checks: "mux41_MIPS:map_mux1"
- 13. Port Connectivity Checks: "bregMIPS:map_breg"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "bregMIPS:map_breg"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -46,13 +45,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 10 17:42:37 2015           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 11 16:49:04 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; stageD                                          ;
 ; Top-level Entity Name              ; stageD                                          ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 115                                             ;
-;     Total combinational functions  ; 115                                             ;
+; Total logic elements               ; 181                                             ;
+;     Total combinational functions  ; 181                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 327                                             ;
@@ -164,7 +163,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ; Library ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
-; ../Mux41/mux41_MIPS.vhd          ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/Mux41/mux41_MIPS.vhd   ;         ;
 ; ../bregMIPS/bregMIPS.vhdl        ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/bregMIPS/bregMIPS.vhdl ;         ;
 ; stageD.vhd                       ; yes             ; User VHDL File  ; E:/ProjetoFinalDisciplina/stageD/stageD.vhd      ;         ;
 +----------------------------------+-----------------+-----------------+--------------------------------------------------+---------+
@@ -175,16 +173,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 115       ;
+; Estimated Total logic elements              ; 181       ;
 ;                                             ;           ;
-; Total combinational functions               ; 115       ;
+; Total combinational functions               ; 181       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 21        ;
-;     -- 3 input functions                    ; 61        ;
-;     -- <=2 input functions                  ; 33        ;
+;     -- 4 input functions                    ; 53        ;
+;     -- 3 input functions                    ; 125       ;
+;     -- <=2 input functions                  ; 3         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 86        ;
+;     -- normal mode                          ; 152       ;
 ;     -- arithmetic mode                      ; 29        ;
 ;                                             ;           ;
 ; Total registers                             ; 0         ;
@@ -195,21 +193,93 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; InstD[15] ;
 ; Maximum fan-out                             ; 34        ;
-; Total fan-out                               ; 519       ;
-; Average fan-out                             ; 1.17      ;
+; Total fan-out                               ; 779       ;
+; Average fan-out                             ; 1.53      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                 ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; |stageD                    ; 115 (51)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 327  ; 0            ; |stageD                     ; work         ;
-;    |mux41_MIPS:map_mux1|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stageD|mux41_MIPS:map_mux1 ; work         ;
-;    |mux41_MIPS:map_mux2|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |stageD|mux41_MIPS:map_mux2 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |stageD                    ; 181 (181)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 327  ; 0            ; |stageD             ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; RfD1[0]                                             ; Mux65               ; yes                    ;
+; RfD1[1]                                             ; Mux65               ; yes                    ;
+; RfD1[2]                                             ; Mux65               ; yes                    ;
+; RfD1[3]                                             ; Mux65               ; yes                    ;
+; RfD1[4]                                             ; Mux65               ; yes                    ;
+; RfD1[5]                                             ; Mux65               ; yes                    ;
+; RfD1[6]                                             ; Mux65               ; yes                    ;
+; RfD1[7]                                             ; Mux65               ; yes                    ;
+; RfD1[8]                                             ; Mux65               ; yes                    ;
+; RfD1[9]                                             ; Mux65               ; yes                    ;
+; RfD1[10]                                            ; Mux65               ; yes                    ;
+; RfD1[11]                                            ; Mux65               ; yes                    ;
+; RfD1[12]                                            ; Mux65               ; yes                    ;
+; RfD1[13]                                            ; Mux65               ; yes                    ;
+; RfD1[14]                                            ; Mux65               ; yes                    ;
+; RfD1[15]                                            ; Mux65               ; yes                    ;
+; RfD1[16]                                            ; Mux65               ; yes                    ;
+; RfD1[17]                                            ; Mux65               ; yes                    ;
+; RfD1[18]                                            ; Mux65               ; yes                    ;
+; RfD1[19]                                            ; Mux65               ; yes                    ;
+; RfD1[20]                                            ; Mux65               ; yes                    ;
+; RfD1[21]                                            ; Mux65               ; yes                    ;
+; RfD1[22]                                            ; Mux65               ; yes                    ;
+; RfD1[23]                                            ; Mux65               ; yes                    ;
+; RfD1[24]                                            ; Mux65               ; yes                    ;
+; RfD1[25]                                            ; Mux65               ; yes                    ;
+; RfD1[26]                                            ; Mux65               ; yes                    ;
+; RfD1[27]                                            ; Mux65               ; yes                    ;
+; RfD1[28]                                            ; Mux65               ; yes                    ;
+; RfD1[29]                                            ; Mux65               ; yes                    ;
+; RfD1[30]                                            ; Mux65               ; yes                    ;
+; RfD1[31]                                            ; Mux65               ; yes                    ;
+; RfD2[0]                                             ; Mux32               ; yes                    ;
+; RfD2[1]                                             ; Mux32               ; yes                    ;
+; RfD2[2]                                             ; Mux32               ; yes                    ;
+; RfD2[3]                                             ; Mux32               ; yes                    ;
+; RfD2[4]                                             ; Mux32               ; yes                    ;
+; RfD2[5]                                             ; Mux32               ; yes                    ;
+; RfD2[6]                                             ; Mux32               ; yes                    ;
+; RfD2[7]                                             ; Mux32               ; yes                    ;
+; RfD2[8]                                             ; Mux32               ; yes                    ;
+; RfD2[9]                                             ; Mux32               ; yes                    ;
+; RfD2[10]                                            ; Mux32               ; yes                    ;
+; RfD2[11]                                            ; Mux32               ; yes                    ;
+; RfD2[12]                                            ; Mux32               ; yes                    ;
+; RfD2[13]                                            ; Mux32               ; yes                    ;
+; RfD2[14]                                            ; Mux32               ; yes                    ;
+; RfD2[15]                                            ; Mux32               ; yes                    ;
+; RfD2[16]                                            ; Mux32               ; yes                    ;
+; RfD2[17]                                            ; Mux32               ; yes                    ;
+; RfD2[18]                                            ; Mux32               ; yes                    ;
+; RfD2[19]                                            ; Mux32               ; yes                    ;
+; RfD2[20]                                            ; Mux32               ; yes                    ;
+; RfD2[21]                                            ; Mux32               ; yes                    ;
+; RfD2[22]                                            ; Mux32               ; yes                    ;
+; RfD2[23]                                            ; Mux32               ; yes                    ;
+; RfD2[24]                                            ; Mux32               ; yes                    ;
+; RfD2[25]                                            ; Mux32               ; yes                    ;
+; RfD2[26]                                            ; Mux32               ; yes                    ;
+; RfD2[27]                                            ; Mux32               ; yes                    ;
+; RfD2[28]                                            ; Mux32               ; yes                    ;
+; RfD2[29]                                            ; Mux32               ; yes                    ;
+; RfD2[30]                                            ; Mux32               ; yes                    ;
+; RfD2[31]                                            ; Mux32               ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-----------------------------------------------------------------------------------+
@@ -1260,32 +1330,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |stageD|mux41_MIPS:map_mux1|Mux31 ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |stageD|mux41_MIPS:map_mux2|Mux31 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux41_MIPS:map_mux2"                                                                                                                        ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; c    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux41_MIPS:map_mux1"                                                                                                                        ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; c    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |stageD|Mux0               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -1312,12 +1363,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 10 17:42:34 2015
+    Info: Processing started: Sat Jul 11 16:49:00 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stageD -c stageD
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/mux41/mux41_mips.vhd
-    Info (12022): Found design unit 1: mux41_MIPS-behavioral
-    Info (12023): Found entity 1: mux41_MIPS
 Info (12021): Found 2 design units, including 1 entities, in source file /projetofinaldisciplina/bregmips/bregmips.vhdl
     Info (12022): Found design unit 1: bregMIPS-behavioral
     Info (12023): Found entity 1: bregMIPS
@@ -1325,75 +1373,242 @@ Info (12021): Found 2 design units, including 1 entities, in source file staged.
     Info (12022): Found design unit 1: stageD-behavioral
     Info (12023): Found entity 1: stageD
 Info (12127): Elaborating entity "stageD" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at stageD.vhd(59): used implicit default value for signal "RD1sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at stageD.vhd(65): object "rd" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(79): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(80): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(81): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(82): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(83): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(84): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(85): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(86): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(87): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(89): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(90): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(92): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(95): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(103): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at stageD.vhd(104): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10541): VHDL Signal Declaration warning at stageD.vhd(51): used implicit default value for signal "RD1sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at stageD.vhd(57): object "rd" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at stageD.vhd(68): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(69): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(70): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(71): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(72): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(73): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(74): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(75): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(76): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(77): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(78): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(80): signal "ForwardA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(81): signal "RD1sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(82): signal "AluOutM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(83): signal "ResultW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(87): signal "ForwardB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(88): signal "RD2sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(89): signal "AluOutM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(90): signal "ResultW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(94): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(95): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(97): signal "signToEx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(100): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(102): signal "RfD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(102): signal "RfD2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(108): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(108): signal "signExtd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(109): signal "PCPlus4D" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at stageD.vhd(109): signal "InstD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at stageD.vhd(66): inferring latch(es) for signal or variable "RfD1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at stageD.vhd(66): inferring latch(es) for signal or variable "RfD2", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "RfD2[0]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[1]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[2]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[3]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[4]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[5]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[6]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[7]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[8]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[9]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[10]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[11]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[12]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[13]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[14]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[15]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[16]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[17]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[18]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[19]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[20]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[21]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[22]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[23]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[24]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[25]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[26]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[27]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[28]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[29]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[30]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD2[31]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[0]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[1]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[2]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[3]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[4]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[5]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[6]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[7]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[8]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[9]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[10]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[11]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[12]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[13]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[14]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[15]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[16]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[17]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[18]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[19]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[20]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[21]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[22]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[23]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[24]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[25]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[26]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[27]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[28]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[29]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[30]" at stageD.vhd(66)
+Info (10041): Inferred latch for "RfD1[31]" at stageD.vhd(66)
 Info (12128): Elaborating entity "bregMIPS" for hierarchy "bregMIPS:map_breg"
 Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(46): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at bregMIPS.vhdl(52): signal "breg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "mux41_MIPS" for hierarchy "mux41_MIPS:map_mux1"
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "bregMIPS:map_breg|breg" is uninferred due to asynchronous read logic
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch RfD1[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD1[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardA[1]
+Warning (13012): Latch RfD2[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
+Warning (13012): Latch RfD2[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ForwardB[1]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "PCJumpD[0]" is stuck at GND
     Warning (13410): Pin "PCJumpD[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 40 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ResultW[0]"
-    Warning (15610): No output dependent on input pin "ResultW[1]"
-    Warning (15610): No output dependent on input pin "ResultW[2]"
-    Warning (15610): No output dependent on input pin "ResultW[3]"
-    Warning (15610): No output dependent on input pin "ResultW[4]"
-    Warning (15610): No output dependent on input pin "ResultW[5]"
-    Warning (15610): No output dependent on input pin "ResultW[6]"
-    Warning (15610): No output dependent on input pin "ResultW[7]"
-    Warning (15610): No output dependent on input pin "ResultW[8]"
-    Warning (15610): No output dependent on input pin "ResultW[9]"
-    Warning (15610): No output dependent on input pin "ResultW[10]"
-    Warning (15610): No output dependent on input pin "ResultW[11]"
-    Warning (15610): No output dependent on input pin "ResultW[12]"
-    Warning (15610): No output dependent on input pin "ResultW[13]"
-    Warning (15610): No output dependent on input pin "ResultW[14]"
-    Warning (15610): No output dependent on input pin "ResultW[15]"
-    Warning (15610): No output dependent on input pin "ResultW[16]"
-    Warning (15610): No output dependent on input pin "ResultW[17]"
-    Warning (15610): No output dependent on input pin "ResultW[18]"
-    Warning (15610): No output dependent on input pin "ResultW[19]"
-    Warning (15610): No output dependent on input pin "ResultW[20]"
-    Warning (15610): No output dependent on input pin "ResultW[21]"
-    Warning (15610): No output dependent on input pin "ResultW[22]"
-    Warning (15610): No output dependent on input pin "ResultW[23]"
-    Warning (15610): No output dependent on input pin "ResultW[24]"
-    Warning (15610): No output dependent on input pin "ResultW[25]"
-    Warning (15610): No output dependent on input pin "ResultW[26]"
-    Warning (15610): No output dependent on input pin "ResultW[27]"
-    Warning (15610): No output dependent on input pin "ResultW[28]"
-    Warning (15610): No output dependent on input pin "ResultW[29]"
-    Warning (15610): No output dependent on input pin "ResultW[30]"
-    Warning (15610): No output dependent on input pin "ResultW[31]"
-    Warning (15610): No output dependent on input pin "ForwardA[0]"
+Warning (21074): Design contains 7 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RegWriteW"
     Warning (15610): No output dependent on input pin "WriteRegW[4]"
     Warning (15610): No output dependent on input pin "WriteRegW[0]"
@@ -1401,14 +1616,14 @@ Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "WriteRegW[2]"
     Warning (15610): No output dependent on input pin "WriteRegW[3]"
     Warning (15610): No output dependent on input pin "clk"
-Info (21057): Implemented 442 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 508 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 139 input pins
     Info (21059): Implemented 188 output pins
-    Info (21061): Implemented 115 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 71 warnings
-    Info: Peak virtual memory: 370 megabytes
-    Info: Processing ended: Fri Jul 10 17:42:37 2015
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 181 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 175 warnings
+    Info: Peak virtual memory: 374 megabytes
+    Info: Processing ended: Sat Jul 11 16:49:04 2015
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
